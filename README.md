@@ -1,14 +1,12 @@
 ### Tutorial of Sources ###
 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
 * log into virtual env for tensorflow: *__conda activate tf-gpu__*
 
 * Using Bridges:
   
-  ```
-  ssh -l *account* login.xsede.prg
-  ```
+  * ```
+    ssh -l *account* login.xsede.prg
+    ```
 
   ```
   ssh -l *account* login.xsede.prg
