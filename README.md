@@ -26,11 +26,7 @@
     module load anaconda3/2019.03
     ```
 
-  * (if haven't build a new env yet, build by 
-    ```
-    conda create -y -n envName
-    ```
-    ;
+  * (if haven't build a new env yet, build by ``` conda create -y -n envName ```;
 
   * ```
     source activate
