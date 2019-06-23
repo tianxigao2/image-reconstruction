@@ -8,39 +8,42 @@
     ssh -l *account* login.xsede.prg
     ```
 
-  ```
-  ssh -l *account* login.xsede.prg
-  ```
+  * ```
+    ssh -l *account* login.xsede.prg
+    ```
 
-  ```
-  gsissh bridges
-  ```
+  * ```
+    gsissh bridges
+    ```
 
-  ```
-  interact
-  ```
+  * ```
+    interact
+    ```
 
   * (if going to use gpu, use
   ```
   interact -gpu -egress
-  ```, but with smaller memory)
+  ```
+  , but with smaller memory)
 
-  ```
-  module load anaconda3/2019.03
-  ```
+  * ```
+    module load anaconda3/2019.03
+    ```
 
   * (if haven't build a new env yet, build by 
     ```
     conda create -y -n envName
-    ```;
+    ```
+    ;
 
-  ```
-  source activate
-  ``` (now should get into (base) env)
+  * ```
+    source activate
+    ```
+    (now should get into (base) env)
 
-  ```
-  conda activate *envName*
-  ```
+  * ```
+    conda activate *envName*
+    ```
 
   * can then install packages using pip or conda
 
