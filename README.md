@@ -20,11 +20,7 @@
     interact
     ```
 
-  * (if going to use gpu, use
-  ```
-  interact -gpu -egress
-  ```
-  , but with smaller memory)
+  * (if going to use gpu, use ```interact -gpu -egress ```, but with smaller memory)
 
   * ```
     module load anaconda3/2019.03
