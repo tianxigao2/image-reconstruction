@@ -4,38 +4,23 @@
 
 * Using Bridges:
   
-  * ```
-    ssh -l *account* login.xsede.prg
-    ```
+  * ``` ssh -l *account* login.xsede.org ```
 
-  * ```
-    ssh -l *account* login.xsede.prg
-    ```
+  * ``` ssh -l *account* login.xsede.org ```
 
-  * ```
-    gsissh bridges
-    ```
+  * ``` gsissh bridges ```
 
-  * ```
-    interact
-    ```
+  * ``` interact ```
 
   * (if going to use gpu, use ```interact -gpu -egress ```, but with smaller memory)
 
-  * ```
-    module load anaconda3/2019.03
-    ```
+  * ``` module load anaconda3/2019.03 ```
 
   * (if haven't build a new env yet, build by ``` conda create -y -n envName ```;
 
-  * ```
-    source activate
-    ```
-    (now should get into (base) env)
+  * ``` source activate ``` (now should get into (base) env)
 
-  * ```
-    conda activate *envName*
-    ```
+  * ``` conda activate *envName* ```
 
   * can then install packages using pip or conda
 
@@ -72,16 +57,9 @@
 
 		# USE "sbatch batch_scripts" to submit job
 
-  * call a job to run by typing 
-  ```
-  sbatch batch_script
-  ```
+  * call a job to run by typing ``` sbatch batch_script ```
 
-  * check status: 
-  ```
-  sacct -X -j nnnnnnnn
-  ```
-  (nnnn stands for the proj-id)
+  * check status: ```sacct -X -j nnnnnnnn ```  (nnnn stands for the proj-id)
 
   * result will be automatically generated to the same directory with batch script
 
