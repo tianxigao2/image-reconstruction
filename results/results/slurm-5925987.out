@@ -1,0 +1,187 @@
++ cd /pylon5/ac5610p/janegao/image-reconstruction-2019/code/code_2d/
++ python main.py
+2019-06-26 13:59:32.842265: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-06-26 13:59:32.861256: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294950000 Hz
+2019-06-26 13:59:32.872369: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5568a3d2d270 executing computations on platform Host. Devices:
+2019-06-26 13:59:32.872502: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-27
+OMP: Info #156: KMP_AFFINITY: 28 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 2 packages x 14 cores/pkg x 1 threads/core (28 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 0 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 0 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 0 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 0 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 20 maps to package 0 core 14 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 1 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 21 maps to package 1 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 1 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 22 maps to package 1 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 1 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 23 maps to package 1 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 1 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 24 maps to package 1 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 1 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 25 maps to package 1 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 1 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 26 maps to package 1 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 1 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 27 maps to package 1 core 14 
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5414 thread 0 bound to OS proc set 0
+2019-06-26 13:59:32.875633: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5502 thread 1 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5559 thread 2 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5560 thread 3 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5561 thread 4 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5562 thread 5 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5563 thread 6 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5564 thread 7 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5565 thread 8 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5566 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5567 thread 10 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5568 thread 11 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5569 thread 12 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5571 thread 14 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5570 thread 13 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5572 thread 15 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5573 thread 16 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5574 thread 17 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5575 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5576 thread 19 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5577 thread 20 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5578 thread 21 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5579 thread 22 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5580 thread 23 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5581 thread 24 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5582 thread 25 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5583 thread 26 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5584 thread 27 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5585 thread 28 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5503 thread 29 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5586 thread 30 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5587 thread 31 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5588 thread 32 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5589 thread 33 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5590 thread 34 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5591 thread 35 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5592 thread 36 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5593 thread 37 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5594 thread 38 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5595 thread 39 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5596 thread 40 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5597 thread 41 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5598 thread 42 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5599 thread 43 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5600 thread 44 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5601 thread 45 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5602 thread 46 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5603 thread 47 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5604 thread 48 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5605 thread 49 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5607 thread 51 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5606 thread 50 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5608 thread 52 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5609 thread 53 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5610 thread 54 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5611 thread 55 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 5414 tid 5612 thread 56 bound to OS proc set 0
+loading the whole csv file (3288, 64, 64, 1)
+loading the whole csv file (3288, 64, 64, 1)
+shape before reshape (1000, 1, 64, 64)
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 64, 64, 64)        5248      
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 64, 64, 32)        2080      
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 64, 64, 1)         801       
+=================================================================
+Total params: 8,129
+Trainable params: 8,129
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 640 samples, validate on 160 samples
+Epoch 1/1000
+ - 14s - loss: 0.0122 - ssim_for2d: 0.7271 - psnr_for2d: 22.6757 - val_loss: 0.0021 - val_ssim_for2d: 0.8351 - val_psnr_for2d: 28.7674
+Epoch 2/1000
+ - 13s - loss: 0.0017 - ssim_for2d: 0.8623 - psnr_for2d: 29.4113 - val_loss: 0.0015 - val_ssim_for2d: 0.8691 - val_psnr_for2d: 30.7192
+Epoch 3/1000
+ - 13s - loss: 0.0012 - ssim_for2d: 0.8879 - psnr_for2d: 31.4937 - val_loss: 0.0013 - val_ssim_for2d: 0.8878 - val_psnr_for2d: 31.6216
+Epoch 4/1000
+ - 13s - loss: 0.0010 - ssim_for2d: 0.9014 - psnr_for2d: 32.1089 - val_loss: 0.0014 - val_ssim_for2d: 0.8972 - val_psnr_for2d: 30.3812
+Epoch 5/1000
+ - 13s - loss: 9.8978e-04 - ssim_for2d: 0.9090 - psnr_for2d: 32.3553 - val_loss: 0.0011 - val_ssim_for2d: 0.9046 - val_psnr_for2d: 32.4576
+Epoch 6/1000
+ - 13s - loss: 9.0149e-04 - ssim_for2d: 0.9138 - psnr_for2d: 32.8886 - val_loss: 9.8295e-04 - val_ssim_for2d: 0.9095 - val_psnr_for2d: 33.0356
+Epoch 7/1000
+ - 13s - loss: 8.6281e-04 - ssim_for2d: 0.9174 - psnr_for2d: 33.1434 - val_loss: 9.6281e-04 - val_ssim_for2d: 0.9119 - val_psnr_for2d: 32.9765
+Epoch 8/1000
+ - 13s - loss: 8.9272e-04 - ssim_for2d: 0.9189 - psnr_for2d: 33.0000 - val_loss: 9.2299e-04 - val_ssim_for2d: 0.9135 - val_psnr_for2d: 33.4750
+Epoch 9/1000
+ - 13s - loss: 7.8257e-04 - ssim_for2d: 0.9204 - psnr_for2d: 33.8699 - val_loss: 9.0746e-04 - val_ssim_for2d: 0.9146 - val_psnr_for2d: 33.5814
+Epoch 10/1000
+ - 13s - loss: 9.7275e-04 - ssim_for2d: 0.9202 - psnr_for2d: 32.4409 - val_loss: 9.0472e-04 - val_ssim_for2d: 0.9148 - val_psnr_for2d: 33.5759
+Epoch 11/1000
+ - 13s - loss: 7.6541e-04 - ssim_for2d: 0.9217 - psnr_for2d: 34.0075 - val_loss: 8.9089e-04 - val_ssim_for2d: 0.9156 - val_psnr_for2d: 33.6782
+Epoch 12/1000
+ - 13s - loss: 7.5970e-04 - ssim_for2d: 0.9222 - psnr_for2d: 34.0182 - val_loss: 8.8413e-04 - val_ssim_for2d: 0.9161 - val_psnr_for2d: 33.7093
+Epoch 13/1000
+ - 13s - loss: 7.5615e-04 - ssim_for2d: 0.9226 - psnr_for2d: 34.0310 - val_loss: 8.7906e-04 - val_ssim_for2d: 0.9165 - val_psnr_for2d: 33.7439
+Epoch 14/1000
+ - 13s - loss: 7.5370e-04 - ssim_for2d: 0.9230 - psnr_for2d: 34.0305 - val_loss: 8.7616e-04 - val_ssim_for2d: 0.9167 - val_psnr_for2d: 33.7210
+Epoch 15/1000
+ - 13s - loss: 7.4754e-04 - ssim_for2d: 0.9233 - psnr_for2d: 34.0981 - val_loss: 8.7423e-04 - val_ssim_for2d: 0.9172 - val_psnr_for2d: 33.7073
+Epoch 16/1000
+ - 13s - loss: 7.3989e-04 - ssim_for2d: 0.9236 - psnr_for2d: 34.1887 - val_loss: 8.6506e-04 - val_ssim_for2d: 0.9175 - val_psnr_for2d: 33.8471
+Epoch 17/1000
+ - 13s - loss: 7.7548e-04 - ssim_for2d: 0.9237 - psnr_for2d: 33.7523 - val_loss: 9.2870e-04 - val_ssim_for2d: 0.9173 - val_psnr_for2d: 32.8215
+Epoch 18/1000
+ - 13s - loss: 8.2035e-04 - ssim_for2d: 0.9235 - psnr_for2d: 33.5714 - val_loss: 8.5882e-04 - val_ssim_for2d: 0.9178 - val_psnr_for2d: 33.8700
+Epoch 19/1000
+ - 13s - loss: 7.3727e-04 - ssim_for2d: 0.9241 - psnr_for2d: 34.1558 - val_loss: 8.5369e-04 - val_ssim_for2d: 0.9179 - val_psnr_for2d: 33.9358
+Epoch 20/1000
+ - 13s - loss: 7.2923e-04 - ssim_for2d: 0.9243 - psnr_for2d: 34.2582 - val_loss: 8.8993e-04 - val_ssim_for2d: 0.9181 - val_psnr_for2d: 33.2208
+Epoch 21/1000
+ - 13s - loss: 7.6716e-04 - ssim_for2d: 0.9244 - psnr_for2d: 33.6492 - val_loss: 8.5010e-04 - val_ssim_for2d: 0.9184 - val_psnr_for2d: 33.9328
+Epoch 22/1000
+ - 13s - loss: 7.2398e-04 - ssim_for2d: 0.9248 - psnr_for2d: 34.2769 - val_loss: 8.4440e-04 - val_ssim_for2d: 0.9186 - val_psnr_for2d: 33.9485
+Epoch 23/1000
+ - 13s - loss: 7.4420e-04 - ssim_for2d: 0.9249 - psnr_for2d: 33.9977 - val_loss: 8.4261e-04 - val_ssim_for2d: 0.9191 - val_psnr_for2d: 33.9076
+Epoch 24/1000
+ - 13s - loss: 7.1639e-04 - ssim_for2d: 0.9252 - psnr_for2d: 34.3238 - val_loss: 8.9209e-04 - val_ssim_for2d: 0.9193 - val_psnr_for2d: 33.0644
+Epoch 25/1000
+ - 13s - loss: 7.1805e-04 - ssim_for2d: 0.9253 - psnr_for2d: 34.2601 - val_loss: 8.6601e-04 - val_ssim_for2d: 0.9191 - val_psnr_for2d: 33.4358
+Epoch 26/1000
+ - 13s - loss: 7.2533e-04 - ssim_for2d: 0.9255 - psnr_for2d: 34.1407 - val_loss: 8.3099e-04 - val_ssim_for2d: 0.9194 - val_psnr_for2d: 34.0412
+Epoch 27/1000
+ - 13s - loss: 7.8026e-04 - ssim_for2d: 0.9251 - psnr_for2d: 33.6801 - val_loss: 8.3367e-04 - val_ssim_for2d: 0.9197 - val_psnr_for2d: 33.9901
+Epoch 28/1000
+ - 13s - loss: 7.0532e-04 - ssim_for2d: 0.9258 - psnr_for2d: 34.4079 - val_loss: 8.2303e-04 - val_ssim_for2d: 0.9196 - val_psnr_for2d: 34.1265
+Epoch 29/1000
+ - 13s - loss: 7.0093e-04 - ssim_for2d: 0.9259 - psnr_for2d: 34.4595 - val_loss: 8.2718e-04 - val_ssim_for2d: 0.9193 - val_psnr_for2d: 34.0256
+Epoch 30/1000
+ - 13s - loss: 7.0271e-04 - ssim_for2d: 0.9260 - psnr_for2d: 34.4231 - val_loss: 8.4191e-04 - val_ssim_for2d: 0.9195 - val_psnr_for2d: 33.6930
+Epoch 31/1000
+ - 13s - loss: 8.7833e-04 - ssim_for2d: 0.9248 - psnr_for2d: 33.3310 - val_loss: 8.3007e-04 - val_ssim_for2d: 0.9195 - val_psnr_for2d: 34.0664
+slurmstepd: error: *** JOB 5925987 ON r329 CANCELLED AT 2019-06-26T19:58:34 DUE TO TIME LIMIT ***
