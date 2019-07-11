@@ -52,22 +52,37 @@ def pickFrame(mode, i, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, layer_3
   #data = img.resize((TARGET_HEIGHT, TARGET_WIDTH))
   if mode == 'x':
     img = Image.open(path + 'Frame_cmp/' + filename)
+    
     if (HEIGHT, WIDTH) == (TARGET_HEIGHT, TARGET_WIDTH):  # for sehpp-logan phantom set, firstly smaller the image size
       HEIGHT = HEIGHT//2
       WIDTH = WIDTH//2
       img = img.resize((HEIGHT, WIDTH))
+    
     data = img.resize((TARGET_HEIGHT, TARGET_WIDTH),Image.BICUBIC)
+    
   elif mode == 'y':
     img = Image.open(path + 'Frame_org/' + filename)
     data = img.resize((TARGET_HEIGHT, TARGET_WIDTH))
+    
+  elif mode == 'p': #prediction from interim result
+    img = Image.open(path + filename)
+    data = img.resize((TARGET_HEIGHT, TARGET_WIDTH)) 
 
-  data = numpy.array(data)
+  data_tmp = numpy.asarray(data)
+  data = data_tmp
 
   if layer_3d == True and mode == 'y':
     #need to make y_set picture size smaller
     data = data[2:TARGET_HEIGHT-2, 2:TARGET_WIDTH-2]
+  
+  #print('shape',data.shape)
+  #print('target_height: ', TARGET_HEIGHT, ', height: ', HEIGHT)
+  #print('data.ndim: ', data.ndim)
 
-  img_yuv = cv2.cvtColor(data, cv2.COLOR_BGR2YUV)
+  if data.ndim == 2:  #prediction get only one channel y
+    return data 
+  
+  img_yuv = cv2.cvtColor(data, cv2.COLOR_BGR2YUV) #--just backup for channel != 1 cases--
   y, u, v = cv2.split(img_yuv)
 
   return y
@@ -94,6 +109,7 @@ def pack(DEPTH, mode, i, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, TOTAL
   return data  #return a single package
 
 #packed_image_set is to pack all the packages into a dataset --------------------------------------------------------
+# only as a backup, not used in 2d+3d model program
 def packed_image_set(DEPTH, AMOUNT, TOTAL_AMOUNT, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH):
 
   x_set = []
@@ -114,6 +130,30 @@ def packed_image_set(DEPTH, AMOUNT, TOTAL_AMOUNT, path, HEIGHT, WIDTH, TARGET_HE
   y_set = numpy.reshape(y_set, (AMOUNT, TARGET_HEIGHT - 2 * 2, TARGET_WIDTH - 2 * 2, 1))
     
   return (AMOUNT, x_set, y_set)
+
+#function for picking up interim resulted pictures---------------------------------------------------------
+def packed_image_set_prediction(DEPTH, AMOUNT, TOTAL_AMOUNT, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH):
+
+  p_set = []
+
+  for i in getIndex(AMOUNT, TOTAL_AMOUNT):
+    
+    HALF_RANGE = math.floor(DEPTH/2)
+
+    if (i - HALF_RANGE) < 0 or (i + HALF_RANGE) >= TOTAL_AMOUNT:
+      AMOUNT = AMOUNT - 1
+      
+    else:
+      p_set.append(pack(DEPTH, 'p', i, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, TOTAL_AMOUNT).tolist())
+      print('packed '+ str(i) + ' packages already')    
+      
+  p_set = numpy.reshape(numpy.array(p_set), (AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH, 1))
+  print('finish picking up prediction set!')
+
+  #y_set = numpy.array([pickFrame('y', i, path, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, True) for i in getIndex(AMOUNT, TOTAL_AMOUNT)])
+  #y_set = numpy.reshape(y_set, (AMOUNT, TARGET_HEIGHT - 2 * 2, TARGET_WIDTH - 2 * 2, 1))
+    
+  return (AMOUNT, p_set)  #, y_set)
 
 # single_image_set is for the final packing of single-image processing case --------------------------------------------------
 # The function will reshape the final output into 4d tensor (the last dim stores color channel)

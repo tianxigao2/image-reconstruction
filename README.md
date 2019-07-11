@@ -1,20 +1,11 @@
 ### Tutorial of Sources ###
 
-<<<<<<< HEAD
 * log into virtual env for tensorflow: ```conda activate tf-gpu```
-=======
-* log into virtual env for tensorflow: *__conda activate tf-gpu__*
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 
 * Using Bridges:
   
   * ``` ssh -l *account* login.xsede.org ```
 
-<<<<<<< HEAD
-=======
-  * ``` ssh -l *account* login.xsede.org ```
-
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
   * ``` gsissh bridges ```
 
   * ``` interact ```
@@ -38,15 +29,11 @@
   ```
 
   ```
-<<<<<<< HEAD
   scp -r /local/directory janegao@bridges.psc.edu:/pylon5/ac5610p/janegao/image-reconstruction-2019/
   ```
 
   ```
   scp janegao@bridges.psc.edu:/pylon5/ac5610p/janegao/running_output/slurm-5921791.out ../results/500_64_128_5_assign_8_hours_changed_PSNR.out
-=======
-  scp -r /local/directory janegao@bridges.psc.edu:pylon5/ac5610p/janegao/image-reconstruction-2019/
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
   ```
 
 * Run a job on batch:
@@ -74,11 +61,8 @@
 
   * call a job to run by typing ``` sbatch batch_script ```
 
-<<<<<<< HEAD
   * check all running (pending) jobs: ```squeue -u janegao```
 
-=======
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
   * check status: ```sacct -X -j nnnnnnnn ```  (nnnn stands for the proj-id)
 
   * result will be automatically generated to the same directory with batch script
@@ -89,7 +73,6 @@
 
 **data**:
 
-<<<<<<< HEAD
 Using shepp-logan phantom to generate org pictures -> for *sequence of images reconstruction*
 
 * Using compression rate = 50 and uncompressed videos, extracting pictures out and stored as TIFF(lossless)
@@ -122,22 +105,6 @@ Performance evaluated by PSNR and SSIM
 
 [?]: how to determine (by concept) if the transfer learning shows better performance. 
 
-=======
-* Using shepp-logan phantom to generate org pictures -> can know the compression rate (and thus the performance of NN) exactly
-
-* Using compression rate = 50 and uncompressed videos, extracting pictures out and stored as TIFF(lossless)
-
-* To run on local machine, use the code "getPath.py" here; to run on Bridges, use the code stored in there
-
-* Performance evaluated by PSNR and SSIM
-
-**SRCNN single image model**
-
-**3D conv layer model with no padding for sequence of images**
-
-**Transfer Learning**
-
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 ### Steps ###
 
 * Develop model following the experiment in SRCNN
@@ -146,7 +113,6 @@ Performance evaluated by PSNR and SSIM
 
   * input and output are simgle images
 
-<<<<<<< HEAD
 * Run on local machine and [Bridges](https://bitbucket.org/EDKLW/image-reconstruction-2019/src/master/results/RECORD.md)
 
 * Develop 3D conv model
@@ -177,17 +143,6 @@ Performance evaluated by PSNR and SSIM
 
 * append 3d model to the transfer learning model
 
-=======
-* Run on local machine
-
-  * run on GPU with AMOUNT <= 100; BATCH <= 15; KERNAL_SIZE = (64, 32, 1)
-
-  * run on CPU with AMOUNT <= 1000; BATCH <=30; KERNAL_SIZE = (64, 32, 1)
-
-* See performance
-
-  * Determine if the problem is overfitting or not by plotting learning curve
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 
 ### Structure in BitBucket ###
 
@@ -195,7 +150,6 @@ Performance evaluated by PSNR and SSIM
 
 * *extractor.py* can run to extract frames out from video; only need to run once at the very beginning;
 
-<<<<<<< HEAD
 **code_2D**:
 
 * to run the nerual network, run *main.py*;
@@ -234,22 +188,6 @@ Under 'shepp logan phantom':
 
 * Used for testing 3d conv CNN model;
 
-=======
-* to run the nerual network, run *main.py*;
-
-  * *load_data.py* load images with YUV model's Y channel to the main_function;
-
-  * *separator.py* separates training set and test set, changes them into ndarry;
-
-  * *model_build_up.py* determines the structure of nerual network and compiles it;
-
-  * *train.py* specifys the callback functions and performance detecting metrics;
-
-  * *acc.py* self-defines the callback functions and performance evaluators for *train.py*.
-
-**data** stores all the data pictures;
-
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 * *compressdSample_xx.avi* and *uncompressedSample.avi* are developed using matlab code;
 
 * *Frame_cmp* stores the images extracted from compressed video (rate = 50);
@@ -258,7 +196,6 @@ Under 'shepp logan phantom':
 
 * two file directories are used for the input of train_x and train_y separately in fit function.
 
-<<<<<<< HEAD
 Under 'Timofte_dataset':
 
 * Currently only use Y channel;
@@ -266,8 +203,6 @@ Under 'Timofte_dataset':
 * Load the CSV file as ndarray;
 
 * Used for single image reconstruction.
-=======
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 
 **datasetMake** store matlab code for shepp-logan phantom and video generation;
 
@@ -291,10 +226,7 @@ Under 'Timofte_dataset':
 
 * SRCNN
 
-<<<<<<< HEAD
 * 3d Model
 
 
-=======
->>>>>>> 35e709b2621290a314ef0129e11dec8ea6b0db4c
 

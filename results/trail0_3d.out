@@ -1,0 +1,227 @@
+Using TensorFlow backend.
+2019-07-09 15:42:20.387216: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2
+2019-07-09 15:42:20.394984: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2659815000 Hz
+2019-07-09 15:42:20.396391: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55f463994600 executing computations on platform Host. Devices:
+2019-07-09 15:42:20.396427: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-09 15:42:20.480965: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-07-09 15:42:20.481358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1650 major: 7 minor: 5 memoryClockRate(GHz): 1.665
+pciBusID: 0000:0f:00.0
+totalMemory: 3.82GiB freeMemory: 1.72GiB
+2019-07-09 15:42:20.481387: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:20.482102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:20.482121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:20.482135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:20.482228: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 15:42:20.484250: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55f463826c00 executing computations on platform CUDA. Devices:
+2019-07-09 15:42:20.484277: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1650, Compute Capability 7.5
+2019-07-09 15:42:31.386110: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:31.386245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:31.386262: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:31.386272: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:31.386462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 15:42:34.185855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:34.185936: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:34.185952: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:34.185964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:34.186055: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 15:42:35.056770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:35.056836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:35.056850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:35.056861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:35.056947: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 15:42:35.478344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:35.478416: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:35.478431: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:35.478443: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:35.478545: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+WARNING:tensorflow:From /home/user1/.conda/envs/tf-gpu/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv3d_1 (Conv3D)            (None, 5, 64, 64, 32)     896       
+_________________________________________________________________
+conv3d_2 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_3 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_4 (Conv3D)            (None, 3, 62, 62, 32)     27680     
+_________________________________________________________________
+conv3d_5 (Conv3D)            (None, 1, 60, 60, 32)     27680     
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 60, 60, 32)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 60, 60, 1)         289       
+=================================================================
+Total params: 111,905
+Trainable params: 111,905
+Non-trainable params: 0
+_________________________________________________________________
+None
+shape of train_x (236, 5, 64, 64, 1) shape of train_y (236, 60, 60, 1)
+WARNING:tensorflow:From /home/user1/.conda/envs/tf-gpu/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Train on 188 samples, validate on 48 samples
+Epoch 1/100
+2019-07-09 15:42:36.764341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 15:42:36.764404: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 15:42:36.764417: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 15:42:36.764427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 15:42:36.764529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1541 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+ - 8s - loss: 13509.0258 - ssim_for2d: 0.2736 - psnr_for2d: 8.3344 - val_loss: 12496.3500 - val_ssim_for2d: 0.2002 - val_psnr_for2d: 7.1634
+Epoch 2/100
+ - 2s - loss: 7005.4417 - ssim_for2d: 0.3565 - psnr_for2d: 10.5824 - val_loss: 1665.8055 - val_ssim_for2d: 0.4608 - val_psnr_for2d: 15.9155
+Epoch 3/100
+ - 2s - loss: 2195.5836 - ssim_for2d: 0.4445 - psnr_for2d: 14.8770 - val_loss: 1474.6406 - val_ssim_for2d: 0.4627 - val_psnr_for2d: 16.4447
+Epoch 4/100
+ - 2s - loss: 1668.8815 - ssim_for2d: 0.4607 - psnr_for2d: 15.9492 - val_loss: 1378.1638 - val_ssim_for2d: 0.4558 - val_psnr_for2d: 16.7383
+Epoch 5/100
+ - 2s - loss: 1371.0222 - ssim_for2d: 0.4645 - psnr_for2d: 16.7635 - val_loss: 1308.7808 - val_ssim_for2d: 0.4600 - val_psnr_for2d: 16.9626
+Epoch 6/100
+ - 2s - loss: 1309.6951 - ssim_for2d: 0.4677 - psnr_for2d: 16.9611 - val_loss: 1215.6084 - val_ssim_for2d: 0.4708 - val_psnr_for2d: 17.2834
+Epoch 7/100
+ - 2s - loss: 1230.7904 - ssim_for2d: 0.4798 - psnr_for2d: 17.2305 - val_loss: 1136.0642 - val_ssim_for2d: 0.4899 - val_psnr_for2d: 17.5775
+Epoch 8/100
+ - 2s - loss: 1133.5842 - ssim_for2d: 0.5025 - psnr_for2d: 17.5879 - val_loss: 1051.4537 - val_ssim_for2d: 0.5152 - val_psnr_for2d: 17.9141
+Epoch 9/100
+ - 2s - loss: 1073.1282 - ssim_for2d: 0.5173 - psnr_for2d: 17.8255 - val_loss: 1007.0170 - val_ssim_for2d: 0.5186 - val_psnr_for2d: 18.1018
+Epoch 10/100
+ - 2s - loss: 1022.1679 - ssim_for2d: 0.5220 - psnr_for2d: 18.0372 - val_loss: 957.3088 - val_ssim_for2d: 0.5238 - val_psnr_for2d: 18.3221
+Epoch 11/100
+ - 2s - loss: 986.8214 - ssim_for2d: 0.5289 - psnr_for2d: 18.1899 - val_loss: 938.0570 - val_ssim_for2d: 0.5244 - val_psnr_for2d: 18.4100
+Epoch 12/100
+ - 3s - loss: 940.7801 - ssim_for2d: 0.5312 - psnr_for2d: 18.3977 - val_loss: 890.0783 - val_ssim_for2d: 0.5305 - val_psnr_for2d: 18.6388
+Epoch 13/100
+ - 2s - loss: 892.0276 - ssim_for2d: 0.5399 - psnr_for2d: 18.6287 - val_loss: 864.5561 - val_ssim_for2d: 0.5333 - val_psnr_for2d: 18.7650
+Epoch 14/100
+ - 3s - loss: 863.1460 - ssim_for2d: 0.5456 - psnr_for2d: 18.7717 - val_loss: 849.5700 - val_ssim_for2d: 0.5392 - val_psnr_for2d: 18.8410
+Epoch 15/100
+ - 3s - loss: 844.8347 - ssim_for2d: 0.5536 - psnr_for2d: 18.8649 - val_loss: 832.0924 - val_ssim_for2d: 0.5459 - val_psnr_for2d: 18.9311
+Epoch 16/100
+ - 3s - loss: 824.3972 - ssim_for2d: 0.5618 - psnr_for2d: 18.9713 - val_loss: 822.4935 - val_ssim_for2d: 0.5523 - val_psnr_for2d: 18.9816
+Epoch 17/100
+ - 3s - loss: 819.6104 - ssim_for2d: 0.5704 - psnr_for2d: 18.9975 - val_loss: 805.1253 - val_ssim_for2d: 0.5598 - val_psnr_for2d: 19.0739
+Epoch 18/100
+ - 2s - loss: 789.8562 - ssim_for2d: 0.5772 - psnr_for2d: 19.1579 - val_loss: 798.7649 - val_ssim_for2d: 0.5625 - val_psnr_for2d: 19.1086
+Epoch 19/100
+ - 2s - loss: 770.9063 - ssim_for2d: 0.5836 - psnr_for2d: 19.2634 - val_loss: 779.9291 - val_ssim_for2d: 0.5681 - val_psnr_for2d: 19.2117
+Epoch 20/100
+ - 2s - loss: 750.9118 - ssim_for2d: 0.5899 - psnr_for2d: 19.3777 - val_loss: 768.9603 - val_ssim_for2d: 0.5701 - val_psnr_for2d: 19.2737
+Epoch 21/100
+ - 2s - loss: 731.9693 - ssim_for2d: 0.5946 - psnr_for2d: 19.4889 - val_loss: 757.9206 - val_ssim_for2d: 0.5743 - val_psnr_for2d: 19.3364
+Epoch 22/100
+ - 2s - loss: 713.0654 - ssim_for2d: 0.5997 - psnr_for2d: 19.6026 - val_loss: 747.5858 - val_ssim_for2d: 0.5758 - val_psnr_for2d: 19.3959
+Epoch 23/100
+ - 2s - loss: 694.3671 - ssim_for2d: 0.6042 - psnr_for2d: 19.7181 - val_loss: 743.1498 - val_ssim_for2d: 0.5757 - val_psnr_for2d: 19.4229
+Epoch 24/100
+ - 2s - loss: 678.9030 - ssim_for2d: 0.6077 - psnr_for2d: 19.8161 - val_loss: 732.7940 - val_ssim_for2d: 0.5777 - val_psnr_for2d: 19.4838
+Epoch 25/100
+ - 2s - loss: 665.7144 - ssim_for2d: 0.6111 - psnr_for2d: 19.9021 - val_loss: 720.1861 - val_ssim_for2d: 0.5841 - val_psnr_for2d: 19.5582
+Epoch 26/100
+ - 2s - loss: 649.9265 - ssim_for2d: 0.6155 - psnr_for2d: 20.0062 - val_loss: 703.2616 - val_ssim_for2d: 0.5861 - val_psnr_for2d: 19.6622
+Epoch 27/100
+ - 2s - loss: 630.7823 - ssim_for2d: 0.6195 - psnr_for2d: 20.1364 - val_loss: 694.8304 - val_ssim_for2d: 0.5912 - val_psnr_for2d: 19.7140
+Epoch 28/100
+ - 2s - loss: 637.0442 - ssim_for2d: 0.6229 - psnr_for2d: 20.0955 - val_loss: 685.0797 - val_ssim_for2d: 0.5965 - val_psnr_for2d: 19.7754
+Epoch 29/100
+ - 2s - loss: 606.2327 - ssim_for2d: 0.6273 - psnr_for2d: 20.3088 - val_loss: 683.8900 - val_ssim_for2d: 0.5933 - val_psnr_for2d: 19.7844
+Epoch 30/100
+ - 2s - loss: 591.7834 - ssim_for2d: 0.6318 - psnr_for2d: 20.4140 - val_loss: 660.3194 - val_ssim_for2d: 0.5994 - val_psnr_for2d: 19.9365
+Epoch 31/100
+ - 2s - loss: 576.6302 - ssim_for2d: 0.6358 - psnr_for2d: 20.5266 - val_loss: 686.3649 - val_ssim_for2d: 0.6011 - val_psnr_for2d: 19.7701
+Epoch 32/100
+ - 2s - loss: 577.9444 - ssim_for2d: 0.6395 - psnr_for2d: 20.5187 - val_loss: 647.3780 - val_ssim_for2d: 0.6094 - val_psnr_for2d: 20.0233
+Epoch 33/100
+ - 2s - loss: 557.1962 - ssim_for2d: 0.6450 - psnr_for2d: 20.6762 - val_loss: 633.5863 - val_ssim_for2d: 0.6151 - val_psnr_for2d: 20.1161
+Epoch 34/100
+ - 2s - loss: 539.7548 - ssim_for2d: 0.6506 - psnr_for2d: 20.8149 - val_loss: 650.5823 - val_ssim_for2d: 0.6092 - val_psnr_for2d: 20.0035
+Epoch 35/100
+ - 2s - loss: 528.6226 - ssim_for2d: 0.6541 - psnr_for2d: 20.9054 - val_loss: 623.9524 - val_ssim_for2d: 0.6145 - val_psnr_for2d: 20.1846
+Epoch 36/100
+ - 2s - loss: 511.7685 - ssim_for2d: 0.6580 - psnr_for2d: 21.0467 - val_loss: 612.9772 - val_ssim_for2d: 0.6186 - val_psnr_for2d: 20.2618
+Epoch 37/100
+ - 2s - loss: 500.0321 - ssim_for2d: 0.6621 - psnr_for2d: 21.1474 - val_loss: 604.4086 - val_ssim_for2d: 0.6205 - val_psnr_for2d: 20.3228
+Epoch 38/100
+ - 2s - loss: 489.8271 - ssim_for2d: 0.6659 - psnr_for2d: 21.2371 - val_loss: 598.7351 - val_ssim_for2d: 0.6247 - val_psnr_for2d: 20.3640
+Epoch 39/100
+ - 2s - loss: 475.2979 - ssim_for2d: 0.6700 - psnr_for2d: 21.3681 - val_loss: 602.8655 - val_ssim_for2d: 0.6251 - val_psnr_for2d: 20.3349
+Epoch 40/100
+ - 2s - loss: 474.7766 - ssim_for2d: 0.6730 - psnr_for2d: 21.3733 - val_loss: 579.2476 - val_ssim_for2d: 0.6305 - val_psnr_for2d: 20.5078
+Epoch 41/100
+ - 3s - loss: 460.6906 - ssim_for2d: 0.6771 - psnr_for2d: 21.5049 - val_loss: 573.4196 - val_ssim_for2d: 0.6323 - val_psnr_for2d: 20.5523
+Epoch 42/100
+ - 2s - loss: 452.1532 - ssim_for2d: 0.6798 - psnr_for2d: 21.5852 - val_loss: 568.2996 - val_ssim_for2d: 0.6382 - val_psnr_for2d: 20.5910
+Epoch 43/100
+ - 3s - loss: 446.8339 - ssim_for2d: 0.6834 - psnr_for2d: 21.6371 - val_loss: 579.4167 - val_ssim_for2d: 0.6404 - val_psnr_for2d: 20.5070
+Epoch 44/100
+ - 4s - loss: 439.3177 - ssim_for2d: 0.6855 - psnr_for2d: 21.7111 - val_loss: 557.9439 - val_ssim_for2d: 0.6406 - val_psnr_for2d: 20.6732
+Epoch 45/100
+ - 3s - loss: 420.9081 - ssim_for2d: 0.6896 - psnr_for2d: 21.8966 - val_loss: 550.5512 - val_ssim_for2d: 0.6414 - val_psnr_for2d: 20.7319
+Epoch 46/100
+ - 2s - loss: 410.2216 - ssim_for2d: 0.6931 - psnr_for2d: 22.0081 - val_loss: 556.7952 - val_ssim_for2d: 0.6461 - val_psnr_for2d: 20.6822
+Epoch 47/100
+ - 2s - loss: 407.5000 - ssim_for2d: 0.6954 - psnr_for2d: 22.0381 - val_loss: 539.6124 - val_ssim_for2d: 0.6455 - val_psnr_for2d: 20.8198
+Epoch 48/100
+ - 2s - loss: 397.0589 - ssim_for2d: 0.6986 - psnr_for2d: 22.1501 - val_loss: 535.1781 - val_ssim_for2d: 0.6484 - val_psnr_for2d: 20.8569
+Epoch 49/100
+ - 2s - loss: 397.1798 - ssim_for2d: 0.7003 - psnr_for2d: 22.1485 - val_loss: 543.7040 - val_ssim_for2d: 0.6483 - val_psnr_for2d: 20.7880
+Epoch 50/100
+ - 2s - loss: 388.0931 - ssim_for2d: 0.7026 - psnr_for2d: 22.2495 - val_loss: 527.3789 - val_ssim_for2d: 0.6521 - val_psnr_for2d: 20.9205
+Epoch 51/100
+ - 2s - loss: 379.9940 - ssim_for2d: 0.7059 - psnr_for2d: 22.3408 - val_loss: 518.0031 - val_ssim_for2d: 0.6558 - val_psnr_for2d: 20.9990
+Epoch 52/100
+ - 2s - loss: 372.5610 - ssim_for2d: 0.7079 - psnr_for2d: 22.4267 - val_loss: 512.2110 - val_ssim_for2d: 0.6572 - val_psnr_for2d: 21.0475
+Epoch 53/100
+ - 2s - loss: 368.7470 - ssim_for2d: 0.7098 - psnr_for2d: 22.4713 - val_loss: 508.3943 - val_ssim_for2d: 0.6582 - val_psnr_for2d: 21.0814
+Epoch 54/100
+ - 2s - loss: 358.8588 - ssim_for2d: 0.7123 - psnr_for2d: 22.5893 - val_loss: 509.7151 - val_ssim_for2d: 0.6583 - val_psnr_for2d: 21.0710
+Epoch 55/100
+ - 2s - loss: 359.7343 - ssim_for2d: 0.7137 - psnr_for2d: 22.5794 - val_loss: 515.8208 - val_ssim_for2d: 0.6617 - val_psnr_for2d: 21.0185
+Epoch 56/100
+ - 2s - loss: 357.3060 - ssim_for2d: 0.7150 - psnr_for2d: 22.6089 - val_loss: 503.3634 - val_ssim_for2d: 0.6621 - val_psnr_for2d: 21.1257
+Epoch 57/100
+ - 2s - loss: 346.4517 - ssim_for2d: 0.7172 - psnr_for2d: 22.7434 - val_loss: 501.1213 - val_ssim_for2d: 0.6614 - val_psnr_for2d: 21.1460
+Epoch 58/100
+ - 2s - loss: 340.5419 - ssim_for2d: 0.7195 - psnr_for2d: 22.8177 - val_loss: 501.1106 - val_ssim_for2d: 0.6617 - val_psnr_for2d: 21.1468
+Epoch 59/100
+ - 2s - loss: 340.1045 - ssim_for2d: 0.7205 - psnr_for2d: 22.8234 - val_loss: 498.3192 - val_ssim_for2d: 0.6667 - val_psnr_for2d: 21.1699
+Epoch 60/100
+ - 2s - loss: 333.5149 - ssim_for2d: 0.7221 - psnr_for2d: 22.9083 - val_loss: 489.9496 - val_ssim_for2d: 0.6668 - val_psnr_for2d: 21.2469
+Epoch 61/100
+ - 2s - loss: 330.5393 - ssim_for2d: 0.7240 - psnr_for2d: 22.9469 - val_loss: 490.7037 - val_ssim_for2d: 0.6670 - val_psnr_for2d: 21.2404
+Epoch 62/100
+ - 2s - loss: 328.5483 - ssim_for2d: 0.7251 - psnr_for2d: 22.9737 - val_loss: 523.5808 - val_ssim_for2d: 0.6625 - val_psnr_for2d: 20.9597
+Epoch 63/100
+ - 2s - loss: 332.4094 - ssim_for2d: 0.7258 - psnr_for2d: 22.9254 - val_loss: 489.8896 - val_ssim_for2d: 0.6674 - val_psnr_for2d: 21.2481
+Epoch 64/100
+ - 2s - loss: 321.6765 - ssim_for2d: 0.7277 - psnr_for2d: 23.0651 - val_loss: 486.5037 - val_ssim_for2d: 0.6690 - val_psnr_for2d: 21.2801
+Epoch 65/100
+ - 2s - loss: 315.1509 - ssim_for2d: 0.7295 - psnr_for2d: 23.1543 - val_loss: 481.7262 - val_ssim_for2d: 0.6707 - val_psnr_for2d: 21.3233
+Epoch 66/100
+ - 2s - loss: 314.9384 - ssim_for2d: 0.7305 - psnr_for2d: 23.1573 - val_loss: 485.1064 - val_ssim_for2d: 0.6701 - val_psnr_for2d: 21.2938
+Epoch 67/100
+ - 2s - loss: 311.7625 - ssim_for2d: 0.7315 - psnr_for2d: 23.2018 - val_loss: 498.2222 - val_ssim_for2d: 0.6696 - val_psnr_for2d: 21.1772
+Epoch 68/100
+ - 2s - loss: 323.0050 - ssim_for2d: 0.7318 - psnr_for2d: 23.0497 - val_loss: 499.0494 - val_ssim_for2d: 0.6694 - val_psnr_for2d: 21.1713
+Epoch 00068: early stopping
+236/236 [==============================] - 3s 11ms/step
+ 
+after model.fit, train_x and train_y shape: (236, 5, 64, 64, 1) (236, 60, 60, 1)
+shape pf test_x (60, 5, 64, 64, 1) shape of test_y (60, 60, 60, 1)
+60/60 [==============================] - 0s 5ms/step
+mean_squared_error_test, ssim_test, psnr_test 644.2618367513021 0.6104357441266378 20.049535751342773
+AMOUNT, BATCH, TARGET_HEIGHT: 296 20 64
+without processed by neural network:
+psnr =  17.78196587358369
+ssim =  0.554682409877536
+performance after processed by nerual network:
+psnr:  22.65897573050806
+ssim:  0.7188682434922558
+performance of predicted images:
+psnr, ssim for raw data: 18.04035808168013 0.5466567410051433
+psnr, ssim for predicted result: 20.049535464784984 0.6461833146612245
+mae, mse for raw data: 16.61642129629629 1021.8336620370367
+mae, mse for predicted result 13.613373819986979 644.2618682861328

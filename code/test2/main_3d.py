@@ -17,6 +17,7 @@ import generator
 
 
 # define the hyperparameter set
+TRIAL = 150
 tes = generator.hyperparameter()
 tes.add('lr', 'float', [0, 0.005])
 tes.add('epochs', 'int', [100, 300])
@@ -24,7 +25,7 @@ tes.add('tolerate', 'int', [2, 6])
 tes.add('decay', 'list', [1e-5, 2e-5, 3e-5, 4e-5, 5e-5, 6e-6, 7e-6, 8e-6, 9e-6])
 tes.add('batch_size', 'list', [10, 15, 20, 25, 30 ,35, 40])
 #tes.add('layers_num', 'int', [1, 5])
-te = tes.multi_generator(100)
+te = tes.multi_generator(TRIAL)
 
 
 '''
@@ -81,10 +82,10 @@ FRACTION = 0.8
 # model = super_resolution_model(TARGET_HEIGHT, TARGET_WIDTH)
 # define callbacks
 # define MetricMeasure
-my_metricmeasure = new_algo.NewMetricMeasure(train_x, train_y, trials = 100, checkpts = numpy.linspace(0.2, 0.6, 4, endpoint = False), 
+my_metricmeasure = new_algo.NewMetricMeasure(train_x, train_y, trials = TRIAL, checkpts = numpy.linspace(0.2, 0.6, 4, endpoint = False), 
                                           keep_rate = 0.3, metric_name = 'loss', split_rate=0.1)
 
-for i in range(100):
+for i in range(TRIAL):
 
     model = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH, LR = te['lr'][i], DECAY = te['decay'][i])
 

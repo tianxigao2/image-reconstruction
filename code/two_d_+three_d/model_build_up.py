@@ -40,7 +40,7 @@ def transfer_learning_SRCNN(FILE_INDEX, HEIGHT, WIDTH):
 
     print(model.summary())
 
-    model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.0029861308377023593, decay=5e-5), metrics=[ssim_for2d, psnr_for2d])
+    model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.001, decay=1e-6), metrics=[ssim_for2d, psnr_for2d])
 
     return model
 

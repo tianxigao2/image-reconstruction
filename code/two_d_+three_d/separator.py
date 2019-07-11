@@ -4,7 +4,7 @@ import math
 def to_ndarray(train, test):
     return (tf.Session().run(train), tf.Session().run(test))
 
-def separator(mode, dataset, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT):
+def separator(dataset, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT):
     
     if dataset.ndim == 4:
         #2d array

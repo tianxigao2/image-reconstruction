@@ -11,11 +11,14 @@ LOCAL_PATH = '/home/user1/REUS/image-reconstruction-2019/data/'
 def prediction_path():
     return LOCAL_PATH + 'prediction_tmp/'
 
+def save_model_path():
+    return '/home/user1/REUS/image-reconstruction-2019/saved_model/'
+
 # for 3D SRNet model to take time-domain information -------------------------------------------------------------
 def prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH):
-    (AMOUNT, x_set, y_set) = packed_image_set(DEPTH, AMOUNT, TOTAL_AMOUNT, prediction_path(), HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
-    (HEIGHT, WIDTH) = Image.open(prediction_path() + 'frame0.tif').size
-    return (AMOUNT, x_set, y_set, HEIGHT, WIDTH)
+    (AMOUNT, p_set) = packed_image_set_prediction(DEPTH, AMOUNT, TOTAL_AMOUNT, prediction_path(), HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
+    (HEIGHT, WIDTH) = Image.open(prediction_path() + 'frame0.tif').size #set size only
+    return (AMOUNT, p_set, HEIGHT, WIDTH)
 
 # ==============================================================================================
 

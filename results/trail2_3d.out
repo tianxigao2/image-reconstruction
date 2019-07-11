@@ -1,0 +1,694 @@
+Using TensorFlow backend.
+2019-07-09 16:34:01.739209: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2
+2019-07-09 16:34:01.750986: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2659815000 Hz
+2019-07-09 16:34:01.752758: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55b4a565b8e0 executing computations on platform Host. Devices:
+2019-07-09 16:34:01.752799: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-09 16:34:01.857399: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-07-09 16:34:01.857848: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1650 major: 7 minor: 5 memoryClockRate(GHz): 1.665
+pciBusID: 0000:0f:00.0
+totalMemory: 3.82GiB freeMemory: 2.90GiB
+2019-07-09 16:34:01.857879: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:01.858706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:01.858728: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:01.858739: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:01.858840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 16:34:01.861155: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55b4a54ee3b0 executing computations on platform CUDA. Devices:
+2019-07-09 16:34:01.861180: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1650, Compute Capability 7.5
+2019-07-09 16:34:12.427890: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:12.428014: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:12.428030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:12.428039: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:12.428171: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 16:34:15.152137: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:15.152221: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:15.152235: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:15.152248: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:15.152349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 16:34:15.985415: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:15.985496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:15.985510: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:15.985520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:15.985626: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+2019-07-09 16:34:16.403993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:16.404072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:16.404086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:16.404096: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:16.404211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+WARNING:tensorflow:From /home/user1/.conda/envs/tf-gpu/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv3d_1 (Conv3D)            (None, 5, 64, 64, 32)     896       
+_________________________________________________________________
+conv3d_2 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_3 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_4 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_5 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_6 (Conv3D)            (None, 3, 62, 62, 32)     27680     
+_________________________________________________________________
+conv3d_7 (Conv3D)            (None, 1, 60, 60, 32)     27680     
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 60, 60, 32)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 60, 60, 1)         289       
+=================================================================
+Total params: 167,265
+Trainable params: 167,265
+Non-trainable params: 0
+_________________________________________________________________
+None
+shape of train_x (236, 5, 64, 64, 1) shape of train_y (236, 60, 60, 1)
+WARNING:tensorflow:From /home/user1/.conda/envs/tf-gpu/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Train on 188 samples, validate on 48 samples
+Epoch 1/300
+2019-07-09 16:34:17.865334: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-07-09 16:34:17.865405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-09 16:34:17.865420: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-07-09 16:34:17.865430: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-07-09 16:34:17.865532: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2665 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1650, pci bus id: 0000:0f:00.0, compute capability: 7.5)
+ - 10s - loss: 3363.6491 - ssim_for2d: 0.3819 - psnr_for2d: 14.3061 - val_loss: 914.4249 - val_ssim_for2d: 0.4737 - val_psnr_for2d: 18.5195
+Epoch 2/300
+ - 3s - loss: 875.5330 - ssim_for2d: 0.4973 - psnr_for2d: 18.8453 - val_loss: 753.9873 - val_ssim_for2d: 0.4980 - val_psnr_for2d: 19.3573
+Epoch 3/300
+ - 3s - loss: 635.7009 - ssim_for2d: 0.5285 - psnr_for2d: 20.1268 - val_loss: 611.3758 - val_ssim_for2d: 0.5581 - val_psnr_for2d: 20.2684
+Epoch 4/300
+ - 3s - loss: 520.6210 - ssim_for2d: 0.5750 - psnr_for2d: 20.9791 - val_loss: 462.1040 - val_ssim_for2d: 0.6047 - val_psnr_for2d: 21.4839
+Epoch 5/300
+ - 3s - loss: 415.4902 - ssim_for2d: 0.6469 - psnr_for2d: 21.9542 - val_loss: 372.9676 - val_ssim_for2d: 0.6737 - val_psnr_for2d: 22.4148
+Epoch 6/300
+ - 3s - loss: 364.6694 - ssim_for2d: 0.6852 - psnr_for2d: 22.5147 - val_loss: 346.2897 - val_ssim_for2d: 0.6931 - val_psnr_for2d: 22.7377
+Epoch 7/300
+ - 3s - loss: 335.9887 - ssim_for2d: 0.7048 - psnr_for2d: 22.8716 - val_loss: 317.0822 - val_ssim_for2d: 0.7133 - val_psnr_for2d: 23.1217
+Epoch 8/300
+ - 3s - loss: 311.8800 - ssim_for2d: 0.7200 - psnr_for2d: 23.1961 - val_loss: 298.6998 - val_ssim_for2d: 0.7227 - val_psnr_for2d: 23.3823
+Epoch 9/300
+ - 3s - loss: 289.9966 - ssim_for2d: 0.7337 - psnr_for2d: 23.5121 - val_loss: 281.7135 - val_ssim_for2d: 0.7332 - val_psnr_for2d: 23.6369
+Epoch 10/300
+ - 3s - loss: 271.2063 - ssim_for2d: 0.7447 - psnr_for2d: 23.8038 - val_loss: 267.5130 - val_ssim_for2d: 0.7444 - val_psnr_for2d: 23.8638
+Epoch 11/300
+ - 3s - loss: 255.4178 - ssim_for2d: 0.7541 - psnr_for2d: 24.0657 - val_loss: 253.1354 - val_ssim_for2d: 0.7531 - val_psnr_for2d: 24.1049
+Epoch 12/300
+ - 3s - loss: 242.5054 - ssim_for2d: 0.7622 - psnr_for2d: 24.2916 - val_loss: 242.0381 - val_ssim_for2d: 0.7583 - val_psnr_for2d: 24.2998
+Epoch 13/300
+ - 3s - loss: 232.1111 - ssim_for2d: 0.7695 - psnr_for2d: 24.4835 - val_loss: 232.2878 - val_ssim_for2d: 0.7672 - val_psnr_for2d: 24.4795
+Epoch 14/300
+ - 3s - loss: 221.5652 - ssim_for2d: 0.7765 - psnr_for2d: 24.6877 - val_loss: 221.2457 - val_ssim_for2d: 0.7708 - val_psnr_for2d: 24.6933
+Epoch 15/300
+ - 3s - loss: 212.7287 - ssim_for2d: 0.7818 - psnr_for2d: 24.8655 - val_loss: 213.9041 - val_ssim_for2d: 0.7765 - val_psnr_for2d: 24.8390
+Epoch 16/300
+ - 3s - loss: 207.0906 - ssim_for2d: 0.7872 - psnr_for2d: 24.9847 - val_loss: 212.7390 - val_ssim_for2d: 0.7799 - val_psnr_for2d: 24.8630
+Epoch 17/300
+ - 3s - loss: 198.2465 - ssim_for2d: 0.7928 - psnr_for2d: 25.1758 - val_loss: 200.5124 - val_ssim_for2d: 0.7850 - val_psnr_for2d: 25.1235
+Epoch 18/300
+ - 3s - loss: 188.9424 - ssim_for2d: 0.7986 - psnr_for2d: 25.3845 - val_loss: 193.8371 - val_ssim_for2d: 0.7879 - val_psnr_for2d: 25.2717
+Epoch 19/300
+ - 3s - loss: 179.9584 - ssim_for2d: 0.8036 - psnr_for2d: 25.5985 - val_loss: 187.2349 - val_ssim_for2d: 0.7932 - val_psnr_for2d: 25.4250
+Epoch 20/300
+ - 3s - loss: 176.6777 - ssim_for2d: 0.8083 - psnr_for2d: 25.6792 - val_loss: 184.6722 - val_ssim_for2d: 0.7983 - val_psnr_for2d: 25.4872
+Epoch 21/300
+ - 3s - loss: 170.5630 - ssim_for2d: 0.8131 - psnr_for2d: 25.8340 - val_loss: 182.6963 - val_ssim_for2d: 0.8006 - val_psnr_for2d: 25.5336
+Epoch 22/300
+ - 3s - loss: 163.2893 - ssim_for2d: 0.8177 - psnr_for2d: 26.0243 - val_loss: 176.3477 - val_ssim_for2d: 0.8037 - val_psnr_for2d: 25.6874
+Epoch 23/300
+ - 3s - loss: 157.6937 - ssim_for2d: 0.8216 - psnr_for2d: 26.1769 - val_loss: 171.0889 - val_ssim_for2d: 0.8082 - val_psnr_for2d: 25.8247
+Epoch 24/300
+ - 3s - loss: 151.5848 - ssim_for2d: 0.8260 - psnr_for2d: 26.3492 - val_loss: 169.2130 - val_ssim_for2d: 0.8092 - val_psnr_for2d: 25.8711
+Epoch 25/300
+ - 3s - loss: 153.2379 - ssim_for2d: 0.8279 - psnr_for2d: 26.3045 - val_loss: 165.1823 - val_ssim_for2d: 0.8151 - val_psnr_for2d: 25.9816
+Epoch 26/300
+ - 3s - loss: 149.1846 - ssim_for2d: 0.8319 - psnr_for2d: 26.4203 - val_loss: 162.8006 - val_ssim_for2d: 0.8160 - val_psnr_for2d: 26.0503
+Epoch 27/300
+ - 3s - loss: 143.1237 - ssim_for2d: 0.8356 - psnr_for2d: 26.6007 - val_loss: 170.9337 - val_ssim_for2d: 0.8187 - val_psnr_for2d: 25.8387
+Epoch 28/300
+ - 3s - loss: 142.2459 - ssim_for2d: 0.8386 - psnr_for2d: 26.6293 - val_loss: 156.2799 - val_ssim_for2d: 0.8218 - val_psnr_for2d: 26.2310
+Epoch 29/300
+ - 3s - loss: 134.7953 - ssim_for2d: 0.8423 - psnr_for2d: 26.8646 - val_loss: 150.7131 - val_ssim_for2d: 0.8259 - val_psnr_for2d: 26.3953
+Epoch 30/300
+ - 3s - loss: 130.0028 - ssim_for2d: 0.8456 - psnr_for2d: 27.0218 - val_loss: 150.9298 - val_ssim_for2d: 0.8291 - val_psnr_for2d: 26.3942
+Epoch 31/300
+ - 3s - loss: 133.0473 - ssim_for2d: 0.8476 - psnr_for2d: 26.9210 - val_loss: 148.0965 - val_ssim_for2d: 0.8315 - val_psnr_for2d: 26.4809
+Epoch 32/300
+ - 3s - loss: 129.1078 - ssim_for2d: 0.8499 - psnr_for2d: 27.0570 - val_loss: 149.3794 - val_ssim_for2d: 0.8355 - val_psnr_for2d: 26.4381
+Epoch 33/300
+ - 3s - loss: 125.4877 - ssim_for2d: 0.8532 - psnr_for2d: 27.1779 - val_loss: 141.9648 - val_ssim_for2d: 0.8369 - val_psnr_for2d: 26.6732
+Epoch 34/300
+ - 3s - loss: 122.5398 - ssim_for2d: 0.8558 - psnr_for2d: 27.2837 - val_loss: 138.8069 - val_ssim_for2d: 0.8399 - val_psnr_for2d: 26.7714
+Epoch 35/300
+ - 3s - loss: 121.1390 - ssim_for2d: 0.8578 - psnr_for2d: 27.3344 - val_loss: 137.5152 - val_ssim_for2d: 0.8416 - val_psnr_for2d: 26.8264
+Epoch 36/300
+ - 3s - loss: 113.9252 - ssim_for2d: 0.8607 - psnr_for2d: 27.6019 - val_loss: 137.4120 - val_ssim_for2d: 0.8437 - val_psnr_for2d: 26.8267
+Epoch 37/300
+ - 3s - loss: 120.7178 - ssim_for2d: 0.8620 - psnr_for2d: 27.3547 - val_loss: 137.4001 - val_ssim_for2d: 0.8453 - val_psnr_for2d: 26.8278
+Epoch 38/300
+ - 3s - loss: 115.0170 - ssim_for2d: 0.8644 - psnr_for2d: 27.5631 - val_loss: 130.7960 - val_ssim_for2d: 0.8472 - val_psnr_for2d: 27.0485
+Epoch 39/300
+ - 3s - loss: 109.7557 - ssim_for2d: 0.8664 - psnr_for2d: 27.7661 - val_loss: 131.6638 - val_ssim_for2d: 0.8469 - val_psnr_for2d: 27.0298
+Epoch 40/300
+ - 3s - loss: 105.2555 - ssim_for2d: 0.8688 - psnr_for2d: 27.9484 - val_loss: 131.8201 - val_ssim_for2d: 0.8492 - val_psnr_for2d: 27.0214
+Epoch 41/300
+ - 3s - loss: 119.4649 - ssim_for2d: 0.8682 - psnr_for2d: 27.4139 - val_loss: 134.2340 - val_ssim_for2d: 0.8503 - val_psnr_for2d: 26.9469
+Epoch 42/300
+ - 3s - loss: 109.6677 - ssim_for2d: 0.8699 - psnr_for2d: 27.7735 - val_loss: 131.5803 - val_ssim_for2d: 0.8501 - val_psnr_for2d: 27.0403
+Epoch 43/300
+ - 3s - loss: 101.1851 - ssim_for2d: 0.8728 - psnr_for2d: 28.1243 - val_loss: 127.6018 - val_ssim_for2d: 0.8521 - val_psnr_for2d: 27.1801
+Epoch 44/300
+ - 3s - loss: 98.9566 - ssim_for2d: 0.8750 - psnr_for2d: 28.2214 - val_loss: 123.8469 - val_ssim_for2d: 0.8558 - val_psnr_for2d: 27.3139
+Epoch 45/300
+ - 3s - loss: 115.9971 - ssim_for2d: 0.8747 - psnr_for2d: 27.5534 - val_loss: 122.6137 - val_ssim_for2d: 0.8570 - val_psnr_for2d: 27.3639
+Epoch 46/300
+ - 3s - loss: 107.2268 - ssim_for2d: 0.8773 - psnr_for2d: 27.8836 - val_loss: 131.6862 - val_ssim_for2d: 0.8550 - val_psnr_for2d: 27.0378
+Epoch 47/300
+ - 3s - loss: 98.5430 - ssim_for2d: 0.8793 - psnr_for2d: 28.2426 - val_loss: 132.4764 - val_ssim_for2d: 0.8548 - val_psnr_for2d: 27.0322
+Epoch 48/300
+ - 3s - loss: 99.6282 - ssim_for2d: 0.8796 - psnr_for2d: 28.2020 - val_loss: 121.1032 - val_ssim_for2d: 0.8577 - val_psnr_for2d: 27.4311
+Epoch 49/300
+ - 3s - loss: 92.8550 - ssim_for2d: 0.8823 - psnr_for2d: 28.5028 - val_loss: 120.4460 - val_ssim_for2d: 0.8616 - val_psnr_for2d: 27.4545
+Epoch 50/300
+ - 3s - loss: 92.1234 - ssim_for2d: 0.8843 - psnr_for2d: 28.5357 - val_loss: 118.9763 - val_ssim_for2d: 0.8619 - val_psnr_for2d: 27.5196
+Epoch 51/300
+ - 3s - loss: 99.0641 - ssim_for2d: 0.8839 - psnr_for2d: 28.2167 - val_loss: 118.7333 - val_ssim_for2d: 0.8600 - val_psnr_for2d: 27.5189
+Epoch 52/300
+ - 3s - loss: 91.2984 - ssim_for2d: 0.8853 - psnr_for2d: 28.5768 - val_loss: 119.0741 - val_ssim_for2d: 0.8619 - val_psnr_for2d: 27.5107
+Epoch 53/300
+ - 3s - loss: 97.1138 - ssim_for2d: 0.8856 - psnr_for2d: 28.3142 - val_loss: 119.4185 - val_ssim_for2d: 0.8631 - val_psnr_for2d: 27.5058
+Epoch 54/300
+ - 3s - loss: 92.0427 - ssim_for2d: 0.8874 - psnr_for2d: 28.5382 - val_loss: 114.6609 - val_ssim_for2d: 0.8660 - val_psnr_for2d: 27.6991
+Epoch 55/300
+ - 3s - loss: 88.9568 - ssim_for2d: 0.8896 - psnr_for2d: 28.6899 - val_loss: 115.5020 - val_ssim_for2d: 0.8661 - val_psnr_for2d: 27.6566
+Epoch 56/300
+ - 3s - loss: 84.3922 - ssim_for2d: 0.8914 - psnr_for2d: 28.9195 - val_loss: 119.0570 - val_ssim_for2d: 0.8667 - val_psnr_for2d: 27.5223
+Epoch 57/300
+ - 3s - loss: 88.2671 - ssim_for2d: 0.8924 - psnr_for2d: 28.7210 - val_loss: 122.0009 - val_ssim_for2d: 0.8676 - val_psnr_for2d: 27.4075
+Epoch 58/300
+ - 3s - loss: 83.2816 - ssim_for2d: 0.8937 - psnr_for2d: 28.9822 - val_loss: 111.7481 - val_ssim_for2d: 0.8676 - val_psnr_for2d: 27.8167
+Epoch 59/300
+ - 3s - loss: 83.8776 - ssim_for2d: 0.8936 - psnr_for2d: 28.9518 - val_loss: 150.7430 - val_ssim_for2d: 0.8636 - val_psnr_for2d: 26.4426
+Epoch 60/300
+ - 3s - loss: 101.6935 - ssim_for2d: 0.8916 - psnr_for2d: 28.1483 - val_loss: 131.0231 - val_ssim_for2d: 0.8671 - val_psnr_for2d: 27.0865
+Epoch 61/300
+ - 3s - loss: 89.5463 - ssim_for2d: 0.8938 - psnr_for2d: 28.6717 - val_loss: 110.4335 - val_ssim_for2d: 0.8698 - val_psnr_for2d: 27.8883
+Epoch 62/300
+ - 3s - loss: 82.7200 - ssim_for2d: 0.8962 - psnr_for2d: 29.0112 - val_loss: 117.1346 - val_ssim_for2d: 0.8703 - val_psnr_for2d: 27.6104
+Epoch 63/300
+ - 3s - loss: 78.4502 - ssim_for2d: 0.8980 - psnr_for2d: 29.2440 - val_loss: 108.1644 - val_ssim_for2d: 0.8725 - val_psnr_for2d: 27.9910
+Epoch 64/300
+ - 3s - loss: 75.4300 - ssim_for2d: 0.8992 - psnr_for2d: 29.4184 - val_loss: 110.9254 - val_ssim_for2d: 0.8725 - val_psnr_for2d: 27.8797
+Epoch 65/300
+ - 3s - loss: 90.2657 - ssim_for2d: 0.8977 - psnr_for2d: 28.6453 - val_loss: 123.2307 - val_ssim_for2d: 0.8704 - val_psnr_for2d: 27.3715
+Epoch 66/300
+ - 3s - loss: 80.4711 - ssim_for2d: 0.8991 - psnr_for2d: 29.1380 - val_loss: 108.0557 - val_ssim_for2d: 0.8728 - val_psnr_for2d: 28.0061
+Epoch 67/300
+ - 3s - loss: 76.3980 - ssim_for2d: 0.9010 - psnr_for2d: 29.3603 - val_loss: 106.7528 - val_ssim_for2d: 0.8744 - val_psnr_for2d: 28.0721
+Epoch 68/300
+ - 3s - loss: 81.2919 - ssim_for2d: 0.9015 - psnr_for2d: 29.0969 - val_loss: 107.6477 - val_ssim_for2d: 0.8744 - val_psnr_for2d: 28.0267
+Epoch 69/300
+ - 3s - loss: 72.1590 - ssim_for2d: 0.9032 - psnr_for2d: 29.6152 - val_loss: 105.2038 - val_ssim_for2d: 0.8758 - val_psnr_for2d: 28.1429
+Epoch 70/300
+ - 3s - loss: 81.5129 - ssim_for2d: 0.9029 - psnr_for2d: 29.1094 - val_loss: 133.7993 - val_ssim_for2d: 0.8722 - val_psnr_for2d: 27.0053
+Epoch 71/300
+ - 3s - loss: 82.8402 - ssim_for2d: 0.9022 - psnr_for2d: 29.0270 - val_loss: 113.1322 - val_ssim_for2d: 0.8724 - val_psnr_for2d: 27.7871
+Epoch 72/300
+ - 3s - loss: 74.0449 - ssim_for2d: 0.9038 - psnr_for2d: 29.5007 - val_loss: 104.0483 - val_ssim_for2d: 0.8773 - val_psnr_for2d: 28.2014
+Epoch 73/300
+ - 3s - loss: 69.8630 - ssim_for2d: 0.9058 - psnr_for2d: 29.7571 - val_loss: 104.0094 - val_ssim_for2d: 0.8777 - val_psnr_for2d: 28.2031
+Epoch 74/300
+ - 3s - loss: 68.9128 - ssim_for2d: 0.9069 - psnr_for2d: 29.8213 - val_loss: 108.6442 - val_ssim_for2d: 0.8777 - val_psnr_for2d: 27.9820
+Epoch 75/300
+ - 3s - loss: 91.1238 - ssim_for2d: 0.9050 - psnr_for2d: 28.6292 - val_loss: 104.5271 - val_ssim_for2d: 0.8777 - val_psnr_for2d: 28.1773
+Epoch 76/300
+ - 3s - loss: 77.2104 - ssim_for2d: 0.9067 - psnr_for2d: 29.3431 - val_loss: 116.6719 - val_ssim_for2d: 0.8790 - val_psnr_for2d: 27.6510
+Epoch 77/300
+ - 3s - loss: 74.0125 - ssim_for2d: 0.9081 - psnr_for2d: 29.5059 - val_loss: 109.9475 - val_ssim_for2d: 0.8782 - val_psnr_for2d: 27.9467
+Epoch 78/300
+ - 3s - loss: 71.7463 - ssim_for2d: 0.9090 - psnr_for2d: 29.6495 - val_loss: 111.4061 - val_ssim_for2d: 0.8780 - val_psnr_for2d: 27.8869
+Epoch 79/300
+ - 3s - loss: 70.6935 - ssim_for2d: 0.9092 - psnr_for2d: 29.7123 - val_loss: 105.1004 - val_ssim_for2d: 0.8801 - val_psnr_for2d: 28.1526
+Epoch 80/300
+ - 3s - loss: 67.9266 - ssim_for2d: 0.9107 - psnr_for2d: 29.8819 - val_loss: 109.3219 - val_ssim_for2d: 0.8798 - val_psnr_for2d: 27.9716
+Epoch 81/300
+ - 3s - loss: 66.3823 - ssim_for2d: 0.9112 - psnr_for2d: 29.9837 - val_loss: 101.7228 - val_ssim_for2d: 0.8803 - val_psnr_for2d: 28.3095
+Epoch 82/300
+ - 3s - loss: 69.5578 - ssim_for2d: 0.9111 - psnr_for2d: 29.7772 - val_loss: 101.8018 - val_ssim_for2d: 0.8788 - val_psnr_for2d: 28.3158
+Epoch 83/300
+ - 3s - loss: 68.8482 - ssim_for2d: 0.9113 - psnr_for2d: 29.8226 - val_loss: 106.5466 - val_ssim_for2d: 0.8817 - val_psnr_for2d: 28.1005
+Epoch 84/300
+ - 3s - loss: 71.5572 - ssim_for2d: 0.9124 - psnr_for2d: 29.6496 - val_loss: 105.7765 - val_ssim_for2d: 0.8832 - val_psnr_for2d: 28.1251
+Epoch 85/300
+ - 3s - loss: 66.0758 - ssim_for2d: 0.9133 - psnr_for2d: 30.0031 - val_loss: 110.3639 - val_ssim_for2d: 0.8814 - val_psnr_for2d: 27.9360
+Epoch 86/300
+ - 3s - loss: 70.6091 - ssim_for2d: 0.9125 - psnr_for2d: 29.7233 - val_loss: 105.7596 - val_ssim_for2d: 0.8805 - val_psnr_for2d: 28.1609
+Epoch 87/300
+ - 3s - loss: 70.9578 - ssim_for2d: 0.9119 - psnr_for2d: 29.6902 - val_loss: 103.4195 - val_ssim_for2d: 0.8832 - val_psnr_for2d: 28.2654
+Epoch 88/300
+ - 3s - loss: 63.5271 - ssim_for2d: 0.9141 - psnr_for2d: 30.1803 - val_loss: 98.9550 - val_ssim_for2d: 0.8847 - val_psnr_for2d: 28.4649
+Epoch 89/300
+ - 3s - loss: 60.7294 - ssim_for2d: 0.9160 - psnr_for2d: 30.3800 - val_loss: 99.6590 - val_ssim_for2d: 0.8849 - val_psnr_for2d: 28.4429
+Epoch 90/300
+ - 3s - loss: 96.3771 - ssim_for2d: 0.9124 - psnr_for2d: 28.5637 - val_loss: 101.3212 - val_ssim_for2d: 0.8834 - val_psnr_for2d: 28.3467
+Epoch 91/300
+ - 3s - loss: 76.4962 - ssim_for2d: 0.9122 - psnr_for2d: 29.4047 - val_loss: 110.0200 - val_ssim_for2d: 0.8824 - val_psnr_for2d: 27.9661
+Epoch 92/300
+ - 3s - loss: 67.1095 - ssim_for2d: 0.9146 - psnr_for2d: 29.9476 - val_loss: 100.8174 - val_ssim_for2d: 0.8826 - val_psnr_for2d: 28.3665
+Epoch 93/300
+ - 3s - loss: 61.7178 - ssim_for2d: 0.9160 - psnr_for2d: 30.3063 - val_loss: 98.9260 - val_ssim_for2d: 0.8846 - val_psnr_for2d: 28.4944
+Epoch 94/300
+ - 3s - loss: 59.9261 - ssim_for2d: 0.9178 - psnr_for2d: 30.4366 - val_loss: 98.1091 - val_ssim_for2d: 0.8859 - val_psnr_for2d: 28.5275
+Epoch 95/300
+ - 3s - loss: 58.2759 - ssim_for2d: 0.9192 - psnr_for2d: 30.5640 - val_loss: 96.6949 - val_ssim_for2d: 0.8864 - val_psnr_for2d: 28.6021
+Epoch 96/300
+ - 3s - loss: 57.4527 - ssim_for2d: 0.9199 - psnr_for2d: 30.6260 - val_loss: 99.2786 - val_ssim_for2d: 0.8872 - val_psnr_for2d: 28.4583
+Epoch 97/300
+ - 3s - loss: 75.6784 - ssim_for2d: 0.9183 - psnr_for2d: 29.4481 - val_loss: 109.6894 - val_ssim_for2d: 0.8876 - val_psnr_for2d: 27.9701
+Epoch 98/300
+ - 3s - loss: 66.2749 - ssim_for2d: 0.9190 - psnr_for2d: 30.0141 - val_loss: 96.5146 - val_ssim_for2d: 0.8880 - val_psnr_for2d: 28.6142
+Epoch 99/300
+ - 3s - loss: 61.9972 - ssim_for2d: 0.9201 - psnr_for2d: 30.2938 - val_loss: 97.1052 - val_ssim_for2d: 0.8860 - val_psnr_for2d: 28.5821
+Epoch 100/300
+ - 3s - loss: 59.7515 - ssim_for2d: 0.9202 - psnr_for2d: 30.4481 - val_loss: 95.4652 - val_ssim_for2d: 0.8881 - val_psnr_for2d: 28.6698
+Epoch 101/300
+ - 3s - loss: 59.4682 - ssim_for2d: 0.9215 - psnr_for2d: 30.4771 - val_loss: 98.6633 - val_ssim_for2d: 0.8895 - val_psnr_for2d: 28.5142
+Epoch 102/300
+ - 3s - loss: 56.0939 - ssim_for2d: 0.9228 - psnr_for2d: 30.7333 - val_loss: 100.2595 - val_ssim_for2d: 0.8889 - val_psnr_for2d: 28.4389
+Epoch 103/300
+ - 3s - loss: 70.7774 - ssim_for2d: 0.9216 - psnr_for2d: 29.7097 - val_loss: 99.7725 - val_ssim_for2d: 0.8887 - val_psnr_for2d: 28.4773
+Epoch 104/300
+ - 3s - loss: 55.8465 - ssim_for2d: 0.9230 - psnr_for2d: 30.7530 - val_loss: 96.7822 - val_ssim_for2d: 0.8900 - val_psnr_for2d: 28.6215
+Epoch 105/300
+ - 3s - loss: 57.1045 - ssim_for2d: 0.9239 - psnr_for2d: 30.6518 - val_loss: 97.0102 - val_ssim_for2d: 0.8903 - val_psnr_for2d: 28.6124
+Epoch 106/300
+ - 3s - loss: 56.2209 - ssim_for2d: 0.9243 - psnr_for2d: 30.7219 - val_loss: 105.5785 - val_ssim_for2d: 0.8902 - val_psnr_for2d: 28.1885
+Epoch 107/300
+ - 3s - loss: 66.3520 - ssim_for2d: 0.9235 - psnr_for2d: 29.9789 - val_loss: 103.6103 - val_ssim_for2d: 0.8900 - val_psnr_for2d: 28.2780
+Epoch 108/300
+ - 3s - loss: 55.6473 - ssim_for2d: 0.9246 - psnr_for2d: 30.7683 - val_loss: 96.9705 - val_ssim_for2d: 0.8907 - val_psnr_for2d: 28.6123
+Epoch 109/300
+ - 3s - loss: 58.1273 - ssim_for2d: 0.9250 - psnr_for2d: 30.5718 - val_loss: 98.4417 - val_ssim_for2d: 0.8904 - val_psnr_for2d: 28.5368
+Epoch 110/300
+ - 3s - loss: 61.7293 - ssim_for2d: 0.9242 - psnr_for2d: 30.3133 - val_loss: 115.6526 - val_ssim_for2d: 0.8862 - val_psnr_for2d: 27.7461
+Epoch 111/300
+ - 3s - loss: 60.9070 - ssim_for2d: 0.9239 - psnr_for2d: 30.3855 - val_loss: 98.4060 - val_ssim_for2d: 0.8893 - val_psnr_for2d: 28.5245
+Epoch 112/300
+ - 3s - loss: 55.9206 - ssim_for2d: 0.9250 - psnr_for2d: 30.7426 - val_loss: 100.1514 - val_ssim_for2d: 0.8913 - val_psnr_for2d: 28.4438
+Epoch 113/300
+ - 3s - loss: 57.1274 - ssim_for2d: 0.9256 - psnr_for2d: 30.6478 - val_loss: 100.2129 - val_ssim_for2d: 0.8921 - val_psnr_for2d: 28.4600
+Epoch 114/300
+ - 3s - loss: 58.5922 - ssim_for2d: 0.9270 - psnr_for2d: 30.5312 - val_loss: 101.7946 - val_ssim_for2d: 0.8928 - val_psnr_for2d: 28.3742
+Epoch 115/300
+ - 3s - loss: 55.7044 - ssim_for2d: 0.9274 - psnr_for2d: 30.7709 - val_loss: 93.0809 - val_ssim_for2d: 0.8930 - val_psnr_for2d: 28.8305
+Epoch 116/300
+ - 3s - loss: 60.0754 - ssim_for2d: 0.9276 - psnr_for2d: 30.4624 - val_loss: 116.5048 - val_ssim_for2d: 0.8901 - val_psnr_for2d: 27.7098
+Epoch 117/300
+ - 3s - loss: 58.2747 - ssim_for2d: 0.9279 - psnr_for2d: 30.6053 - val_loss: 100.7853 - val_ssim_for2d: 0.8912 - val_psnr_for2d: 28.4173
+Epoch 118/300
+ - 3s - loss: 64.2958 - ssim_for2d: 0.9257 - psnr_for2d: 30.1257 - val_loss: 95.0774 - val_ssim_for2d: 0.8898 - val_psnr_for2d: 28.7183
+Epoch 119/300
+ - 3s - loss: 54.0194 - ssim_for2d: 0.9276 - psnr_for2d: 30.8982 - val_loss: 93.3547 - val_ssim_for2d: 0.8938 - val_psnr_for2d: 28.8290
+Epoch 120/300
+ - 4s - loss: 50.4216 - ssim_for2d: 0.9295 - psnr_for2d: 31.2073 - val_loss: 95.7641 - val_ssim_for2d: 0.8945 - val_psnr_for2d: 28.7107
+Epoch 121/300
+ - 3s - loss: 57.3597 - ssim_for2d: 0.9296 - psnr_for2d: 30.6405 - val_loss: 114.6502 - val_ssim_for2d: 0.8935 - val_psnr_for2d: 27.7950
+Epoch 122/300
+ - 4s - loss: 60.5237 - ssim_for2d: 0.9290 - psnr_for2d: 30.4389 - val_loss: 98.6259 - val_ssim_for2d: 0.8922 - val_psnr_for2d: 28.5651
+Epoch 123/300
+ - 3s - loss: 58.9939 - ssim_for2d: 0.9288 - psnr_for2d: 30.5215 - val_loss: 92.7421 - val_ssim_for2d: 0.8949 - val_psnr_for2d: 28.8532
+Epoch 124/300
+ - 4s - loss: 52.4054 - ssim_for2d: 0.9304 - psnr_for2d: 31.0358 - val_loss: 94.1604 - val_ssim_for2d: 0.8936 - val_psnr_for2d: 28.8092
+Epoch 125/300
+ - 4s - loss: 48.7315 - ssim_for2d: 0.9312 - psnr_for2d: 31.3618 - val_loss: 94.5809 - val_ssim_for2d: 0.8940 - val_psnr_for2d: 28.7648
+Epoch 126/300
+ - 4s - loss: 56.5617 - ssim_for2d: 0.9308 - psnr_for2d: 30.6997 - val_loss: 115.2678 - val_ssim_for2d: 0.8911 - val_psnr_for2d: 27.7886
+Epoch 127/300
+ - 4s - loss: 57.7141 - ssim_for2d: 0.9309 - psnr_for2d: 30.6553 - val_loss: 92.1509 - val_ssim_for2d: 0.8963 - val_psnr_for2d: 28.9038
+Epoch 128/300
+ - 4s - loss: 48.2373 - ssim_for2d: 0.9323 - psnr_for2d: 31.4038 - val_loss: 92.5950 - val_ssim_for2d: 0.8953 - val_psnr_for2d: 28.9191
+Epoch 129/300
+ - 4s - loss: 48.3699 - ssim_for2d: 0.9325 - psnr_for2d: 31.3944 - val_loss: 101.5826 - val_ssim_for2d: 0.8943 - val_psnr_for2d: 28.3969
+Epoch 130/300
+ - 4s - loss: 74.7377 - ssim_for2d: 0.9292 - psnr_for2d: 29.4912 - val_loss: 92.5387 - val_ssim_for2d: 0.8954 - val_psnr_for2d: 28.8867
+Epoch 131/300
+ - 3s - loss: 57.8601 - ssim_for2d: 0.9302 - psnr_for2d: 30.6198 - val_loss: 95.3946 - val_ssim_for2d: 0.8945 - val_psnr_for2d: 28.7445
+Epoch 132/300
+ - 4s - loss: 54.9180 - ssim_for2d: 0.9317 - psnr_for2d: 30.8387 - val_loss: 97.5345 - val_ssim_for2d: 0.8968 - val_psnr_for2d: 28.6256
+Epoch 133/300
+ - 3s - loss: 51.4986 - ssim_for2d: 0.9329 - psnr_for2d: 31.1093 - val_loss: 96.6982 - val_ssim_for2d: 0.8957 - val_psnr_for2d: 28.6647
+Epoch 134/300
+ - 3s - loss: 49.7579 - ssim_for2d: 0.9333 - psnr_for2d: 31.2696 - val_loss: 98.1633 - val_ssim_for2d: 0.8961 - val_psnr_for2d: 28.5930
+Epoch 135/300
+ - 4s - loss: 50.1452 - ssim_for2d: 0.9342 - psnr_for2d: 31.2371 - val_loss: 90.5120 - val_ssim_for2d: 0.8967 - val_psnr_for2d: 29.0197
+Epoch 136/300
+ - 4s - loss: 50.8819 - ssim_for2d: 0.9346 - psnr_for2d: 31.1691 - val_loss: 92.8944 - val_ssim_for2d: 0.8974 - val_psnr_for2d: 28.8838
+Epoch 137/300
+ - 3s - loss: 48.3221 - ssim_for2d: 0.9351 - psnr_for2d: 31.3995 - val_loss: 96.5690 - val_ssim_for2d: 0.8983 - val_psnr_for2d: 28.6710
+Epoch 138/300
+ - 3s - loss: 49.1687 - ssim_for2d: 0.9349 - psnr_for2d: 31.3196 - val_loss: 90.8567 - val_ssim_for2d: 0.8984 - val_psnr_for2d: 29.0297
+Epoch 139/300
+ - 3s - loss: 47.4647 - ssim_for2d: 0.9357 - psnr_for2d: 31.4881 - val_loss: 111.7593 - val_ssim_for2d: 0.8958 - val_psnr_for2d: 27.9425
+Epoch 140/300
+ - 3s - loss: 67.2863 - ssim_for2d: 0.9316 - psnr_for2d: 29.9723 - val_loss: 99.4540 - val_ssim_for2d: 0.8932 - val_psnr_for2d: 28.5102
+Epoch 141/300
+ - 3s - loss: 51.6944 - ssim_for2d: 0.9338 - psnr_for2d: 31.1042 - val_loss: 92.7283 - val_ssim_for2d: 0.8976 - val_psnr_for2d: 28.9179
+Epoch 142/300
+ - 3s - loss: 50.8113 - ssim_for2d: 0.9355 - psnr_for2d: 31.1693 - val_loss: 90.3104 - val_ssim_for2d: 0.8983 - val_psnr_for2d: 29.0606
+Epoch 143/300
+ - 3s - loss: 45.3748 - ssim_for2d: 0.9364 - psnr_for2d: 31.6720 - val_loss: 92.1419 - val_ssim_for2d: 0.8993 - val_psnr_for2d: 28.9416
+Epoch 144/300
+ - 3s - loss: 46.4399 - ssim_for2d: 0.9372 - psnr_for2d: 31.5699 - val_loss: 91.1030 - val_ssim_for2d: 0.8998 - val_psnr_for2d: 28.9977
+Epoch 145/300
+ - 3s - loss: 44.0659 - ssim_for2d: 0.9379 - psnr_for2d: 31.8102 - val_loss: 88.8836 - val_ssim_for2d: 0.9002 - val_psnr_for2d: 29.1380
+Epoch 146/300
+ - 3s - loss: 42.7318 - ssim_for2d: 0.9385 - psnr_for2d: 31.9490 - val_loss: 89.2244 - val_ssim_for2d: 0.9009 - val_psnr_for2d: 29.1461
+Epoch 147/300
+ - 3s - loss: 49.7307 - ssim_for2d: 0.9379 - psnr_for2d: 31.3395 - val_loss: 143.1874 - val_ssim_for2d: 0.8966 - val_psnr_for2d: 26.7384
+Epoch 148/300
+ - 3s - loss: 89.9218 - ssim_for2d: 0.9299 - psnr_for2d: 28.8855 - val_loss: 120.5657 - val_ssim_for2d: 0.8924 - val_psnr_for2d: 27.5748
+Epoch 149/300
+ - 4s - loss: 56.3810 - ssim_for2d: 0.9334 - psnr_for2d: 30.7490 - val_loss: 97.4645 - val_ssim_for2d: 0.8971 - val_psnr_for2d: 28.6656
+Epoch 150/300
+ - 4s - loss: 49.8264 - ssim_for2d: 0.9363 - psnr_for2d: 31.2522 - val_loss: 90.5427 - val_ssim_for2d: 0.8999 - val_psnr_for2d: 29.0372
+Epoch 151/300
+ - 4s - loss: 46.2085 - ssim_for2d: 0.9382 - psnr_for2d: 31.5989 - val_loss: 89.5986 - val_ssim_for2d: 0.9013 - val_psnr_for2d: 29.0993
+Epoch 152/300
+ - 4s - loss: 42.7907 - ssim_for2d: 0.9394 - psnr_for2d: 31.9456 - val_loss: 89.2416 - val_ssim_for2d: 0.9006 - val_psnr_for2d: 29.1442
+Epoch 153/300
+ - 3s - loss: 41.8570 - ssim_for2d: 0.9399 - psnr_for2d: 32.0429 - val_loss: 89.2891 - val_ssim_for2d: 0.9018 - val_psnr_for2d: 29.1355
+Epoch 154/300
+ - 4s - loss: 42.1805 - ssim_for2d: 0.9400 - psnr_for2d: 32.0080 - val_loss: 90.2254 - val_ssim_for2d: 0.9018 - val_psnr_for2d: 29.0750
+Epoch 155/300
+ - 3s - loss: 44.8193 - ssim_for2d: 0.9403 - psnr_for2d: 31.7244 - val_loss: 92.2949 - val_ssim_for2d: 0.9019 - val_psnr_for2d: 28.9447
+Epoch 156/300
+ - 3s - loss: 46.6168 - ssim_for2d: 0.9404 - psnr_for2d: 31.5486 - val_loss: 88.8000 - val_ssim_for2d: 0.9023 - val_psnr_for2d: 29.1711
+Epoch 157/300
+ - 3s - loss: 41.7002 - ssim_for2d: 0.9410 - psnr_for2d: 32.0525 - val_loss: 92.9852 - val_ssim_for2d: 0.9016 - val_psnr_for2d: 28.9085
+Epoch 158/300
+ - 3s - loss: 58.4359 - ssim_for2d: 0.9395 - psnr_for2d: 30.5703 - val_loss: 102.2875 - val_ssim_for2d: 0.9017 - val_psnr_for2d: 28.3903
+Epoch 159/300
+ - 3s - loss: 44.5377 - ssim_for2d: 0.9407 - psnr_for2d: 31.7702 - val_loss: 91.6020 - val_ssim_for2d: 0.9022 - val_psnr_for2d: 29.0266
+Epoch 160/300
+ - 3s - loss: 41.7331 - ssim_for2d: 0.9415 - psnr_for2d: 32.0525 - val_loss: 87.6379 - val_ssim_for2d: 0.9030 - val_psnr_for2d: 29.2360
+Epoch 161/300
+ - 3s - loss: 40.6848 - ssim_for2d: 0.9421 - psnr_for2d: 32.1718 - val_loss: 93.0873 - val_ssim_for2d: 0.9019 - val_psnr_for2d: 28.9178
+Epoch 162/300
+ - 3s - loss: 58.5053 - ssim_for2d: 0.9399 - psnr_for2d: 30.5822 - val_loss: 98.3911 - val_ssim_for2d: 0.8999 - val_psnr_for2d: 28.6202
+Epoch 163/300
+ - 3s - loss: 45.3711 - ssim_for2d: 0.9411 - psnr_for2d: 31.6840 - val_loss: 95.2174 - val_ssim_for2d: 0.9021 - val_psnr_for2d: 28.7946
+Epoch 164/300
+ - 3s - loss: 42.5923 - ssim_for2d: 0.9420 - psnr_for2d: 31.9622 - val_loss: 97.8440 - val_ssim_for2d: 0.9021 - val_psnr_for2d: 28.6361
+Epoch 165/300
+ - 3s - loss: 48.1852 - ssim_for2d: 0.9418 - psnr_for2d: 31.4026 - val_loss: 88.3198 - val_ssim_for2d: 0.9034 - val_psnr_for2d: 29.2228
+Epoch 166/300
+ - 3s - loss: 39.6726 - ssim_for2d: 0.9430 - psnr_for2d: 32.2777 - val_loss: 87.0638 - val_ssim_for2d: 0.9039 - val_psnr_for2d: 29.3034
+Epoch 167/300
+ - 3s - loss: 41.4297 - ssim_for2d: 0.9428 - psnr_for2d: 32.0808 - val_loss: 92.5774 - val_ssim_for2d: 0.9031 - val_psnr_for2d: 28.9569
+Epoch 168/300
+ - 3s - loss: 50.8045 - ssim_for2d: 0.9424 - psnr_for2d: 31.1565 - val_loss: 95.8961 - val_ssim_for2d: 0.9028 - val_psnr_for2d: 28.7578
+Epoch 169/300
+ - 3s - loss: 41.7738 - ssim_for2d: 0.9434 - psnr_for2d: 32.0544 - val_loss: 93.7291 - val_ssim_for2d: 0.9044 - val_psnr_for2d: 28.8681
+Epoch 170/300
+ - 3s - loss: 52.9022 - ssim_for2d: 0.9428 - psnr_for2d: 30.9789 - val_loss: 94.7181 - val_ssim_for2d: 0.9051 - val_psnr_for2d: 28.8052
+Epoch 171/300
+ - 3s - loss: 41.1911 - ssim_for2d: 0.9438 - psnr_for2d: 32.0957 - val_loss: 89.6028 - val_ssim_for2d: 0.9041 - val_psnr_for2d: 29.1379
+Epoch 172/300
+ - 3s - loss: 40.4916 - ssim_for2d: 0.9445 - psnr_for2d: 32.1811 - val_loss: 91.0140 - val_ssim_for2d: 0.9038 - val_psnr_for2d: 29.0452
+Epoch 173/300
+ - 3s - loss: 45.7400 - ssim_for2d: 0.9441 - psnr_for2d: 31.6348 - val_loss: 97.6763 - val_ssim_for2d: 0.9028 - val_psnr_for2d: 28.6570
+Epoch 174/300
+ - 3s - loss: 42.9429 - ssim_for2d: 0.9440 - psnr_for2d: 31.9278 - val_loss: 88.4983 - val_ssim_for2d: 0.9039 - val_psnr_for2d: 29.2364
+Epoch 175/300
+ - 3s - loss: 38.0293 - ssim_for2d: 0.9452 - psnr_for2d: 32.4677 - val_loss: 86.9482 - val_ssim_for2d: 0.9064 - val_psnr_for2d: 29.3088
+Epoch 176/300
+ - 3s - loss: 50.2024 - ssim_for2d: 0.9445 - psnr_for2d: 31.3606 - val_loss: 138.6306 - val_ssim_for2d: 0.9009 - val_psnr_for2d: 26.8965
+Epoch 177/300
+ - 3s - loss: 61.2306 - ssim_for2d: 0.9412 - psnr_for2d: 30.5113 - val_loss: 111.0388 - val_ssim_for2d: 0.8988 - val_psnr_for2d: 27.9924
+Epoch 178/300
+ - 3s - loss: 50.5829 - ssim_for2d: 0.9407 - psnr_for2d: 31.2073 - val_loss: 95.3166 - val_ssim_for2d: 0.9019 - val_psnr_for2d: 28.7784
+Epoch 179/300
+ - 3s - loss: 43.7338 - ssim_for2d: 0.9428 - psnr_for2d: 31.8336 - val_loss: 88.8553 - val_ssim_for2d: 0.9042 - val_psnr_for2d: 29.1823
+Epoch 180/300
+ - 3s - loss: 40.5614 - ssim_for2d: 0.9438 - psnr_for2d: 32.1697 - val_loss: 86.9984 - val_ssim_for2d: 0.9049 - val_psnr_for2d: 29.2914
+Epoch 181/300
+ - 3s - loss: 41.4103 - ssim_for2d: 0.9447 - psnr_for2d: 32.0810 - val_loss: 86.4768 - val_ssim_for2d: 0.9061 - val_psnr_for2d: 29.3013
+Epoch 182/300
+ - 3s - loss: 38.3542 - ssim_for2d: 0.9457 - psnr_for2d: 32.4245 - val_loss: 88.5917 - val_ssim_for2d: 0.9061 - val_psnr_for2d: 29.2040
+Epoch 183/300
+ - 3s - loss: 36.9427 - ssim_for2d: 0.9466 - psnr_for2d: 32.5969 - val_loss: 87.2185 - val_ssim_for2d: 0.9060 - val_psnr_for2d: 29.2924
+Epoch 184/300
+ - 3s - loss: 42.6207 - ssim_for2d: 0.9463 - psnr_for2d: 31.9644 - val_loss: 104.4479 - val_ssim_for2d: 0.9035 - val_psnr_for2d: 28.3265
+Epoch 185/300
+ - 3s - loss: 47.0906 - ssim_for2d: 0.9450 - psnr_for2d: 31.5437 - val_loss: 93.1965 - val_ssim_for2d: 0.9045 - val_psnr_for2d: 28.9157
+Epoch 186/300
+ - 3s - loss: 42.9787 - ssim_for2d: 0.9451 - psnr_for2d: 31.9076 - val_loss: 86.3796 - val_ssim_for2d: 0.9070 - val_psnr_for2d: 29.3504
+Epoch 187/300
+ - 4s - loss: 36.2899 - ssim_for2d: 0.9472 - psnr_for2d: 32.6756 - val_loss: 86.3089 - val_ssim_for2d: 0.9055 - val_psnr_for2d: 29.3358
+Epoch 188/300
+ - 3s - loss: 36.2883 - ssim_for2d: 0.9476 - psnr_for2d: 32.6760 - val_loss: 84.7849 - val_ssim_for2d: 0.9081 - val_psnr_for2d: 29.4502
+Epoch 189/300
+ - 3s - loss: 36.7645 - ssim_for2d: 0.9483 - psnr_for2d: 32.6146 - val_loss: 96.6058 - val_ssim_for2d: 0.9063 - val_psnr_for2d: 28.7357
+Epoch 190/300
+ - 3s - loss: 73.5219 - ssim_for2d: 0.9428 - psnr_for2d: 29.7298 - val_loss: 95.2395 - val_ssim_for2d: 0.9056 - val_psnr_for2d: 28.8085
+Epoch 191/300
+ - 3s - loss: 51.3917 - ssim_for2d: 0.9435 - psnr_for2d: 31.1822 - val_loss: 104.5109 - val_ssim_for2d: 0.9031 - val_psnr_for2d: 28.3288
+Epoch 192/300
+ - 3s - loss: 45.1420 - ssim_for2d: 0.9458 - psnr_for2d: 31.7182 - val_loss: 86.7046 - val_ssim_for2d: 0.9068 - val_psnr_for2d: 29.2850
+Epoch 193/300
+ - 3s - loss: 39.2407 - ssim_for2d: 0.9472 - psnr_for2d: 32.3230 - val_loss: 85.7214 - val_ssim_for2d: 0.9081 - val_psnr_for2d: 29.3895
+Epoch 194/300
+ - 3s - loss: 38.0617 - ssim_for2d: 0.9475 - psnr_for2d: 32.4569 - val_loss: 86.8252 - val_ssim_for2d: 0.9065 - val_psnr_for2d: 29.3345
+Epoch 195/300
+ - 3s - loss: 36.3014 - ssim_for2d: 0.9480 - psnr_for2d: 32.6754 - val_loss: 84.7290 - val_ssim_for2d: 0.9081 - val_psnr_for2d: 29.4342
+Epoch 196/300
+ - 3s - loss: 35.5664 - ssim_for2d: 0.9488 - psnr_for2d: 32.7632 - val_loss: 86.4127 - val_ssim_for2d: 0.9092 - val_psnr_for2d: 29.3309
+Epoch 197/300
+ - 3s - loss: 35.9486 - ssim_for2d: 0.9493 - psnr_for2d: 32.7138 - val_loss: 85.5434 - val_ssim_for2d: 0.9087 - val_psnr_for2d: 29.4209
+Epoch 198/300
+ - 3s - loss: 34.3837 - ssim_for2d: 0.9497 - psnr_for2d: 32.9197 - val_loss: 84.4048 - val_ssim_for2d: 0.9088 - val_psnr_for2d: 29.4747
+Epoch 199/300
+ - 3s - loss: 37.3833 - ssim_for2d: 0.9499 - psnr_for2d: 32.5608 - val_loss: 110.4178 - val_ssim_for2d: 0.9060 - val_psnr_for2d: 28.0435
+Epoch 200/300
+ - 3s - loss: 58.5754 - ssim_for2d: 0.9476 - psnr_for2d: 30.6731 - val_loss: 91.2616 - val_ssim_for2d: 0.9086 - val_psnr_for2d: 29.0547
+Epoch 201/300
+ - 3s - loss: 40.7356 - ssim_for2d: 0.9491 - psnr_for2d: 32.1702 - val_loss: 89.3662 - val_ssim_for2d: 0.9071 - val_psnr_for2d: 29.1687
+Epoch 202/300
+ - 3s - loss: 36.5918 - ssim_for2d: 0.9502 - psnr_for2d: 32.6480 - val_loss: 84.5729 - val_ssim_for2d: 0.9096 - val_psnr_for2d: 29.5174
+Epoch 203/300
+ - 3s - loss: 33.0823 - ssim_for2d: 0.9511 - psnr_for2d: 33.0983 - val_loss: 83.3822 - val_ssim_for2d: 0.9103 - val_psnr_for2d: 29.5748
+Epoch 204/300
+ - 3s - loss: 32.9990 - ssim_for2d: 0.9513 - psnr_for2d: 33.1099 - val_loss: 83.7587 - val_ssim_for2d: 0.9104 - val_psnr_for2d: 29.5606
+Epoch 205/300
+ - 3s - loss: 38.6163 - ssim_for2d: 0.9510 - psnr_for2d: 32.4188 - val_loss: 104.3564 - val_ssim_for2d: 0.9092 - val_psnr_for2d: 28.3194
+Epoch 206/300
+ - 3s - loss: 47.6654 - ssim_for2d: 0.9498 - psnr_for2d: 31.5210 - val_loss: 84.0783 - val_ssim_for2d: 0.9096 - val_psnr_for2d: 29.5318
+Epoch 207/300
+ - 3s - loss: 33.4919 - ssim_for2d: 0.9515 - psnr_for2d: 33.0355 - val_loss: 84.4308 - val_ssim_for2d: 0.9099 - val_psnr_for2d: 29.5086
+Epoch 208/300
+ - 3s - loss: 37.9132 - ssim_for2d: 0.9512 - psnr_for2d: 32.4860 - val_loss: 90.6255 - val_ssim_for2d: 0.9089 - val_psnr_for2d: 29.0866
+Epoch 209/300
+ - 3s - loss: 35.2510 - ssim_for2d: 0.9514 - psnr_for2d: 32.8172 - val_loss: 88.2291 - val_ssim_for2d: 0.9102 - val_psnr_for2d: 29.2472
+Epoch 210/300
+ - 3s - loss: 52.0374 - ssim_for2d: 0.9498 - psnr_for2d: 31.1449 - val_loss: 92.9267 - val_ssim_for2d: 0.9092 - val_psnr_for2d: 28.9468
+Epoch 211/300
+ - 3s - loss: 42.6891 - ssim_for2d: 0.9501 - psnr_for2d: 31.9736 - val_loss: 86.6881 - val_ssim_for2d: 0.9081 - val_psnr_for2d: 29.3773
+Epoch 212/300
+ - 3s - loss: 35.8618 - ssim_for2d: 0.9511 - psnr_for2d: 32.7264 - val_loss: 84.5251 - val_ssim_for2d: 0.9109 - val_psnr_for2d: 29.4930
+Epoch 213/300
+ - 3s - loss: 37.3294 - ssim_for2d: 0.9515 - psnr_for2d: 32.5776 - val_loss: 93.7028 - val_ssim_for2d: 0.9088 - val_psnr_for2d: 28.9251
+Epoch 214/300
+ - 3s - loss: 36.7814 - ssim_for2d: 0.9516 - psnr_for2d: 32.6148 - val_loss: 89.2650 - val_ssim_for2d: 0.9093 - val_psnr_for2d: 29.2089
+Epoch 215/300
+ - 3s - loss: 36.0561 - ssim_for2d: 0.9518 - psnr_for2d: 32.6867 - val_loss: 87.3405 - val_ssim_for2d: 0.9097 - val_psnr_for2d: 29.2765
+Epoch 216/300
+ - 3s - loss: 35.7980 - ssim_for2d: 0.9521 - psnr_for2d: 32.7183 - val_loss: 89.2986 - val_ssim_for2d: 0.9102 - val_psnr_for2d: 29.2107
+Epoch 217/300
+ - 3s - loss: 34.8243 - ssim_for2d: 0.9527 - psnr_for2d: 32.8485 - val_loss: 86.0743 - val_ssim_for2d: 0.9111 - val_psnr_for2d: 29.3975
+Epoch 218/300
+ - 3s - loss: 33.2264 - ssim_for2d: 0.9530 - psnr_for2d: 33.0578 - val_loss: 83.4508 - val_ssim_for2d: 0.9104 - val_psnr_for2d: 29.5580
+Epoch 219/300
+ - 3s - loss: 31.9981 - ssim_for2d: 0.9529 - psnr_for2d: 33.2399 - val_loss: 84.3365 - val_ssim_for2d: 0.9109 - val_psnr_for2d: 29.5010
+Epoch 220/300
+ - 3s - loss: 45.8474 - ssim_for2d: 0.9524 - psnr_for2d: 31.8644 - val_loss: 148.6535 - val_ssim_for2d: 0.9062 - val_psnr_for2d: 26.5795
+Epoch 221/300
+ - 3s - loss: 64.5234 - ssim_for2d: 0.9421 - psnr_for2d: 30.3609 - val_loss: 95.7223 - val_ssim_for2d: 0.9064 - val_psnr_for2d: 28.7749
+Epoch 222/300
+ - 3s - loss: 38.1201 - ssim_for2d: 0.9491 - psnr_for2d: 32.4518 - val_loss: 83.7755 - val_ssim_for2d: 0.9107 - val_psnr_for2d: 29.5508
+Epoch 223/300
+ - 3s - loss: 34.2110 - ssim_for2d: 0.9525 - psnr_for2d: 32.9247 - val_loss: 83.4772 - val_ssim_for2d: 0.9112 - val_psnr_for2d: 29.5667
+Epoch 224/300
+ - 3s - loss: 31.3649 - ssim_for2d: 0.9538 - psnr_for2d: 33.3278 - val_loss: 82.9590 - val_ssim_for2d: 0.9124 - val_psnr_for2d: 29.6031
+Epoch 225/300
+ - 3s - loss: 31.4121 - ssim_for2d: 0.9544 - psnr_for2d: 33.3158 - val_loss: 84.1931 - val_ssim_for2d: 0.9120 - val_psnr_for2d: 29.5510
+Epoch 226/300
+ - 3s - loss: 33.7221 - ssim_for2d: 0.9546 - psnr_for2d: 33.0175 - val_loss: 95.4344 - val_ssim_for2d: 0.9111 - val_psnr_for2d: 28.8402
+Epoch 227/300
+ - 3s - loss: 45.6711 - ssim_for2d: 0.9534 - psnr_for2d: 31.6417 - val_loss: 86.7882 - val_ssim_for2d: 0.9105 - val_psnr_for2d: 29.3941
+Epoch 228/300
+ - 3s - loss: 32.6583 - ssim_for2d: 0.9540 - psnr_for2d: 33.1406 - val_loss: 85.7986 - val_ssim_for2d: 0.9127 - val_psnr_for2d: 29.4223
+Epoch 229/300
+ - 3s - loss: 31.6384 - ssim_for2d: 0.9551 - psnr_for2d: 33.2881 - val_loss: 82.9497 - val_ssim_for2d: 0.9127 - val_psnr_for2d: 29.6386
+Epoch 230/300
+ - 3s - loss: 30.5496 - ssim_for2d: 0.9552 - psnr_for2d: 33.4458 - val_loss: 87.3412 - val_ssim_for2d: 0.9119 - val_psnr_for2d: 29.3446
+Epoch 231/300
+ - 3s - loss: 49.8207 - ssim_for2d: 0.9537 - psnr_for2d: 31.4205 - val_loss: 114.2511 - val_ssim_for2d: 0.9089 - val_psnr_for2d: 27.8821
+Epoch 232/300
+ - 3s - loss: 42.8935 - ssim_for2d: 0.9525 - psnr_for2d: 31.9712 - val_loss: 92.1276 - val_ssim_for2d: 0.9100 - val_psnr_for2d: 29.0227
+Epoch 233/300
+ - 3s - loss: 35.6839 - ssim_for2d: 0.9537 - psnr_for2d: 32.7432 - val_loss: 86.8822 - val_ssim_for2d: 0.9102 - val_psnr_for2d: 29.3643
+Epoch 234/300
+ - 3s - loss: 33.8377 - ssim_for2d: 0.9547 - psnr_for2d: 32.9866 - val_loss: 84.6354 - val_ssim_for2d: 0.9129 - val_psnr_for2d: 29.5092
+Epoch 235/300
+ - 3s - loss: 31.1721 - ssim_for2d: 0.9559 - psnr_for2d: 33.3568 - val_loss: 87.1562 - val_ssim_for2d: 0.9133 - val_psnr_for2d: 29.3607
+Epoch 236/300
+ - 3s - loss: 32.8368 - ssim_for2d: 0.9561 - psnr_for2d: 33.1104 - val_loss: 82.3867 - val_ssim_for2d: 0.9133 - val_psnr_for2d: 29.6808
+Epoch 237/300
+ - 3s - loss: 30.7991 - ssim_for2d: 0.9565 - psnr_for2d: 33.4084 - val_loss: 84.9753 - val_ssim_for2d: 0.9131 - val_psnr_for2d: 29.5045
+Epoch 238/300
+ - 3s - loss: 33.7712 - ssim_for2d: 0.9565 - psnr_for2d: 32.9860 - val_loss: 91.5353 - val_ssim_for2d: 0.9118 - val_psnr_for2d: 29.0570
+Epoch 239/300
+ - 3s - loss: 40.0498 - ssim_for2d: 0.9553 - psnr_for2d: 32.2184 - val_loss: 85.8744 - val_ssim_for2d: 0.9120 - val_psnr_for2d: 29.4667
+Epoch 240/300
+ - 3s - loss: 29.7634 - ssim_for2d: 0.9567 - psnr_for2d: 33.5681 - val_loss: 83.2500 - val_ssim_for2d: 0.9134 - val_psnr_for2d: 29.6206
+Epoch 241/300
+ - 3s - loss: 32.4097 - ssim_for2d: 0.9570 - psnr_for2d: 33.1742 - val_loss: 95.0186 - val_ssim_for2d: 0.9133 - val_psnr_for2d: 28.8581
+Epoch 242/300
+ - 3s - loss: 39.0213 - ssim_for2d: 0.9562 - psnr_for2d: 32.3645 - val_loss: 82.5127 - val_ssim_for2d: 0.9136 - val_psnr_for2d: 29.6810
+Epoch 243/300
+ - 3s - loss: 34.6162 - ssim_for2d: 0.9565 - psnr_for2d: 32.8762 - val_loss: 85.2592 - val_ssim_for2d: 0.9127 - val_psnr_for2d: 29.5015
+Epoch 244/300
+ - 3s - loss: 30.5250 - ssim_for2d: 0.9570 - psnr_for2d: 33.4477 - val_loss: 88.7612 - val_ssim_for2d: 0.9131 - val_psnr_for2d: 29.2429
+Epoch 245/300
+ - 3s - loss: 36.5758 - ssim_for2d: 0.9567 - psnr_for2d: 32.6331 - val_loss: 83.2595 - val_ssim_for2d: 0.9126 - val_psnr_for2d: 29.6185
+Epoch 246/300
+ - 3s - loss: 32.6773 - ssim_for2d: 0.9570 - psnr_for2d: 33.1816 - val_loss: 94.6198 - val_ssim_for2d: 0.9122 - val_psnr_for2d: 28.8833
+Epoch 247/300
+ - 3s - loss: 34.4921 - ssim_for2d: 0.9567 - psnr_for2d: 32.9144 - val_loss: 83.5169 - val_ssim_for2d: 0.9129 - val_psnr_for2d: 29.6308
+Epoch 248/300
+ - 3s - loss: 31.3173 - ssim_for2d: 0.9573 - psnr_for2d: 33.3294 - val_loss: 88.6553 - val_ssim_for2d: 0.9141 - val_psnr_for2d: 29.2553
+Epoch 249/300
+ - 3s - loss: 37.1890 - ssim_for2d: 0.9571 - psnr_for2d: 32.5425 - val_loss: 96.8036 - val_ssim_for2d: 0.9137 - val_psnr_for2d: 28.7592
+Epoch 250/300
+ - 3s - loss: 33.2273 - ssim_for2d: 0.9576 - psnr_for2d: 33.0961 - val_loss: 82.1898 - val_ssim_for2d: 0.9140 - val_psnr_for2d: 29.7097
+Epoch 251/300
+ - 3s - loss: 28.2635 - ssim_for2d: 0.9580 - psnr_for2d: 33.7959 - val_loss: 83.2387 - val_ssim_for2d: 0.9131 - val_psnr_for2d: 29.6223
+Epoch 252/300
+ - 3s - loss: 29.0673 - ssim_for2d: 0.9582 - psnr_for2d: 33.6646 - val_loss: 89.6216 - val_ssim_for2d: 0.9125 - val_psnr_for2d: 29.2106
+Epoch 253/300
+ - 3s - loss: 50.5029 - ssim_for2d: 0.9546 - psnr_for2d: 31.2455 - val_loss: 94.5826 - val_ssim_for2d: 0.9104 - val_psnr_for2d: 28.8711
+Epoch 254/300
+ - 3s - loss: 35.6300 - ssim_for2d: 0.9541 - psnr_for2d: 32.7498 - val_loss: 90.4564 - val_ssim_for2d: 0.9115 - val_psnr_for2d: 29.1555
+Epoch 255/300
+ - 3s - loss: 31.8150 - ssim_for2d: 0.9567 - psnr_for2d: 33.2650 - val_loss: 84.8662 - val_ssim_for2d: 0.9136 - val_psnr_for2d: 29.5548
+Epoch 256/300
+ - 3s - loss: 29.7957 - ssim_for2d: 0.9583 - psnr_for2d: 33.5476 - val_loss: 82.9305 - val_ssim_for2d: 0.9154 - val_psnr_for2d: 29.6487
+Epoch 257/300
+ - 3s - loss: 27.8424 - ssim_for2d: 0.9590 - psnr_for2d: 33.8649 - val_loss: 82.8931 - val_ssim_for2d: 0.9146 - val_psnr_for2d: 29.6587
+Epoch 258/300
+ - 3s - loss: 36.3667 - ssim_for2d: 0.9586 - psnr_for2d: 32.7088 - val_loss: 105.3629 - val_ssim_for2d: 0.9122 - val_psnr_for2d: 28.3224
+Epoch 259/300
+ - 3s - loss: 36.6485 - ssim_for2d: 0.9585 - psnr_for2d: 32.7393 - val_loss: 82.8148 - val_ssim_for2d: 0.9148 - val_psnr_for2d: 29.6709
+Epoch 260/300
+ - 3s - loss: 31.7269 - ssim_for2d: 0.9590 - psnr_for2d: 33.2569 - val_loss: 85.6573 - val_ssim_for2d: 0.9149 - val_psnr_for2d: 29.4707
+Epoch 261/300
+ - 3s - loss: 28.8604 - ssim_for2d: 0.9591 - psnr_for2d: 33.6935 - val_loss: 81.7460 - val_ssim_for2d: 0.9153 - val_psnr_for2d: 29.7639
+Epoch 262/300
+ - 3s - loss: 27.1875 - ssim_for2d: 0.9598 - psnr_for2d: 33.9674 - val_loss: 84.0241 - val_ssim_for2d: 0.9156 - val_psnr_for2d: 29.5855
+Epoch 263/300
+ - 3s - loss: 37.8457 - ssim_for2d: 0.9590 - psnr_for2d: 32.6258 - val_loss: 117.7603 - val_ssim_for2d: 0.9130 - val_psnr_for2d: 27.7301
+Epoch 264/300
+ - 3s - loss: 45.5625 - ssim_for2d: 0.9538 - psnr_for2d: 31.7782 - val_loss: 87.0815 - val_ssim_for2d: 0.9111 - val_psnr_for2d: 29.3549
+Epoch 265/300
+ - 3s - loss: 31.1076 - ssim_for2d: 0.9571 - psnr_for2d: 33.3630 - val_loss: 84.0807 - val_ssim_for2d: 0.9143 - val_psnr_for2d: 29.5967
+Epoch 266/300
+ - 3s - loss: 27.8009 - ssim_for2d: 0.9596 - psnr_for2d: 33.8619 - val_loss: 85.0225 - val_ssim_for2d: 0.9149 - val_psnr_for2d: 29.5194
+Epoch 267/300
+ - 3s - loss: 29.6263 - ssim_for2d: 0.9602 - psnr_for2d: 33.5682 - val_loss: 85.9020 - val_ssim_for2d: 0.9155 - val_psnr_for2d: 29.4531
+Epoch 268/300
+ - 3s - loss: 28.4616 - ssim_for2d: 0.9604 - psnr_for2d: 33.7534 - val_loss: 82.2506 - val_ssim_for2d: 0.9150 - val_psnr_for2d: 29.7500
+Epoch 269/300
+ - 3s - loss: 29.3443 - ssim_for2d: 0.9604 - psnr_for2d: 33.6474 - val_loss: 101.7302 - val_ssim_for2d: 0.9122 - val_psnr_for2d: 28.5018
+Epoch 270/300
+ - 3s - loss: 56.0072 - ssim_for2d: 0.9543 - psnr_for2d: 30.7927 - val_loss: 88.1576 - val_ssim_for2d: 0.9067 - val_psnr_for2d: 29.3118
+Epoch 271/300
+ - 3s - loss: 34.4118 - ssim_for2d: 0.9557 - psnr_for2d: 32.8851 - val_loss: 84.9444 - val_ssim_for2d: 0.9131 - val_psnr_for2d: 29.5415
+Epoch 272/300
+ - 3s - loss: 32.7673 - ssim_for2d: 0.9590 - psnr_for2d: 33.1492 - val_loss: 83.1296 - val_ssim_for2d: 0.9147 - val_psnr_for2d: 29.6622
+Epoch 273/300
+ - 3s - loss: 29.0593 - ssim_for2d: 0.9601 - psnr_for2d: 33.6490 - val_loss: 82.4930 - val_ssim_for2d: 0.9161 - val_psnr_for2d: 29.7250
+Epoch 274/300
+ - 3s - loss: 32.5435 - ssim_for2d: 0.9603 - psnr_for2d: 33.1374 - val_loss: 83.7698 - val_ssim_for2d: 0.9161 - val_psnr_for2d: 29.6069
+Epoch 275/300
+ - 3s - loss: 27.6612 - ssim_for2d: 0.9606 - psnr_for2d: 33.8900 - val_loss: 87.1783 - val_ssim_for2d: 0.9149 - val_psnr_for2d: 29.4060
+Epoch 276/300
+ - 3s - loss: 28.8595 - ssim_for2d: 0.9609 - psnr_for2d: 33.6969 - val_loss: 83.2533 - val_ssim_for2d: 0.9155 - val_psnr_for2d: 29.6655
+Epoch 277/300
+ - 3s - loss: 29.5135 - ssim_for2d: 0.9611 - psnr_for2d: 33.5777 - val_loss: 87.5284 - val_ssim_for2d: 0.9157 - val_psnr_for2d: 29.3303
+Epoch 278/300
+ - 3s - loss: 32.0929 - ssim_for2d: 0.9606 - psnr_for2d: 33.1915 - val_loss: 87.6283 - val_ssim_for2d: 0.9157 - val_psnr_for2d: 29.3585
+Epoch 279/300
+ - 3s - loss: 27.4480 - ssim_for2d: 0.9611 - psnr_for2d: 33.9225 - val_loss: 82.4660 - val_ssim_for2d: 0.9159 - val_psnr_for2d: 29.7564
+Epoch 280/300
+ - 3s - loss: 25.4032 - ssim_for2d: 0.9619 - psnr_for2d: 34.2798 - val_loss: 81.8664 - val_ssim_for2d: 0.9164 - val_psnr_for2d: 29.7724
+Epoch 281/300
+ - 3s - loss: 25.4538 - ssim_for2d: 0.9621 - psnr_for2d: 34.2684 - val_loss: 83.2809 - val_ssim_for2d: 0.9158 - val_psnr_for2d: 29.6641
+Epoch 282/300
+ - 3s - loss: 52.3814 - ssim_for2d: 0.9589 - psnr_for2d: 31.3682 - val_loss: 124.2309 - val_ssim_for2d: 0.9053 - val_psnr_for2d: 27.4795
+Epoch 283/300
+ - 3s - loss: 40.3453 - ssim_for2d: 0.9558 - psnr_for2d: 32.3140 - val_loss: 91.5126 - val_ssim_for2d: 0.9121 - val_psnr_for2d: 29.0705
+Epoch 284/300
+ - 3s - loss: 32.4440 - ssim_for2d: 0.9582 - psnr_for2d: 33.1536 - val_loss: 83.7901 - val_ssim_for2d: 0.9142 - val_psnr_for2d: 29.5895
+Epoch 285/300
+ - 3s - loss: 28.3192 - ssim_for2d: 0.9603 - psnr_for2d: 33.7685 - val_loss: 81.8778 - val_ssim_for2d: 0.9159 - val_psnr_for2d: 29.7419
+Epoch 286/300
+ - 3s - loss: 25.4369 - ssim_for2d: 0.9621 - psnr_for2d: 34.2691 - val_loss: 81.5911 - val_ssim_for2d: 0.9166 - val_psnr_for2d: 29.8088
+Epoch 287/300
+ - 3s - loss: 25.4933 - ssim_for2d: 0.9625 - psnr_for2d: 34.2543 - val_loss: 85.5443 - val_ssim_for2d: 0.9166 - val_psnr_for2d: 29.5239
+Epoch 288/300
+ - 3s - loss: 30.6124 - ssim_for2d: 0.9621 - psnr_for2d: 33.4025 - val_loss: 85.3549 - val_ssim_for2d: 0.9175 - val_psnr_for2d: 29.5277
+Epoch 289/300
+ - 3s - loss: 26.6901 - ssim_for2d: 0.9625 - psnr_for2d: 34.0421 - val_loss: 82.0951 - val_ssim_for2d: 0.9168 - val_psnr_for2d: 29.7442
+Epoch 290/300
+ - 3s - loss: 25.3984 - ssim_for2d: 0.9630 - psnr_for2d: 34.2716 - val_loss: 81.7384 - val_ssim_for2d: 0.9175 - val_psnr_for2d: 29.8081
+Epoch 291/300
+ - 3s - loss: 28.9538 - ssim_for2d: 0.9629 - psnr_for2d: 33.7002 - val_loss: 103.6209 - val_ssim_for2d: 0.9162 - val_psnr_for2d: 28.4257
+Epoch 292/300
+ - 3s - loss: 46.6523 - ssim_for2d: 0.9602 - psnr_for2d: 31.7042 - val_loss: 85.9408 - val_ssim_for2d: 0.9147 - val_psnr_for2d: 29.5224
+Epoch 293/300
+ - 3s - loss: 31.0488 - ssim_for2d: 0.9607 - psnr_for2d: 33.3594 - val_loss: 80.5607 - val_ssim_for2d: 0.9180 - val_psnr_for2d: 29.8706
+Epoch 294/300
+ - 3s - loss: 26.2626 - ssim_for2d: 0.9630 - psnr_for2d: 34.1204 - val_loss: 81.1947 - val_ssim_for2d: 0.9178 - val_psnr_for2d: 29.8371
+Epoch 295/300
+ - 3s - loss: 24.8240 - ssim_for2d: 0.9633 - psnr_for2d: 34.3732 - val_loss: 82.9366 - val_ssim_for2d: 0.9169 - val_psnr_for2d: 29.7429
+Epoch 296/300
+ - 3s - loss: 24.4535 - ssim_for2d: 0.9636 - psnr_for2d: 34.4465 - val_loss: 80.6938 - val_ssim_for2d: 0.9181 - val_psnr_for2d: 29.8841
+Epoch 297/300
+ - 3s - loss: 23.8463 - ssim_for2d: 0.9639 - psnr_for2d: 34.5621 - val_loss: 81.1715 - val_ssim_for2d: 0.9179 - val_psnr_for2d: 29.8670
+Epoch 298/300
+ - 3s - loss: 24.3642 - ssim_for2d: 0.9641 - psnr_for2d: 34.4620 - val_loss: 87.1643 - val_ssim_for2d: 0.9167 - val_psnr_for2d: 29.4147
+Epoch 299/300
+ - 3s - loss: 57.6400 - ssim_for2d: 0.9602 - psnr_for2d: 30.8112 - val_loss: 86.8228 - val_ssim_for2d: 0.9133 - val_psnr_for2d: 29.3991
+Epoch 300/300
+ - 3s - loss: 37.4178 - ssim_for2d: 0.9603 - psnr_for2d: 32.6293 - val_loss: 83.1009 - val_ssim_for2d: 0.9166 - val_psnr_for2d: 29.7092
+236/236 [==============================] - 2s 9ms/step
+ 
+after model.fit, train_x and train_y shape: (236, 5, 64, 64, 1) (236, 60, 60, 1)
+shape pf test_x (60, 5, 64, 64, 1) shape of test_y (60, 60, 60, 1)
+60/60 [==============================] - 0s 6ms/step
+mean_squared_error_test, ssim_test, psnr_test 107.77480010986328 0.897786005338033 28.031186294555663
+AMOUNT, BATCH, TARGET_HEIGHT: 296 20 64
+without processed by neural network:
+psnr =  22.13051281787807
+ssim =  0.7328004798243157
+performance after processed by nerual network:
+psnr:  33.145489191604874
+ssim:  0.95365040080022
+performance of predicted images:
+psnr, ssim for raw data: 22.15469605738412 0.7350725715496504
+psnr, ssim for predicted result: 28.0311867966957 0.916338634191216
+mae, mse for raw data: 10.585930555555555 396.00651388888895
+mae, mse for predicted result 5.051918466885884 107.774800046285
