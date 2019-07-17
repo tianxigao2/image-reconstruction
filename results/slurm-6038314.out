@@ -1,0 +1,454 @@
+/var/slurmd/job6038314/slurm_script: line 3: SBATCH: command not found
+/var/slurmd/job6038314/slurm_script: line 4: SBATCH: command not found
++ cd /pylon5/ac5610p/janegao/image-reconstruction-2019/code/test_3d/
++ python main_3d.py
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-27
+OMP: Info #156: KMP_AFFINITY: 28 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 2 packages x 14 cores/pkg x 1 threads/core (28 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 0 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 0 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 0 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 0 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 20 maps to package 0 core 14 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 1 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 21 maps to package 1 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 1 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 22 maps to package 1 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 1 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 23 maps to package 1 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 1 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 24 maps to package 1 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 1 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 25 maps to package 1 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 1 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 26 maps to package 1 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 1 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 27 maps to package 1 core 14 
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11634 thread 0 bound to OS proc set 0
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-07-15 13:19:15.482122: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-07-15 13:19:15.485526: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294550000 Hz
+2019-07-15 13:19:15.485698: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x562677d67a70 executing computations on platform Host. Devices:
+2019-07-15 13:19:15.485735: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-15 13:19:15.485835: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11856 thread 1 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11900 thread 2 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11901 thread 3 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11903 thread 5 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11904 thread 6 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11902 thread 4 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11905 thread 7 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11906 thread 8 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11907 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11909 thread 11 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11908 thread 10 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11910 thread 12 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11911 thread 13 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11912 thread 14 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11913 thread 15 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11914 thread 16 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11915 thread 17 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11916 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11917 thread 19 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11918 thread 20 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11919 thread 21 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11920 thread 22 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11921 thread 23 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11922 thread 24 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11923 thread 25 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11924 thread 26 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11925 thread 27 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11926 thread 28 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11857 thread 29 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11928 thread 30 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11929 thread 31 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11930 thread 32 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11931 thread 33 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11932 thread 34 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11933 thread 35 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11934 thread 36 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11935 thread 37 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11937 thread 39 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11936 thread 38 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11938 thread 40 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11939 thread 41 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11940 thread 42 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11941 thread 43 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11942 thread 44 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11943 thread 45 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11944 thread 46 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11945 thread 47 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11946 thread 48 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11947 thread 49 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11948 thread 50 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11949 thread 51 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11950 thread 52 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11951 thread 53 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11952 thread 54 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11954 thread 56 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 11634 tid 11953 thread 55 bound to OS proc set 27
+packed 2 packages already
+packed 3 packages already
+packed 4 packages already
+packed 5 packages already
+packed 6 packages already
+packed 7 packages already
+packed 8 packages already
+packed 9 packages already
+packed 10 packages already
+packed 11 packages already
+packed 12 packages already
+packed 13 packages already
+packed 14 packages already
+packed 15 packages already
+packed 16 packages already
+packed 17 packages already
+packed 18 packages already
+packed 19 packages already
+packed 20 packages already
+packed 21 packages already
+packed 22 packages already
+packed 23 packages already
+packed 24 packages already
+packed 25 packages already
+packed 26 packages already
+packed 27 packages already
+packed 28 packages already
+packed 29 packages already
+packed 30 packages already
+packed 31 packages already
+packed 32 packages already
+packed 33 packages already
+packed 34 packages already
+packed 35 packages already
+packed 36 packages already
+packed 37 packages already
+packed 38 packages already
+packed 39 packages already
+packed 40 packages already
+packed 41 packages already
+packed 42 packages already
+packed 43 packages already
+packed 44 packages already
+packed 45 packages already
+packed 46 packages already
+packed 47 packages already
+packed 48 packages already
+packed 49 packages already
+packed 50 packages already
+packed 51 packages already
+packed 52 packages already
+packed 53 packages already
+packed 54 packages already
+packed 55 packages already
+packed 56 packages already
+packed 57 packages already
+packed 58 packages already
+packed 59 packages already
+packed 60 packages already
+packed 61 packages already
+packed 62 packages already
+packed 63 packages already
+packed 64 packages already
+packed 65 packages already
+packed 66 packages already
+packed 67 packages already
+packed 68 packages already
+packed 69 packages already
+packed 70 packages already
+packed 71 packages already
+packed 72 packages already
+packed 73 packages already
+packed 74 packages already
+packed 75 packages already
+packed 76 packages already
+packed 77 packages already
+packed 78 packages already
+packed 79 packages already
+packed 80 packages already
+packed 81 packages already
+packed 82 packages already
+packed 83 packages already
+packed 84 packages already
+packed 85 packages already
+packed 86 packages already
+packed 87 packages already
+packed 88 packages already
+packed 89 packages already
+packed 90 packages already
+packed 91 packages already
+packed 92 packages already
+packed 93 packages already
+packed 94 packages already
+packed 95 packages already
+packed 96 packages already
+packed 97 packages already
+packed 98 packages already
+packed 99 packages already
+packed 100 packages already
+packed 101 packages already
+packed 102 packages already
+packed 103 packages already
+packed 104 packages already
+packed 105 packages already
+packed 106 packages already
+packed 107 packages already
+packed 108 packages already
+packed 109 packages already
+packed 110 packages already
+packed 111 packages already
+packed 112 packages already
+packed 113 packages already
+packed 114 packages already
+packed 115 packages already
+packed 116 packages already
+packed 117 packages already
+packed 118 packages already
+packed 119 packages already
+packed 120 packages already
+packed 121 packages already
+packed 122 packages already
+packed 123 packages already
+packed 124 packages already
+packed 125 packages already
+packed 126 packages already
+packed 127 packages already
+packed 128 packages already
+packed 129 packages already
+packed 130 packages already
+packed 131 packages already
+packed 132 packages already
+packed 133 packages already
+packed 134 packages already
+packed 135 packages already
+packed 136 packages already
+packed 137 packages already
+packed 138 packages already
+packed 139 packages already
+packed 140 packages already
+packed 141 packages already
+packed 142 packages already
+packed 143 packages already
+packed 144 packages already
+packed 145 packages already
+packed 146 packages already
+packed 147 packages already
+packed 148 packages already
+packed 149 packages already
+packed 150 packages already
+packed 151 packages already
+packed 152 packages already
+packed 153 packages already
+packed 154 packages already
+packed 155 packages already
+packed 156 packages already
+packed 157 packages already
+packed 158 packages already
+packed 159 packages already
+packed 160 packages already
+packed 161 packages already
+packed 162 packages already
+packed 163 packages already
+packed 164 packages already
+packed 165 packages already
+packed 166 packages already
+packed 167 packages already
+packed 168 packages already
+packed 169 packages already
+packed 170 packages already
+packed 171 packages already
+packed 172 packages already
+packed 173 packages already
+packed 174 packages already
+packed 175 packages already
+packed 176 packages already
+packed 177 packages already
+packed 178 packages already
+packed 179 packages already
+packed 180 packages already
+packed 181 packages already
+packed 182 packages already
+packed 183 packages already
+packed 184 packages already
+packed 185 packages already
+packed 186 packages already
+packed 187 packages already
+packed 188 packages already
+packed 189 packages already
+packed 190 packages already
+packed 191 packages already
+packed 192 packages already
+packed 193 packages already
+packed 194 packages already
+packed 195 packages already
+packed 196 packages already
+packed 197 packages already
+packed 198 packages already
+packed 199 packages already
+packed 200 packages already
+packed 201 packages already
+packed 202 packages already
+packed 203 packages already
+packed 204 packages already
+packed 205 packages already
+packed 206 packages already
+packed 207 packages already
+packed 208 packages already
+packed 209 packages already
+packed 210 packages already
+packed 211 packages already
+packed 212 packages already
+packed 213 packages already
+packed 214 packages already
+packed 215 packages already
+packed 216 packages already
+packed 217 packages already
+packed 218 packages already
+packed 219 packages already
+packed 220 packages already
+packed 221 packages already
+packed 222 packages already
+packed 223 packages already
+packed 224 packages already
+packed 225 packages already
+packed 226 packages already
+packed 227 packages already
+packed 228 packages already
+packed 229 packages already
+packed 230 packages already
+packed 231 packages already
+packed 232 packages already
+packed 233 packages already
+packed 234 packages already
+packed 235 packages already
+packed 236 packages already
+packed 237 packages already
+packed 238 packages already
+packed 239 packages already
+packed 240 packages already
+packed 241 packages already
+packed 242 packages already
+packed 243 packages already
+packed 244 packages already
+packed 245 packages already
+packed 246 packages already
+packed 247 packages already
+packed 248 packages already
+packed 249 packages already
+packed 250 packages already
+packed 251 packages already
+packed 252 packages already
+packed 253 packages already
+packed 254 packages already
+packed 255 packages already
+packed 256 packages already
+packed 257 packages already
+packed 258 packages already
+packed 259 packages already
+packed 260 packages already
+packed 261 packages already
+packed 262 packages already
+packed 263 packages already
+packed 264 packages already
+packed 265 packages already
+packed 266 packages already
+packed 267 packages already
+packed 268 packages already
+packed 269 packages already
+packed 270 packages already
+packed 271 packages already
+packed 272 packages already
+packed 273 packages already
+packed 274 packages already
+packed 275 packages already
+packed 276 packages already
+packed 277 packages already
+packed 278 packages already
+packed 279 packages already
+packed 280 packages already
+packed 281 packages already
+packed 282 packages already
+packed 283 packages already
+packed 284 packages already
+packed 285 packages already
+packed 286 packages already
+packed 287 packages already
+packed 288 packages already
+packed 289 packages already
+packed 290 packages already
+packed 291 packages already
+packed 292 packages already
+packed 293 packages already
+packed 294 packages already
+packed 295 packages already
+packed 296 packages already
+packed 297 packages already
+finish picking up prediction set!
+prediction_set shape:  (296, 5, 352, 288, 1)
+shape of train_prediction (266, 5, 352, 288, 1) shape of train_y (266, 348, 284, 1)
+Train on 239 samples, validate on 27 samples
+Epoch 1/300
+ - 413s - loss: 931.1250 - ssim_for2d: 0.4660 - psnr_for2d: 18.4436 - val_loss: 1093.1821 - val_ssim_for2d: 0.4113 - val_psnr_for2d: 17.7492
+
+Epoch 00001: val_loss improved from inf to 1093.18207, saving model to ./checkpoint.h5
+Epoch 2/300
+ - 413s - loss: 905.0316 - ssim_for2d: 0.4695 - psnr_for2d: 18.5660 - val_loss: 1090.9632 - val_ssim_for2d: 0.4106 - val_psnr_for2d: 17.7582
+
+Epoch 00002: val_loss improved from 1093.18207 to 1090.96316, saving model to ./checkpoint.h5
+Epoch 3/300
+ - 411s - loss: 898.7295 - ssim_for2d: 0.4711 - psnr_for2d: 18.5963 - val_loss: 1084.1668 - val_ssim_for2d: 0.4136 - val_psnr_for2d: 17.7853
+
+Epoch 00003: val_loss improved from 1090.96316 to 1084.16682, saving model to ./checkpoint.h5
+Epoch 4/300
+ - 408s - loss: 901.6292 - ssim_for2d: 0.4722 - psnr_for2d: 18.5827 - val_loss: 1085.5598 - val_ssim_for2d: 0.4127 - val_psnr_for2d: 17.7800
+
+Epoch 00004: val_loss did not improve from 1084.16682
+Epoch 5/300
+ - 410s - loss: 891.3574 - ssim_for2d: 0.4733 - psnr_for2d: 18.6321 - val_loss: 1085.3587 - val_ssim_for2d: 0.4138 - val_psnr_for2d: 17.7808
+
+Epoch 00005: val_loss did not improve from 1084.16682
+Epoch 6/300
+ - 409s - loss: 902.5591 - ssim_for2d: 0.4736 - psnr_for2d: 18.5785 - val_loss: 1117.1403 - val_ssim_for2d: 0.4176 - val_psnr_for2d: 17.6550
+
+Epoch 00006: val_loss did not improve from 1084.16682
+Epoch 00006: early stopping
+
+ 32/266 [==>...........................] - ETA: 2:31
+ 64/266 [======>.......................] - ETA: 2:07
+ 96/266 [=========>....................] - ETA: 1:47
+128/266 [=============>................] - ETA: 1:26
+160/266 [=================>............] - ETA: 1:06
+192/266 [====================>.........] - ETA: 46s 
+224/266 [========================>.....] - ETA: 26s
+256/266 [===========================>..] - ETA: 6s 
+266/266 [==============================] - 167s 628ms/step
+ 
+
+AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH: 296 10 352 288 288 352 
+
+without any process, raw data:
+psnr_before, ssim_before: 13.682346301406387 0.15409605369424448 
+
+after processed by 3D SRnet:
+for train set, mse, ssim, psnr: 951.1482319078947 0.46820308929099175 18.35716063994214
+for test set, mse, ssim, psnr: 1242.394287109375 0.3949599862098694 17.188947677612305 
+

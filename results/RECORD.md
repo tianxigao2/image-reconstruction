@@ -422,7 +422,7 @@ Non-linear Mapping
 
 Reconstruction
 
-- Resulut: [model_1+3.out](https://bitbucket.org/EDKLW/image-reconstruction-2019/src/master/results/model_1%2B3.out)
+- Result: [model_1+3.out](https://bitbucket.org/EDKLW/image-reconstruction-2019/src/master/results/model_1%2B3.out)
 
 ##### hyper-parameter tuning #####
 
@@ -466,3 +466,23 @@ Reconstruction
 		mean_squared_error, ssim_trained, psnr_trained 97.87347929356461 0.8613884822796967 30.329247199882897
 		
 		--result stores in test2.h5
+
+##### 2D + 3D model #####
+
+Results:
+
+- slurm-6026838.out: sudden drop in val-loss in second model
+
+- slurm-6030026.out: pass interim prediction to 3d model, optimizor = (0.001, 1e-6)
+
+  - Earlystop, no improvement
+
+- slurm-6037270.out: pass interim prediction to 3d model, optimizor = (0.002, 1e-5), add 2 layers, batch = 10
+
+  - EarlyStop, no improvement
+
+- slurm-6038314.out: load saved model (probably overfit), fit with interim prediction
+
+  - PSNR: 13 -> 18
+
+  - error in Calculation of PSNR?

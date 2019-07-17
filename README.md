@@ -1,148 +1,98 @@
-### Tutorial of Sources ###
-
-* log into virtual env for tensorflow: ```conda activate tf-gpu```
-
-* Using Bridges:
-  
-  * ``` ssh -l *account* login.xsede.org ```
-
-  * ``` gsissh bridges ```
-
-  * ``` interact ```
-
-  * (if going to use gpu, use ```interact -gpu -egress ```, but with smaller memory)
-
-  * ``` module load anaconda3/2019.03 ```
-
-  * (if haven't build a new env yet, build by ``` conda create -y -n envName ```;
-
-  * ``` source activate ``` (now should get into (base) env)
-
-  * ``` conda activate *envName* ```
-
-  * can then install packages using pip or conda
-
-* Using scp:
-
-  ```
-  scp separator.py janegao@bridges.psc.edu:/pylon5/ac5610p/janegao/image-reconstruction-2019/
-  ```
-
-  ```
-  scp -r /local/directory janegao@bridges.psc.edu:/pylon5/ac5610p/janegao/image-reconstruction-2019/
-  ```
-
-  ```
-  scp janegao@bridges.psc.edu:/pylon5/ac5610p/janegao/running_output/slurm-5921791.out ../results/500_64_128_5_assign_8_hours_changed_PSNR.out
-  ```
-
-* Run a job on batch:
-
-  * create a new file as batch script([how to write a sample batch script](https://www.psc.edu/bridges/user-guide/sample-batch-scripts));
-
-  * batch script example:
-
-		#!/bin/bash
-		#SBATCH -p RM
-		#SBATCH -t 2:50:00
-		#SBATCH -N 1
-		#SBATCH --ntasks-per-node 16
-
-		#echo commands to stdout
-		set -x
-
-		#move to working directory
-		cd /pylon5/ac5610p/janegao/image-reconstruction-2019/code/
-
-		#run python file
-		python main.py
-
-		# USE "sbatch batch_scripts" to submit job
-
-  * call a job to run by typing ``` sbatch batch_script ```
-
-  * check all running (pending) jobs: ```squeue -u janegao```
-
-  * check status: ```sacct -X -j nnnnnnnn ```  (nnnn stands for the proj-id)
-
-  * result will be automatically generated to the same directory with batch script
-
-  * be sure to store code under pylon5 directory
-
 ### Concept and Theory ###
 
-**data**:
+#### data ####
 
-Using shepp-logan phantom to generate org pictures -> for *sequence of images reconstruction*
+Different dataset for different model:
 
-* Using compression rate = 50 and uncompressed videos, extracting pictures out and stored as TIFF(lossless)
+* Using shepp-logan phantom to generate org pictures -> for *sequence of images reconstruction*
+
+  - Using compression rate = 50 and uncompressed videos, extracting pictures out and stored as TIFF(lossless)
 
 * Use 3D model
 
-Using Timofte dataset with size of 3288 independent image for *single image reconstruction*
+  - Using Timofte dataset with size of 3288 independent image for *single image reconstruction*
+
+  - Compress by using resize: downsampling + upsampling, information missing
+
+  - PSNR, SSIM, MAE, MSE: 33.24609813224299, 0.9121916197185661, 0.016739558613043767, 0.0009313933013429778
 
 * Use 2D model
 
-Performance evaluated by PSNR and SSIM
+  - Using short movie sequence, frames extracted one by one from pictures
 
-**(2D) SRCNN single image model**
+  - Compress by using resize: downsampling + upsampling, information missing
 
-* Doing feature extracting in the first two layers
+#### (2D) SRCNN single image model ####
 
-**3D conv layer model with no padding for sequence of images**
+* Typical model: Build model as paper stated, using Timofte dataset only.
 
-* Subnet the paper mentioned: "video SR subnet" and "scene change detection and frame replacement subnet", but we will only use videp ST subnet
+  - PSNR, SSIM, MAE, MSE: 33.9774122589296, 0.9298915633331887, 0.01597587670676589, 0.0007675648953920149
 
-* Point: input packages should be concatinated
+* All parameters frozen inside model:
 
-**Transfer Learning**
+  - PSNR, SSIM, MAE, MSE: 34.39533863298893, 0.9314247043105195, 0.015128582491306834, 0.0007203916113815921
 
-* First two layers of SRCNN single image model (with org fine-tuned parameters) + the whole 3D conv layer
+* Transfer Learning model: Freeze the first one or two layers with fine-tuned parameters, provided by paper.
 
-[?]: should we train 3D conv layer before combining the two;
+  - Freeze only one layer makes better performance.
 
-[?]: should we use the whole 3d model;
+  - For 9-1-5 model, the second layer is doing non-linear mapping, thus only the first layer frozen helps.
 
-[?]: how to determine (by concept) if the transfer learning shows better performance. 
+  - For 9-3-5 model or 9-5-5 model, freeze the second layer may also help.	//TODO
 
-### Steps ###
+  - Test to add another non-linear mapping layer to the 9-3-5 or 9-5-5 model.	//TODO
 
-* Develop model following the experiment in SRCNN
+  - PSNR, SSIM, MAE, MSE: 34.568111435612344, 0.9339550069793681, 0.014882425023144312, 0.0006896958805634528
 
-  * 3 conv layers
+  - Not significant improvement: hyperparameter? Raw data too good?
 
-  * input and output are simgle images
+* Tuning structure: will add some more non-linear mapping layers help?
 
-* Run on local machine and [Bridges](https://bitbucket.org/EDKLW/image-reconstruction-2019/src/master/results/RECORD.md)
+  - Not significant improvement, sometimes 3 layers, sometimes 5 or 6 layers gave better result.
 
-* Develop 3D conv model
+#### 3D conv layer model with no padding for sequence of images ####
 
-* Separate 2D functions and 3D functions
+* Using movie sequence to train
 
-* Load fine-tuned parameter from .mat file
+  - Shepp-logan phantom not generalized enough;
 
-* [load the parameters into compilable format](https://bitbucket.org/EDKLW/image-reconstruction-2019/src/master/doc/transferLearning.md#How%20to%20use%20pre-trained%20data%20saved%20as%20.mat%20file%20and%20load%20as%20a%20model)
+  - Dataset for one movie too small: only 300 frames even before test-set separation.
 
-* freeze the first two layers and add another 2 layers
+  - Set stop points at the end of each movie when doing 5-frame packages, and then conbine packages for all movies to make a larger dataset.	//TODO
 
-* fine tune the learning rate of transfer learning model
+* Typical model: 3 conv3d layers with padding, 2 conv3d layers w/o padding, package size = 5
 
-* compare preformance of:
+* Training with typical model + 2 model conv3d layers with padding.
 
-  - self-trained SRCNN
+#### 2D model + 3D model: individual reconstruction + movie reconstruction ####
 
-  - typical SRCNN with trained parameters
+* Process data frames independently for the first model (aka 2d model), store the prediction as interim results;
 
-  - basic SRCNN model with added 2 layers
+* Pack interim results as input for the second model (aka 3d model), store the prediction for final results.
 
-=========================================================================
+  - When processing movie sequence directly, no need to do earlystopping and the performance will keep being improved;
 
-  - (basic SRCNN model with 3d model)
+  - After processing interim result, will experience a [sudden decrease](https://github.com/tianxigao2/image-reconstruction/tree/to_merge/results/slurm-6026838.out): [Earlystopping? Checkpoint model save?](https://github.com/tianxigao2/image-reconstruction/tree/to_merge/results/slrum-6028662.out)
+  - 	Running on local machine, with the second model take batch size = 2
+  -	Running on Bridges, with batch size = 20	=>	is it a problem of hyper-parameter?
 
-* choose different file to load base-model's parameters
+* Does not help?
 
-* append 3d model to the transfer learning model
+		x.shape:(300, 348, 284) y.shape(300, 348, 284)
+		psnr_raw, ssim_raw, mae_raw, mse_raw: 25.366856127420387, 0.9064812078136102, 111.63283933004146, 36.877505632453726
 
+		x_set.shape: (300, 352, 288, 1) y_set.shape: (300, 352, 288, 1)
+		psnr_interim, ssim_interim, mae_interim, mse_interim: 24.245902882606238, 0.8765903830874335, 9.984719794591268, 244.69206939697267
+
+		AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH:  296 300 288 352 352 288 5
+		x_set.shape:  (300, 352, 288, 1) y_set.shape:  (296, 348, 284, 1) x_interim.shape:  (296, 5, 352, 288, 1)
+		mse_final, ssim_final, psnr_final:  2603.812209670608 0.20025187650242368 13.975267255628431
+
+  - Loading fine-tuned parameters from previous trained 3d model
+
+  - Problem of reloading interim prediction?	//todo
+
+  - Missing backpropogation if split the model by half: using functional model to conbine the two structure into one model.	->code under folder 'functional'
 
 ### Structure in BitBucket ###
 
@@ -181,6 +131,18 @@ Performance evaluated by PSNR and SSIM
   * *train.py* specifys the callback functions and performance detecting metrics;
 
   * *acc.py* self-defines the callback functions and performance evaluators for *train.py*;
+
+**test_3d**:
+
+* Directly load interim prediction after SRCNN pre-processing
+
+  - check any possible errors in reloading function!	//TODO
+
+**functional**:
+
+* Using functional model to combine the two network inside one model
+
+  - Avoid data reload, add back propogation between the two networks
 
 **data** stores all the data pictures;
 
@@ -227,6 +189,7 @@ Under 'Timofte_dataset':
 * SRCNN
 
 * 3d Model
+
 
 
 
