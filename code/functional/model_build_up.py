@@ -3,13 +3,15 @@ from load_parameter import *
 from load_data import *
 import keras
 from keras.models import Sequential, Model
-from keras.layers import Input, Conv2D, MaxPooling2D, Conv3D, Reshape
+from keras.layers import Input, Lambda, Conv2D, MaxPooling2D, Conv3D, Reshape
 from keras import optimizers
 from keras.optimizers import adam
 from keras import backend
 import tensorflow as tf
 import numpy
 import math
+
+#TODO: depth defaults to be 5; If modified, need to change lambda function and lambda shape function
 
 def base_model_SRCNN(FILENAME, HEIGHT, WIDTH):
 
@@ -79,20 +81,18 @@ def SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     
     return model
 
-
-def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
-    #----------------------------build SRCNN model-----------------------------------------   
-    ip = Input(shape = (TARGET_HEIGHT, TARGET_WIDTH, 1))
-    SRCNN_network = base_model_SRCNN(FILENAME, TARGET_HEIGHT, TARGET_WIDTH) (ip)     
-
+def repacking(x):
+    #----------------------------get shape from input tensor---------------------------------
+    (AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp) = x.shape
+    DEPTH = 5
     #----------------------------pack frame one by one---------------------------------------
     FIRST = True
     HALF_RANGE = math.floor(DEPTH/2)
 
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
-    interim_tensor = sess.run(SRCNN_network, feed_dict = {
-        "input_1: 0": numpy.zeros((AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, 1)).astype(numpy.float32)})
+    interim_tensor = sess.run(x, feed_dict = {"input_1: 0":
+        numpy.zeros((AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp)).astype(numpy.float32)})
 
     for i in range(AMOUNT):
         if (i - HALF_RANGE) < 0 or (i + HALF_RANGE) >= AMOUNT:
@@ -121,17 +121,30 @@ def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
 
     package_set = numpy.reshape(package_set, (AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH, 1))   #(294, 5, 352, 288, 1)
     package_set_tensor= tf.convert_to_tensor(package_set, dtype = tf.float32)
+    return package_set_tensor
+
+def repacking_output_shape(input_shape):
+    #--------------get shape from input_shape---------------------------
+    [AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp] = list(input_shape)
+    DEPTH = 5
+    #--------------modify shape-----------------------------------------
+    for i in range(AMOUNT):
+        if (i - HALF_RANGE) < 0 or (i + HALF_RANGE) >= AMOUNT:
+            AMOUNT = AMOUNT - 1
+    
+    output_shape = (AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH, 1)
+    return output_shape
+
+def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
+    #----------------------------build SRCNN model-----------------------------------------   
+    ip = Input(shape = (TARGET_HEIGHT, TARGET_WIDTH, 1))
+    SRCNN_network = base_model_SRCNN(FILENAME, TARGET_HEIGHT, TARGET_WIDTH) (ip)     
+    
+    #----------------------------pack frame one by one---------------------------------------
+    interim_repacking = Lambda(repacking, output_shape = repacking_output_shape)(SRCNN_network)
 
     #---------------------------build 3dSRnet model--------------------------------------------
-    '''
-    #for testing only
-    interim_ip = Input(shape = (DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1))
-    SRnet_layer_tmp = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(interim_ip)
-    SRnet_tmp = Model(inputs = interim_ip, outputs = SRnet_layer_tmp)
-    print(SRnet_tmp.summary())
-    '''
-    #for combined model sequence
-    SRnet_layer = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(package_set_tensor) #<class 'tensorflow.python.framework.ops.Tensor'>
+    SRnet_layer = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(interim_repacking)
 
     #--------------------------test the result of combination----------------------------------
     combined_model = Model(inputs = ip, outputs = SRnet_layer)
