@@ -49,6 +49,8 @@ HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH = 176, 144, 352, 288 #default
 
 # package choice: akiyo_package; container_package; shepp_logan_phantom_package
 (x_set, y_set, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH) = container_2D(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
+y_set_tmp = y_set[:, 2:TARGET_HEIGHT - 2, 2:TARGET_WIDTH - 2, :]
+y_set = y_set_tmp
 
 print('x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH')
 print(x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH)
@@ -69,7 +71,8 @@ print('x.shape:', x.shape, 'y.shape', y.shape)
 FILENAME = 'x3.mat'
 
 model = combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
-
+model.compile(loss = 'mean_squared_error',
+                optimizer = adam(lr=0.0005, decay=1e-6), metrics=[ssim_for2d, psnr_for2d])
 # Train model ------------------------------------------------------------------------
 EPOCHS = 200
 BATCH = 20
