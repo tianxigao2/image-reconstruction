@@ -43,20 +43,6 @@ def base_model_SRCNN(FILENAME, HEIGHT, WIDTH):
 
 def SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     '''
-    SRnet1 = Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last",
-                    activation='relu', use_bias=True)(package_set_tensor)   #input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)
-    SRnet2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
-                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet1)
-    SRnet3 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
-                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet2)
-    SRnet_downgrade_1 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
-                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet3)
-    SRnet_downgrade_2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
-                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet_downgrade_1)
-    SRnet_reshape = Reshape((TARGET_HEIGHT - 2*2, TARGET_WIDTH - 2*2, -1))(SRnet_downgrade_2)
-    SRnet_output = Conv2D(1, kernel_size=(3, 3), padding='same', activation='relu', use_bias = True,
-                    input_shape=(DEPTH,TARGET_HEIGHT-2*2, TARGET_WIDTH-2*2, -1))(SRnet_reshape)
-    '''
     model = Sequential()
     
     model.add(Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last", activation='relu', use_bias=True, input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)))
@@ -72,6 +58,27 @@ def SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.002, decay=1e-5), metrics=[ssim_for2d, psnr_for2d])
 
     return model
+    '''    
+    input_placeholder = Input(shape = (DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1))
+    SRnet1 = Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last",
+                    activation='relu', use_bias=True)(input_placeholder)   
+                    #input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)
+    SRnet2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet1)
+    SRnet3 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet2)
+    SRnet_downgrade_1 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet3)
+    SRnet_downgrade_2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet_downgrade_1)
+    SRnet_reshape = Reshape((TARGET_HEIGHT - 2*2, TARGET_WIDTH - 2*2, -1))(SRnet_downgrade_2)
+    SRnet_output = Conv2D(1, kernel_size=(3, 3), padding='same', activation='relu', use_bias = True,
+                    input_shape=(DEPTH,TARGET_HEIGHT-2*2, TARGET_WIDTH-2*2, -1))(SRnet_reshape)
+
+    model = Model(inputs = input_placeholder, outputs = SRnet_reshape)
+    
+    return model
+
 
 def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     #----------------------------build SRCNN model-----------------------------------------   
@@ -124,8 +131,8 @@ def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     print(SRnet_tmp.summary())
     '''
     #for combined model sequence
-    SRnet_layer = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(package_set_tensor)
-    
+    SRnet_layer = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(package_set_tensor) #<class 'tensorflow.python.framework.ops.Tensor'>
+
     #--------------------------test the result of combination----------------------------------
     combined_model = Model(inputs = ip, outputs = SRnet_layer)
     print(combined_model.summary())  

@@ -1,0 +1,535 @@
++ cd /pylon5/ac5610p/janegao/image-reconstruction-2019/code/code_3d/
++ python main_3d.py
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-27
+OMP: Info #156: KMP_AFFINITY: 28 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 2 packages x 14 cores/pkg x 1 threads/core (28 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 0 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 0 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 0 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 0 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 20 maps to package 0 core 14 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 1 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 21 maps to package 1 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 1 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 22 maps to package 1 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 1 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 23 maps to package 1 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 1 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 24 maps to package 1 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 1 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 25 maps to package 1 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 1 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 26 maps to package 1 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 1 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 27 maps to package 1 core 14 
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8590 thread 0 bound to OS proc set 0
+2019-07-15 16:47:37.281382: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-07-15 16:47:37.285415: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294675000 Hz
+2019-07-15 16:47:37.285589: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5652c1e08f50 executing computations on platform Host. Devices:
+2019-07-15 16:47:37.285627: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-15 16:47:37.285742: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8608 thread 1 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8730 thread 2 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8731 thread 3 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8732 thread 4 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8733 thread 5 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8734 thread 6 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8735 thread 7 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8737 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8736 thread 8 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8738 thread 10 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8739 thread 11 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8740 thread 12 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8741 thread 13 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8742 thread 14 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8743 thread 15 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8744 thread 16 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8745 thread 17 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8746 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8747 thread 19 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8748 thread 20 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8749 thread 21 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8750 thread 22 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8751 thread 23 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8752 thread 24 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8753 thread 25 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8754 thread 26 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8755 thread 27 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8756 thread 28 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8609 thread 29 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8757 thread 30 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8758 thread 31 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8759 thread 32 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8760 thread 33 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8762 thread 35 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8761 thread 34 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8763 thread 36 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8764 thread 37 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8765 thread 38 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8766 thread 39 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8767 thread 40 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8768 thread 41 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8769 thread 42 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8770 thread 43 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8771 thread 44 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8772 thread 45 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8773 thread 46 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8775 thread 48 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8774 thread 47 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8776 thread 49 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8777 thread 50 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8778 thread 51 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8779 thread 52 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8780 thread 53 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8781 thread 54 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8782 thread 55 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 8590 tid 8783 thread 56 bound to OS proc set 0
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv3d_1 (Conv3D)            (None, 5, 64, 64, 32)     896       
+_________________________________________________________________
+conv3d_2 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_3 (Conv3D)            (None, 5, 64, 64, 32)     27680     
+_________________________________________________________________
+conv3d_4 (Conv3D)            (None, 3, 62, 62, 32)     27680     
+_________________________________________________________________
+conv3d_5 (Conv3D)            (None, 1, 60, 60, 32)     27680     
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 60, 60, 32)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 60, 60, 1)         289       
+=================================================================
+Total params: 111,905
+Trainable params: 111,905
+Non-trainable params: 0
+_________________________________________________________________
+None
+shape of train_x (236, 5, 64, 64, 1) shape of train_y (236, 60, 60, 1)
+Train on 188 samples, validate on 48 samples
+Epoch 1/500
+ - 10s - loss: 3438.3818 - ssim_for2d: 0.4103 - psnr_for2d: 15.0754 - val_loss: 1104.7319 - val_ssim_for2d: 0.5770 - val_psnr_for2d: 17.6987
+
+Epoch 00001: val_loss improved from inf to 1104.73189, saving model to ./3d_network.h5
+Epoch 2/500
+ - 8s - loss: 661.7841 - ssim_for2d: 0.5870 - psnr_for2d: 20.0694 - val_loss: 464.9868 - val_ssim_for2d: 0.5920 - val_psnr_for2d: 21.4570
+
+Epoch 00002: val_loss improved from 1104.73189 to 464.98678, saving model to ./3d_network.h5
+Epoch 3/500
+ - 8s - loss: 460.3048 - ssim_for2d: 0.6166 - psnr_for2d: 21.5135 - val_loss: 397.1441 - val_ssim_for2d: 0.6443 - val_psnr_for2d: 22.1423
+
+Epoch 00003: val_loss improved from 464.98678 to 397.14413, saving model to ./3d_network.h5
+Epoch 4/500
+ - 8s - loss: 390.7277 - ssim_for2d: 0.6614 - psnr_for2d: 22.2160 - val_loss: 372.9177 - val_ssim_for2d: 0.6734 - val_psnr_for2d: 22.4155
+
+Epoch 00004: val_loss improved from 397.14413 to 372.91773, saving model to ./3d_network.h5
+Epoch 5/500
+ - 8s - loss: 362.2873 - ssim_for2d: 0.6882 - psnr_for2d: 22.5429 - val_loss: 348.8622 - val_ssim_for2d: 0.6940 - val_psnr_for2d: 22.7055
+
+Epoch 00005: val_loss improved from 372.91773 to 348.86219, saving model to ./3d_network.h5
+Epoch 6/500
+ - 8s - loss: 345.3952 - ssim_for2d: 0.7034 - psnr_for2d: 22.7505 - val_loss: 334.1140 - val_ssim_for2d: 0.7071 - val_psnr_for2d: 22.8934
+
+Epoch 00006: val_loss improved from 348.86219 to 334.11404, saving model to ./3d_network.h5
+Epoch 7/500
+ - 8s - loss: 328.7470 - ssim_for2d: 0.7134 - psnr_for2d: 22.9652 - val_loss: 316.8544 - val_ssim_for2d: 0.7164 - val_psnr_for2d: 23.1243
+
+Epoch 00007: val_loss improved from 334.11404 to 316.85441, saving model to ./3d_network.h5
+Epoch 8/500
+ - 8s - loss: 312.4012 - ssim_for2d: 0.7228 - psnr_for2d: 23.1871 - val_loss: 301.7210 - val_ssim_for2d: 0.7248 - val_psnr_for2d: 23.3376
+
+Epoch 00008: val_loss improved from 316.85441 to 301.72104, saving model to ./3d_network.h5
+Epoch 9/500
+ - 8s - loss: 296.1761 - ssim_for2d: 0.7328 - psnr_for2d: 23.4195 - val_loss: 288.3532 - val_ssim_for2d: 0.7346 - val_psnr_for2d: 23.5354
+
+Epoch 00009: val_loss improved from 301.72104 to 288.35322, saving model to ./3d_network.h5
+Epoch 10/500
+ - 8s - loss: 282.0272 - ssim_for2d: 0.7417 - psnr_for2d: 23.6327 - val_loss: 276.1331 - val_ssim_for2d: 0.7428 - val_psnr_for2d: 23.7249
+
+Epoch 00010: val_loss improved from 288.35322 to 276.13307, saving model to ./3d_network.h5
+Epoch 11/500
+ - 8s - loss: 269.2400 - ssim_for2d: 0.7496 - psnr_for2d: 23.8362 - val_loss: 264.7469 - val_ssim_for2d: 0.7488 - val_psnr_for2d: 23.9096
+
+Epoch 00011: val_loss improved from 276.13307 to 264.74685, saving model to ./3d_network.h5
+Epoch 12/500
+ - 8s - loss: 258.1725 - ssim_for2d: 0.7554 - psnr_for2d: 24.0204 - val_loss: 256.1449 - val_ssim_for2d: 0.7549 - val_psnr_for2d: 24.0538
+
+Epoch 00012: val_loss improved from 264.74685 to 256.14486, saving model to ./3d_network.h5
+Epoch 13/500
+ - 8s - loss: 248.2104 - ssim_for2d: 0.7611 - psnr_for2d: 24.1919 - val_loss: 248.1040 - val_ssim_for2d: 0.7584 - val_psnr_for2d: 24.1927
+
+Epoch 00013: val_loss improved from 256.14486 to 248.10399, saving model to ./3d_network.h5
+Epoch 14/500
+ - 8s - loss: 239.5555 - ssim_for2d: 0.7662 - psnr_for2d: 24.3468 - val_loss: 241.5942 - val_ssim_for2d: 0.7625 - val_psnr_for2d: 24.3094
+
+Epoch 00014: val_loss improved from 248.10399 to 241.59418, saving model to ./3d_network.h5
+Epoch 15/500
+ - 8s - loss: 232.0416 - ssim_for2d: 0.7710 - psnr_for2d: 24.4867 - val_loss: 237.2659 - val_ssim_for2d: 0.7680 - val_psnr_for2d: 24.3884
+
+Epoch 00015: val_loss improved from 241.59418 to 237.26590, saving model to ./3d_network.h5
+Epoch 16/500
+ - 8s - loss: 224.9048 - ssim_for2d: 0.7759 - psnr_for2d: 24.6239 - val_loss: 232.9684 - val_ssim_for2d: 0.7688 - val_psnr_for2d: 24.4712
+
+Epoch 00016: val_loss improved from 237.26590 to 232.96835, saving model to ./3d_network.h5
+Epoch 17/500
+ - 8s - loss: 217.6589 - ssim_for2d: 0.7797 - psnr_for2d: 24.7671 - val_loss: 224.6772 - val_ssim_for2d: 0.7740 - val_psnr_for2d: 24.6289
+
+Epoch 00017: val_loss improved from 232.96835 to 224.67717, saving model to ./3d_network.h5
+Epoch 18/500
+ - 8s - loss: 212.1414 - ssim_for2d: 0.7840 - psnr_for2d: 24.8796 - val_loss: 220.4393 - val_ssim_for2d: 0.7758 - val_psnr_for2d: 24.7146
+
+Epoch 00018: val_loss improved from 224.67717 to 220.43927, saving model to ./3d_network.h5
+Epoch 19/500
+ - 8s - loss: 206.3684 - ssim_for2d: 0.7876 - psnr_for2d: 25.0008 - val_loss: 216.6832 - val_ssim_for2d: 0.7782 - val_psnr_for2d: 24.7912
+
+Epoch 00019: val_loss improved from 220.43927 to 216.68322, saving model to ./3d_network.h5
+Epoch 20/500
+ - 8s - loss: 200.2861 - ssim_for2d: 0.7913 - psnr_for2d: 25.1321 - val_loss: 212.5849 - val_ssim_for2d: 0.7818 - val_psnr_for2d: 24.8743
+
+Epoch 00020: val_loss improved from 216.68322 to 212.58485, saving model to ./3d_network.h5
+Epoch 21/500
+ - 8s - loss: 199.0250 - ssim_for2d: 0.7939 - psnr_for2d: 25.1605 - val_loss: 207.0776 - val_ssim_for2d: 0.7838 - val_psnr_for2d: 24.9881
+
+Epoch 00021: val_loss improved from 212.58485 to 207.07763, saving model to ./3d_network.h5
+Epoch 22/500
+ - 8s - loss: 193.6241 - ssim_for2d: 0.7967 - psnr_for2d: 25.2830 - val_loss: 205.6405 - val_ssim_for2d: 0.7863 - val_psnr_for2d: 25.0210
+
+Epoch 00022: val_loss improved from 207.07763 to 205.64051, saving model to ./3d_network.h5
+Epoch 23/500
+ - 8s - loss: 187.2125 - ssim_for2d: 0.8002 - psnr_for2d: 25.4297 - val_loss: 201.2852 - val_ssim_for2d: 0.7885 - val_psnr_for2d: 25.1161
+
+Epoch 00023: val_loss improved from 205.64051 to 201.28523, saving model to ./3d_network.h5
+Epoch 24/500
+ - 8s - loss: 182.7410 - ssim_for2d: 0.8031 - psnr_for2d: 25.5347 - val_loss: 196.2242 - val_ssim_for2d: 0.7916 - val_psnr_for2d: 25.2282
+
+Epoch 00024: val_loss improved from 201.28523 to 196.22417, saving model to ./3d_network.h5
+Epoch 25/500
+ - 8s - loss: 180.2186 - ssim_for2d: 0.8060 - psnr_for2d: 25.5969 - val_loss: 191.4646 - val_ssim_for2d: 0.7945 - val_psnr_for2d: 25.3359
+
+Epoch 00025: val_loss improved from 196.22417 to 191.46460, saving model to ./3d_network.h5
+Epoch 26/500
+ - 8s - loss: 178.3257 - ssim_for2d: 0.8082 - psnr_for2d: 25.6460 - val_loss: 204.1871 - val_ssim_for2d: 0.7937 - val_psnr_for2d: 25.0584
+
+Epoch 00026: val_loss did not improve from 191.46460
+Epoch 27/500
+ - 8s - loss: 175.0452 - ssim_for2d: 0.8104 - psnr_for2d: 25.7272 - val_loss: 192.9780 - val_ssim_for2d: 0.7972 - val_psnr_for2d: 25.3076
+
+Epoch 00027: val_loss did not improve from 191.46460
+Epoch 28/500
+ - 8s - loss: 169.9370 - ssim_for2d: 0.8133 - psnr_for2d: 25.8560 - val_loss: 184.9484 - val_ssim_for2d: 0.8024 - val_psnr_for2d: 25.4901
+
+Epoch 00028: val_loss improved from 191.46460 to 184.94840, saving model to ./3d_network.h5
+Epoch 29/500
+ - 8s - loss: 164.0374 - ssim_for2d: 0.8168 - psnr_for2d: 26.0108 - val_loss: 181.1897 - val_ssim_for2d: 0.8031 - val_psnr_for2d: 25.5846
+
+Epoch 00029: val_loss improved from 184.94840 to 181.18975, saving model to ./3d_network.h5
+Epoch 30/500
+ - 8s - loss: 164.8998 - ssim_for2d: 0.8183 - psnr_for2d: 25.9893 - val_loss: 187.1009 - val_ssim_for2d: 0.8039 - val_psnr_for2d: 25.4414
+
+Epoch 00030: val_loss did not improve from 181.18975
+Epoch 31/500
+ - 8s - loss: 163.6848 - ssim_for2d: 0.8199 - psnr_for2d: 26.0230 - val_loss: 174.8150 - val_ssim_for2d: 0.8080 - val_psnr_for2d: 25.7412
+
+Epoch 00031: val_loss improved from 181.18975 to 174.81498, saving model to ./3d_network.h5
+Epoch 32/500
+ - 8s - loss: 159.6115 - ssim_for2d: 0.8224 - psnr_for2d: 26.1332 - val_loss: 172.1856 - val_ssim_for2d: 0.8103 - val_psnr_for2d: 25.8053
+
+Epoch 00032: val_loss improved from 174.81498 to 172.18562, saving model to ./3d_network.h5
+Epoch 33/500
+ - 8s - loss: 153.0793 - ssim_for2d: 0.8250 - psnr_for2d: 26.3151 - val_loss: 170.8494 - val_ssim_for2d: 0.8115 - val_psnr_for2d: 25.8397
+
+Epoch 00033: val_loss improved from 172.18562 to 170.84940, saving model to ./3d_network.h5
+Epoch 34/500
+ - 8s - loss: 150.3990 - ssim_for2d: 0.8272 - psnr_for2d: 26.3929 - val_loss: 168.4590 - val_ssim_for2d: 0.8130 - val_psnr_for2d: 25.9099
+
+Epoch 00034: val_loss improved from 170.84940 to 168.45904, saving model to ./3d_network.h5
+Epoch 35/500
+ - 8s - loss: 146.8450 - ssim_for2d: 0.8295 - psnr_for2d: 26.4977 - val_loss: 171.4026 - val_ssim_for2d: 0.8156 - val_psnr_for2d: 25.8318
+
+Epoch 00035: val_loss did not improve from 168.45904
+Epoch 36/500
+ - 8s - loss: 150.5530 - ssim_for2d: 0.8300 - psnr_for2d: 26.3913 - val_loss: 168.4390 - val_ssim_for2d: 0.8156 - val_psnr_for2d: 25.9087
+
+Epoch 00036: val_loss improved from 168.45904 to 168.43902, saving model to ./3d_network.h5
+Epoch 37/500
+ - 8s - loss: 146.1290 - ssim_for2d: 0.8321 - psnr_for2d: 26.5194 - val_loss: 164.4018 - val_ssim_for2d: 0.8160 - val_psnr_for2d: 26.0195
+
+Epoch 00037: val_loss improved from 168.43902 to 164.40180, saving model to ./3d_network.h5
+Epoch 38/500
+ - 8s - loss: 142.4250 - ssim_for2d: 0.8341 - psnr_for2d: 26.6316 - val_loss: 164.1902 - val_ssim_for2d: 0.8196 - val_psnr_for2d: 26.0238
+
+Epoch 00038: val_loss improved from 164.40180 to 164.19024, saving model to ./3d_network.h5
+Epoch 39/500
+ - 8s - loss: 138.1336 - ssim_for2d: 0.8362 - psnr_for2d: 26.7651 - val_loss: 159.6952 - val_ssim_for2d: 0.8210 - val_psnr_for2d: 26.1516
+
+Epoch 00039: val_loss improved from 164.19024 to 159.69525, saving model to ./3d_network.h5
+Epoch 40/500
+ - 8s - loss: 136.4378 - ssim_for2d: 0.8379 - psnr_for2d: 26.8197 - val_loss: 159.7872 - val_ssim_for2d: 0.8224 - val_psnr_for2d: 26.1509
+
+Epoch 00040: val_loss did not improve from 159.69525
+Epoch 41/500
+ - 8s - loss: 142.9092 - ssim_for2d: 0.8379 - psnr_for2d: 26.6182 - val_loss: 156.4725 - val_ssim_for2d: 0.8236 - val_psnr_for2d: 26.2357
+
+Epoch 00041: val_loss improved from 159.69525 to 156.47248, saving model to ./3d_network.h5
+Epoch 42/500
+ - 8s - loss: 137.0429 - ssim_for2d: 0.8400 - psnr_for2d: 26.8021 - val_loss: 158.8441 - val_ssim_for2d: 0.8256 - val_psnr_for2d: 26.1759
+
+Epoch 00042: val_loss did not improve from 156.47248
+Epoch 43/500
+ - 8s - loss: 132.5380 - ssim_for2d: 0.8422 - psnr_for2d: 26.9476 - val_loss: 155.7582 - val_ssim_for2d: 0.8269 - val_psnr_for2d: 26.2584
+
+Epoch 00043: val_loss improved from 156.47248 to 155.75819, saving model to ./3d_network.h5
+Epoch 44/500
+ - 8s - loss: 132.3785 - ssim_for2d: 0.8432 - psnr_for2d: 26.9523 - val_loss: 151.9661 - val_ssim_for2d: 0.8267 - val_psnr_for2d: 26.3626
+
+Epoch 00044: val_loss improved from 155.75819 to 151.96607, saving model to ./3d_network.h5
+Epoch 45/500
+ - 8s - loss: 129.3196 - ssim_for2d: 0.8449 - psnr_for2d: 27.0544 - val_loss: 148.4713 - val_ssim_for2d: 0.8292 - val_psnr_for2d: 26.4703
+
+Epoch 00045: val_loss improved from 151.96607 to 148.47135, saving model to ./3d_network.h5
+Epoch 46/500
+ - 8s - loss: 124.7998 - ssim_for2d: 0.8469 - psnr_for2d: 27.2106 - val_loss: 150.4529 - val_ssim_for2d: 0.8304 - val_psnr_for2d: 26.4155
+
+Epoch 00046: val_loss did not improve from 148.47135
+Epoch 47/500
+ - 8s - loss: 123.7415 - ssim_for2d: 0.8483 - psnr_for2d: 27.2484 - val_loss: 145.5200 - val_ssim_for2d: 0.8311 - val_psnr_for2d: 26.5645
+
+Epoch 00047: val_loss improved from 148.47135 to 145.51996, saving model to ./3d_network.h5
+Epoch 48/500
+ - 8s - loss: 121.8410 - ssim_for2d: 0.8498 - psnr_for2d: 27.3155 - val_loss: 153.9288 - val_ssim_for2d: 0.8300 - val_psnr_for2d: 26.3098
+
+Epoch 00048: val_loss did not improve from 145.51996
+Epoch 49/500
+ - 8s - loss: 131.1820 - ssim_for2d: 0.8488 - psnr_for2d: 26.9963 - val_loss: 163.0724 - val_ssim_for2d: 0.8322 - val_psnr_for2d: 26.0596
+
+Epoch 00049: val_loss did not improve from 145.51996
+Epoch 50/500
+ - 8s - loss: 128.0561 - ssim_for2d: 0.8505 - psnr_for2d: 27.0995 - val_loss: 151.0056 - val_ssim_for2d: 0.8331 - val_psnr_for2d: 26.4078
+
+Epoch 00050: val_loss did not improve from 145.51996
+Epoch 51/500
+ - 8s - loss: 123.5895 - ssim_for2d: 0.8522 - psnr_for2d: 27.2523 - val_loss: 141.3353 - val_ssim_for2d: 0.8358 - val_psnr_for2d: 26.7003
+
+Epoch 00051: val_loss improved from 145.51996 to 141.33529, saving model to ./3d_network.h5
+Epoch 52/500
+ - 8s - loss: 116.4527 - ssim_for2d: 0.8545 - psnr_for2d: 27.5132 - val_loss: 141.0151 - val_ssim_for2d: 0.8361 - val_psnr_for2d: 26.7171
+
+Epoch 00052: val_loss improved from 141.33529 to 141.01506, saving model to ./3d_network.h5
+Epoch 53/500
+ - 8s - loss: 113.5926 - ssim_for2d: 0.8562 - psnr_for2d: 27.6230 - val_loss: 139.4858 - val_ssim_for2d: 0.8373 - val_psnr_for2d: 26.7653
+
+Epoch 00053: val_loss improved from 141.01506 to 139.48577, saving model to ./3d_network.h5
+Epoch 54/500
+ - 8s - loss: 112.3622 - ssim_for2d: 0.8574 - psnr_for2d: 27.6697 - val_loss: 138.3082 - val_ssim_for2d: 0.8384 - val_psnr_for2d: 26.7965
+
+Epoch 00054: val_loss improved from 139.48577 to 138.30815, saving model to ./3d_network.h5
+Epoch 55/500
+ - 8s - loss: 112.6700 - ssim_for2d: 0.8582 - psnr_for2d: 27.6561 - val_loss: 137.7706 - val_ssim_for2d: 0.8394 - val_psnr_for2d: 26.8183
+
+Epoch 00055: val_loss improved from 138.30815 to 137.77057, saving model to ./3d_network.h5
+Epoch 56/500
+ - 8s - loss: 110.5674 - ssim_for2d: 0.8594 - psnr_for2d: 27.7390 - val_loss: 142.5153 - val_ssim_for2d: 0.8398 - val_psnr_for2d: 26.6661
+
+Epoch 00056: val_loss did not improve from 137.77057
+Epoch 57/500
+ - 8s - loss: 117.5927 - ssim_for2d: 0.8593 - psnr_for2d: 27.4665 - val_loss: 135.2952 - val_ssim_for2d: 0.8411 - val_psnr_for2d: 26.9002
+
+Epoch 00057: val_loss improved from 137.77057 to 135.29522, saving model to ./3d_network.h5
+Epoch 58/500
+ - 8s - loss: 110.7639 - ssim_for2d: 0.8613 - psnr_for2d: 27.7311 - val_loss: 136.9731 - val_ssim_for2d: 0.8427 - val_psnr_for2d: 26.8453
+
+Epoch 00058: val_loss did not improve from 135.29522
+Epoch 59/500
+ - 8s - loss: 108.1943 - ssim_for2d: 0.8627 - psnr_for2d: 27.8327 - val_loss: 135.8944 - val_ssim_for2d: 0.8424 - val_psnr_for2d: 26.8784
+
+Epoch 00059: val_loss did not improve from 135.29522
+Epoch 60/500
+ - 8s - loss: 106.1709 - ssim_for2d: 0.8637 - psnr_for2d: 27.9168 - val_loss: 133.2918 - val_ssim_for2d: 0.8449 - val_psnr_for2d: 26.9686
+
+Epoch 00060: val_loss improved from 135.29522 to 133.29179, saving model to ./3d_network.h5
+Epoch 61/500
+ - 8s - loss: 105.1232 - ssim_for2d: 0.8649 - psnr_for2d: 27.9623 - val_loss: 136.6406 - val_ssim_for2d: 0.8439 - val_psnr_for2d: 26.8571
+
+Epoch 00061: val_loss did not improve from 133.29179
+Epoch 62/500
+ - 8s - loss: 108.2169 - ssim_for2d: 0.8650 - psnr_for2d: 27.8309 - val_loss: 132.3379 - val_ssim_for2d: 0.8440 - val_psnr_for2d: 27.0069
+
+Epoch 00062: val_loss improved from 133.29179 to 132.33788, saving model to ./3d_network.h5
+Epoch 63/500
+ - 8s - loss: 104.3908 - ssim_for2d: 0.8663 - psnr_for2d: 27.9894 - val_loss: 130.6188 - val_ssim_for2d: 0.8462 - val_psnr_for2d: 27.0665
+
+Epoch 00063: val_loss improved from 132.33788 to 130.61880, saving model to ./3d_network.h5
+Epoch 64/500
+ - 8s - loss: 101.0646 - ssim_for2d: 0.8678 - psnr_for2d: 28.1319 - val_loss: 130.3721 - val_ssim_for2d: 0.8476 - val_psnr_for2d: 27.0802
+
+Epoch 00064: val_loss improved from 130.61880 to 130.37213, saving model to ./3d_network.h5
+Epoch 65/500
+ - 8s - loss: 109.4400 - ssim_for2d: 0.8675 - psnr_for2d: 27.7942 - val_loss: 157.4690 - val_ssim_for2d: 0.8444 - val_psnr_for2d: 26.2286
+
+Epoch 00065: val_loss did not improve from 130.37213
+Epoch 66/500
+ - 8s - loss: 109.4635 - ssim_for2d: 0.8674 - psnr_for2d: 27.7888 - val_loss: 133.4069 - val_ssim_for2d: 0.8485 - val_psnr_for2d: 26.9775
+
+Epoch 00066: val_loss did not improve from 130.37213
+Epoch 67/500
+ - 8s - loss: 106.8816 - ssim_for2d: 0.8689 - psnr_for2d: 27.8886 - val_loss: 130.1717 - val_ssim_for2d: 0.8472 - val_psnr_for2d: 27.0850
+
+Epoch 00067: val_loss improved from 130.37213 to 130.17171, saving model to ./3d_network.h5
+Epoch 68/500
+ - 8s - loss: 102.5537 - ssim_for2d: 0.8699 - psnr_for2d: 28.0686 - val_loss: 132.6501 - val_ssim_for2d: 0.8483 - val_psnr_for2d: 26.9931
+
+Epoch 00068: val_loss did not improve from 130.17171
+Epoch 69/500
+ - 8s - loss: 99.0935 - ssim_for2d: 0.8714 - psnr_for2d: 28.2162 - val_loss: 127.7751 - val_ssim_for2d: 0.8496 - val_psnr_for2d: 27.1627
+
+Epoch 00069: val_loss improved from 130.17171 to 127.77509, saving model to ./3d_network.h5
+Epoch 70/500
+ - 8s - loss: 99.6125 - ssim_for2d: 0.8721 - psnr_for2d: 28.1927 - val_loss: 127.9302 - val_ssim_for2d: 0.8513 - val_psnr_for2d: 27.1684
+
+Epoch 00070: val_loss did not improve from 127.77509
+Epoch 71/500
+ - 8s - loss: 95.8054 - ssim_for2d: 0.8736 - psnr_for2d: 28.3641 - val_loss: 126.4536 - val_ssim_for2d: 0.8522 - val_psnr_for2d: 27.2220
+
+Epoch 00071: val_loss improved from 127.77509 to 126.45356, saving model to ./3d_network.h5
+Epoch 72/500
+ - 8s - loss: 95.2050 - ssim_for2d: 0.8743 - psnr_for2d: 28.3932 - val_loss: 125.2540 - val_ssim_for2d: 0.8519 - val_psnr_for2d: 27.2695
+
+Epoch 00072: val_loss improved from 126.45356 to 125.25398, saving model to ./3d_network.h5
+Epoch 73/500
+ - 8s - loss: 92.9646 - ssim_for2d: 0.8753 - psnr_for2d: 28.4955 - val_loss: 123.4351 - val_ssim_for2d: 0.8532 - val_psnr_for2d: 27.3385
+
+Epoch 00073: val_loss improved from 125.25398 to 123.43510, saving model to ./3d_network.h5
+Epoch 74/500
+ - 8s - loss: 95.1250 - ssim_for2d: 0.8759 - psnr_for2d: 28.3981 - val_loss: 132.9868 - val_ssim_for2d: 0.8527 - val_psnr_for2d: 26.9961
+
+Epoch 00074: val_loss did not improve from 123.43510
+Epoch 75/500
+ - 8s - loss: 96.5328 - ssim_for2d: 0.8762 - psnr_for2d: 28.3317 - val_loss: 144.6314 - val_ssim_for2d: 0.8500 - val_psnr_for2d: 26.6096
+
+Epoch 00075: val_loss did not improve from 123.43510
+Epoch 76/500
+ - 8s - loss: 101.5953 - ssim_for2d: 0.8752 - psnr_for2d: 28.1178 - val_loss: 127.8631 - val_ssim_for2d: 0.8531 - val_psnr_for2d: 27.1760
+
+Epoch 00076: val_loss did not improve from 123.43510
+Epoch 77/500
+ - 8s - loss: 93.3684 - ssim_for2d: 0.8776 - psnr_for2d: 28.4795 - val_loss: 121.6249 - val_ssim_for2d: 0.8554 - val_psnr_for2d: 27.4088
+
+Epoch 00077: val_loss improved from 123.43510 to 121.62492, saving model to ./3d_network.h5
+Epoch 78/500
+ - 8s - loss: 90.0387 - ssim_for2d: 0.8788 - psnr_for2d: 28.6360 - val_loss: 121.8557 - val_ssim_for2d: 0.8543 - val_psnr_for2d: 27.4098
+
+Epoch 00078: val_loss did not improve from 121.62492
+Epoch 79/500
+ - 8s - loss: 95.4961 - ssim_for2d: 0.8784 - psnr_for2d: 28.3818 - val_loss: 121.9251 - val_ssim_for2d: 0.8560 - val_psnr_for2d: 27.4090
+
+Epoch 00079: val_loss did not improve from 121.62492
+Epoch 80/500
+ - 8s - loss: 94.2509 - ssim_for2d: 0.8793 - psnr_for2d: 28.4384 - val_loss: 120.0696 - val_ssim_for2d: 0.8562 - val_psnr_for2d: 27.4687
+
+Epoch 00080: val_loss improved from 121.62492 to 120.06960, saving model to ./3d_network.h5
+Epoch 81/500
+ - 8s - loss: 87.7140 - ssim_for2d: 0.8808 - psnr_for2d: 28.7520 - val_loss: 120.0709 - val_ssim_for2d: 0.8570 - val_psnr_for2d: 27.4762
+
+Epoch 00081: val_loss did not improve from 120.06960
+Epoch 82/500
+ - 8s - loss: 90.9234 - ssim_for2d: 0.8810 - psnr_for2d: 28.5944 - val_loss: 118.6838 - val_ssim_for2d: 0.8583 - val_psnr_for2d: 27.5332
+
+Epoch 00082: val_loss improved from 120.06960 to 118.68383, saving model to ./3d_network.h5
+Epoch 83/500
+ - 8s - loss: 85.8984 - ssim_for2d: 0.8827 - psnr_for2d: 28.8449 - val_loss: 119.8813 - val_ssim_for2d: 0.8577 - val_psnr_for2d: 27.4857
+
+Epoch 00083: val_loss did not improve from 118.68383
+Epoch 84/500
+ - 8s - loss: 85.9505 - ssim_for2d: 0.8829 - psnr_for2d: 28.8399 - val_loss: 120.3345 - val_ssim_for2d: 0.8582 - val_psnr_for2d: 27.4681
+
+Epoch 00084: val_loss did not improve from 118.68383
+Epoch 85/500
+ - 8s - loss: 99.2071 - ssim_for2d: 0.8818 - psnr_for2d: 28.2312 - val_loss: 127.3912 - val_ssim_for2d: 0.8552 - val_psnr_for2d: 27.2052
+
+Epoch 00085: val_loss did not improve from 118.68383
+Epoch 86/500
+ - 8s - loss: 92.5757 - ssim_for2d: 0.8822 - psnr_for2d: 28.5166 - val_loss: 117.9224 - val_ssim_for2d: 0.8595 - val_psnr_for2d: 27.5606
+
+Epoch 00086: val_loss improved from 118.68383 to 117.92236, saving model to ./3d_network.h5
+Epoch 87/500
+ - 8s - loss: 87.7234 - ssim_for2d: 0.8841 - psnr_for2d: 28.7506 - val_loss: 118.8199 - val_ssim_for2d: 0.8583 - val_psnr_for2d: 27.5311
+
+Epoch 00087: val_loss did not improve from 117.92236
+Epoch 88/500
+ - 8s - loss: 85.3298 - ssim_for2d: 0.8845 - psnr_for2d: 28.8714 - val_loss: 123.7273 - val_ssim_for2d: 0.8593 - val_psnr_for2d: 27.3466
+
+Epoch 00088: val_loss did not improve from 117.92236
+Epoch 89/500
+ - 8s - loss: 85.7201 - ssim_for2d: 0.8853 - psnr_for2d: 28.8557 - val_loss: 116.3878 - val_ssim_for2d: 0.8604 - val_psnr_for2d: 27.6279
+
+Epoch 00089: val_loss improved from 117.92236 to 116.38779, saving model to ./3d_network.h5
+Epoch 90/500
+ - 8s - loss: 84.1167 - ssim_for2d: 0.8862 - psnr_for2d: 28.9336 - val_loss: 114.9287 - val_ssim_for2d: 0.8618 - val_psnr_for2d: 27.6780
+
+Epoch 00090: val_loss improved from 116.38779 to 114.92869, saving model to ./3d_network.h5
+Epoch 91/500
+ - 8s - loss: 82.3399 - ssim_for2d: 0.8874 - psnr_for2d: 29.0312 - val_loss: 122.5344 - val_ssim_for2d: 0.8615 - val_psnr_for2d: 27.3976
+
+Epoch 00091: val_loss did not improve from 114.92869
+Epoch 92/500
+ - 8s - loss: 84.5356 - ssim_for2d: 0.8878 - psnr_for2d: 28.9128 - val_loss: 115.6218 - val_ssim_for2d: 0.8625 - val_psnr_for2d: 27.6646
+
+Epoch 00092: val_loss did not improve from 114.92869
+Epoch 93/500
+ - 8s - loss: 82.6874 - ssim_for2d: 0.8881 - psnr_for2d: 29.0100 - val_loss: 119.2293 - val_ssim_for2d: 0.8620 - val_psnr_for2d: 27.5286
+
+Epoch 00093: val_loss did not improve from 114.92869
+Epoch 94/500
+ - 8s - loss: 89.3707 - ssim_for2d: 0.8881 - psnr_for2d: 28.6653 - val_loss: 119.0070 - val_ssim_for2d: 0.8625 - val_psnr_for2d: 27.5430
+
+Epoch 00094: val_loss did not improve from 114.92869
+Epoch 00094: early stopping
+
+ 32/236 [===>..........................] - ETA: 3s
+ 64/236 [=======>......................] - ETA: 2s
+ 96/236 [===========>..................] - ETA: 2s
+128/236 [===============>..............] - ETA: 1s
+160/236 [===================>..........] - ETA: 1s
+192/236 [=======================>......] - ETA: 0s
+224/236 [===========================>..] - ETA: 0s
+236/236 [==============================] - 4s 17ms/step
+ 
+after model.fit, train_x and train_y shape: (236, 5, 64, 64, 1) (236, 60, 60, 1)
+shape pf test_x (60, 5, 64, 64, 1) shape of test_y (60, 60, 60, 1)
+
+32/60 [===============>..............] - ETA: 0s
+60/60 [==============================] - 1s 17ms/step
+mean_squared_error_test, ssim_test, psnr_test 127.8032460530599 0.8547548492749532 27.132880655924478
+AMOUNT, BATCH, TARGET_HEIGHT: 296 20 64
+without processed by neural network:
+psnr =  22.13051281787807
+ssim =  0.7328004798243157
+performance after processed by nerual network:
+psnr:  28.66692960060249
+ssim:  0.8834709797875356
+performance of predicted images:
+psnr, ssim for raw data: 22.15469605738412 0.7350725715496504
+psnr, ssim for predicted result: 27.132881109018673 0.875063289207399
+mae, mse for raw data: 10.585930555555555 396.00651388888895
+mae, mse for predicted result 5.979494118690491 127.80325088500976

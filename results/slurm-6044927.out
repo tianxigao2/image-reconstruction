@@ -1,0 +1,925 @@
+/var/slurmd/job6044927/slurm_script: line 3: SBATCH: command not found
+/var/slurmd/job6044927/slurm_script: line 4: SBATCH: command not found
++ cd /pylon5/ac5610p/janegao/image-reconstruction-2019/code/two_d+three_d/
++ python main.py
+OMP: Info #212: KMP_AFFINITY: decoding x2APIC ids.
+OMP: Info #210: KMP_AFFINITY: Affinity capable, using global cpuid leaf 11 info
+OMP: Info #154: KMP_AFFINITY: Initial OS proc set respected: 0-27
+OMP: Info #156: KMP_AFFINITY: 28 available OS procs
+OMP: Info #157: KMP_AFFINITY: Uniform topology
+OMP: Info #179: KMP_AFFINITY: 2 packages x 14 cores/pkg x 1 threads/core (28 total cores)
+OMP: Info #214: KMP_AFFINITY: OS proc to physical thread map:
+OMP: Info #171: KMP_AFFINITY: OS proc 0 maps to package 0 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 14 maps to package 0 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 1 maps to package 0 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 15 maps to package 0 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 2 maps to package 0 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 16 maps to package 0 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 3 maps to package 0 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 17 maps to package 0 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 4 maps to package 0 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 18 maps to package 0 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 5 maps to package 0 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 19 maps to package 0 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 6 maps to package 0 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 20 maps to package 0 core 14 
+OMP: Info #171: KMP_AFFINITY: OS proc 7 maps to package 1 core 0 
+OMP: Info #171: KMP_AFFINITY: OS proc 21 maps to package 1 core 1 
+OMP: Info #171: KMP_AFFINITY: OS proc 8 maps to package 1 core 2 
+OMP: Info #171: KMP_AFFINITY: OS proc 22 maps to package 1 core 3 
+OMP: Info #171: KMP_AFFINITY: OS proc 9 maps to package 1 core 4 
+OMP: Info #171: KMP_AFFINITY: OS proc 23 maps to package 1 core 5 
+OMP: Info #171: KMP_AFFINITY: OS proc 10 maps to package 1 core 6 
+OMP: Info #171: KMP_AFFINITY: OS proc 24 maps to package 1 core 8 
+OMP: Info #171: KMP_AFFINITY: OS proc 11 maps to package 1 core 9 
+OMP: Info #171: KMP_AFFINITY: OS proc 25 maps to package 1 core 10 
+OMP: Info #171: KMP_AFFINITY: OS proc 12 maps to package 1 core 11 
+OMP: Info #171: KMP_AFFINITY: OS proc 26 maps to package 1 core 12 
+OMP: Info #171: KMP_AFFINITY: OS proc 13 maps to package 1 core 13 
+OMP: Info #171: KMP_AFFINITY: OS proc 27 maps to package 1 core 14 
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7184 thread 0 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7232 thread 2 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7234 thread 4 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7233 thread 3 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7231 thread 1 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7235 thread 5 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7236 thread 6 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7238 thread 8 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7237 thread 7 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7240 thread 10 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7239 thread 9 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7241 thread 11 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7242 thread 12 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7243 thread 13 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7244 thread 14 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7246 thread 16 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7245 thread 15 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7247 thread 17 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7248 thread 18 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7249 thread 19 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7250 thread 20 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7251 thread 21 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7252 thread 22 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7253 thread 23 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7254 thread 24 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7255 thread 25 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7256 thread 26 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7257 thread 27 bound to OS proc set 27
+Using TensorFlow backend.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-07-16 15:33:56.732229: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-07-16 15:33:56.736047: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294730000 Hz
+2019-07-16 15:33:56.736212: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x565548d3a500 executing computations on platform Host. Devices:
+2019-07-16 15:33:56.736248: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-07-16 15:33:56.736347: I tensorflow/core/common_runtime/process_util.cc:71] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+WARNING:tensorflow:From /home/janegao/.conda/envs/env/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7269 thread 28 bound to OS proc set 0
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7268 thread 29 bound to OS proc set 7
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7322 thread 30 bound to OS proc set 14
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7323 thread 31 bound to OS proc set 21
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7324 thread 32 bound to OS proc set 1
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7325 thread 33 bound to OS proc set 8
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7326 thread 34 bound to OS proc set 15
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7327 thread 35 bound to OS proc set 22
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7328 thread 36 bound to OS proc set 2
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7329 thread 37 bound to OS proc set 9
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7330 thread 38 bound to OS proc set 16
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7331 thread 39 bound to OS proc set 23
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7332 thread 40 bound to OS proc set 3
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7333 thread 41 bound to OS proc set 10
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7334 thread 42 bound to OS proc set 17
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7335 thread 43 bound to OS proc set 24
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7336 thread 44 bound to OS proc set 4
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7337 thread 45 bound to OS proc set 11
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7338 thread 46 bound to OS proc set 18
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7339 thread 47 bound to OS proc set 25
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7340 thread 48 bound to OS proc set 5
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7341 thread 49 bound to OS proc set 12
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7342 thread 50 bound to OS proc set 19
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7343 thread 51 bound to OS proc set 26
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7344 thread 52 bound to OS proc set 6
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7345 thread 53 bound to OS proc set 13
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7346 thread 54 bound to OS proc set 20
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7347 thread 55 bound to OS proc set 27
+OMP: Info #250: KMP_AFFINITY: pid 7184 tid 7348 thread 56 bound to OS proc set 0
+x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH (300, 352, 288, 1) (300, 352, 288, 1) 352 288 176 144
+x.shape: (285, 348, 284) y.shape (285, 348, 284)
+Train on 270 samples, validate on 15 samples
+Epoch 1/120
+ - 68s - loss: 7351.8135 - ssim_for2d: 0.2190 - psnr_for2d: 10.5204 - val_loss: 2407.0269 - val_ssim_for2d: 0.3811 - val_psnr_for2d: 14.3162
+Epoch 2/120
+ - 67s - loss: 2345.9599 - ssim_for2d: 0.4453 - psnr_for2d: 14.6366 - val_loss: 1643.1951 - val_ssim_for2d: 0.5323 - val_psnr_for2d: 15.9740
+Epoch 3/120
+ - 67s - loss: 1493.6234 - ssim_for2d: 0.5784 - psnr_for2d: 16.4640 - val_loss: 1224.7723 - val_ssim_for2d: 0.6139 - val_psnr_for2d: 17.2503
+Epoch 4/120
+ - 67s - loss: 1099.3492 - ssim_for2d: 0.6398 - psnr_for2d: 17.7363 - val_loss: 964.2086 - val_ssim_for2d: 0.6614 - val_psnr_for2d: 18.2892
+Epoch 5/120
+ - 67s - loss: 926.1315 - ssim_for2d: 0.6757 - psnr_for2d: 18.4712 - val_loss: 802.8661 - val_ssim_for2d: 0.6919 - val_psnr_for2d: 19.0844
+Epoch 6/120
+ - 67s - loss: 803.4023 - ssim_for2d: 0.7018 - psnr_for2d: 19.0842 - val_loss: 722.3761 - val_ssim_for2d: 0.7156 - val_psnr_for2d: 19.5433
+Epoch 7/120
+ - 67s - loss: 725.8502 - ssim_for2d: 0.7228 - psnr_for2d: 19.5240 - val_loss: 660.7388 - val_ssim_for2d: 0.7352 - val_psnr_for2d: 19.9306
+Epoch 8/120
+ - 67s - loss: 667.5706 - ssim_for2d: 0.7408 - psnr_for2d: 19.8874 - val_loss: 612.4075 - val_ssim_for2d: 0.7517 - val_psnr_for2d: 20.2605
+Epoch 9/120
+ - 67s - loss: 620.9239 - ssim_for2d: 0.7559 - psnr_for2d: 20.2018 - val_loss: 572.6876 - val_ssim_for2d: 0.7647 - val_psnr_for2d: 20.5517
+Epoch 10/120
+ - 67s - loss: 581.3510 - ssim_for2d: 0.7677 - psnr_for2d: 20.4878 - val_loss: 536.3661 - val_ssim_for2d: 0.7752 - val_psnr_for2d: 20.8363
+Epoch 11/120
+ - 68s - loss: 547.2536 - ssim_for2d: 0.7774 - psnr_for2d: 20.7503 - val_loss: 505.9679 - val_ssim_for2d: 0.7839 - val_psnr_for2d: 21.0897
+Epoch 12/120
+ - 68s - loss: 517.7407 - ssim_for2d: 0.7857 - psnr_for2d: 20.9912 - val_loss: 479.7962 - val_ssim_for2d: 0.7915 - val_psnr_for2d: 21.3203
+Epoch 13/120
+ - 67s - loss: 492.0162 - ssim_for2d: 0.7931 - psnr_for2d: 21.2125 - val_loss: 456.6903 - val_ssim_for2d: 0.7982 - val_psnr_for2d: 21.5347
+Epoch 14/120
+ - 67s - loss: 469.3811 - ssim_for2d: 0.7996 - psnr_for2d: 21.4169 - val_loss: 436.1911 - val_ssim_for2d: 0.8041 - val_psnr_for2d: 21.7341
+Epoch 15/120
+ - 67s - loss: 449.2186 - ssim_for2d: 0.8056 - psnr_for2d: 21.6078 - val_loss: 418.0104 - val_ssim_for2d: 0.8095 - val_psnr_for2d: 21.9190
+Epoch 16/120
+ - 67s - loss: 431.3230 - ssim_for2d: 0.8110 - psnr_for2d: 21.7842 - val_loss: 402.1788 - val_ssim_for2d: 0.8144 - val_psnr_for2d: 22.0867
+Epoch 17/120
+ - 67s - loss: 415.9008 - ssim_for2d: 0.8158 - psnr_for2d: 21.9424 - val_loss: 388.5320 - val_ssim_for2d: 0.8190 - val_psnr_for2d: 22.2366
+Epoch 18/120
+ - 67s - loss: 402.5783 - ssim_for2d: 0.8203 - psnr_for2d: 22.0838 - val_loss: 376.8672 - val_ssim_for2d: 0.8234 - val_psnr_for2d: 22.3690
+Epoch 19/120
+ - 67s - loss: 391.2794 - ssim_for2d: 0.8243 - psnr_for2d: 22.2074 - val_loss: 367.2686 - val_ssim_for2d: 0.8269 - val_psnr_for2d: 22.4810
+Epoch 20/120
+ - 67s - loss: 381.7190 - ssim_for2d: 0.8276 - psnr_for2d: 22.3147 - val_loss: 358.9579 - val_ssim_for2d: 0.8299 - val_psnr_for2d: 22.5805
+Epoch 21/120
+ - 68s - loss: 373.4011 - ssim_for2d: 0.8305 - psnr_for2d: 22.4104 - val_loss: 351.5768 - val_ssim_for2d: 0.8326 - val_psnr_for2d: 22.6707
+Epoch 22/120
+ - 68s - loss: 366.0509 - ssim_for2d: 0.8332 - psnr_for2d: 22.4967 - val_loss: 345.0909 - val_ssim_for2d: 0.8352 - val_psnr_for2d: 22.7516
+Epoch 23/120
+ - 67s - loss: 359.4882 - ssim_for2d: 0.8357 - psnr_for2d: 22.5753 - val_loss: 339.1301 - val_ssim_for2d: 0.8376 - val_psnr_for2d: 22.8272
+Epoch 24/120
+ - 67s - loss: 353.5477 - ssim_for2d: 0.8380 - psnr_for2d: 22.6476 - val_loss: 333.8600 - val_ssim_for2d: 0.8398 - val_psnr_for2d: 22.8952
+Epoch 25/120
+ - 69s - loss: 348.1065 - ssim_for2d: 0.8402 - psnr_for2d: 22.7150 - val_loss: 328.8695 - val_ssim_for2d: 0.8419 - val_psnr_for2d: 22.9607
+Epoch 26/120
+ - 68s - loss: 343.0800 - ssim_for2d: 0.8422 - psnr_for2d: 22.7782 - val_loss: 324.2945 - val_ssim_for2d: 0.8438 - val_psnr_for2d: 23.0215
+Epoch 27/120
+ - 67s - loss: 338.4369 - ssim_for2d: 0.8440 - psnr_for2d: 22.8373 - val_loss: 320.1249 - val_ssim_for2d: 0.8456 - val_psnr_for2d: 23.0777
+Epoch 28/120
+ - 67s - loss: 334.0094 - ssim_for2d: 0.8457 - psnr_for2d: 22.8945 - val_loss: 316.1279 - val_ssim_for2d: 0.8472 - val_psnr_for2d: 23.1323
+Epoch 29/120
+ - 67s - loss: 329.7774 - ssim_for2d: 0.8472 - psnr_for2d: 22.9498 - val_loss: 312.3176 - val_ssim_for2d: 0.8486 - val_psnr_for2d: 23.1849
+Epoch 30/120
+ - 67s - loss: 325.7826 - ssim_for2d: 0.8487 - psnr_for2d: 23.0027 - val_loss: 308.7303 - val_ssim_for2d: 0.8500 - val_psnr_for2d: 23.2351
+Epoch 31/120
+ - 67s - loss: 321.9970 - ssim_for2d: 0.8501 - psnr_for2d: 23.0535 - val_loss: 305.2841 - val_ssim_for2d: 0.8514 - val_psnr_for2d: 23.2838
+Epoch 32/120
+ - 68s - loss: 318.4744 - ssim_for2d: 0.8514 - psnr_for2d: 23.1013 - val_loss: 302.0058 - val_ssim_for2d: 0.8527 - val_psnr_for2d: 23.3307
+Epoch 33/120
+ - 68s - loss: 315.2258 - ssim_for2d: 0.8528 - psnr_for2d: 23.1458 - val_loss: 299.0301 - val_ssim_for2d: 0.8540 - val_psnr_for2d: 23.3737
+Epoch 34/120
+ - 67s - loss: 312.2507 - ssim_for2d: 0.8540 - psnr_for2d: 23.1870 - val_loss: 296.1860 - val_ssim_for2d: 0.8553 - val_psnr_for2d: 23.4152
+Epoch 35/120
+ - 67s - loss: 309.4943 - ssim_for2d: 0.8552 - psnr_for2d: 23.2255 - val_loss: 293.6295 - val_ssim_for2d: 0.8564 - val_psnr_for2d: 23.4529
+Epoch 36/120
+ - 67s - loss: 306.9070 - ssim_for2d: 0.8564 - psnr_for2d: 23.2620 - val_loss: 291.0565 - val_ssim_for2d: 0.8576 - val_psnr_for2d: 23.4911
+Epoch 37/120
+ - 67s - loss: 304.4342 - ssim_for2d: 0.8575 - psnr_for2d: 23.2971 - val_loss: 288.7324 - val_ssim_for2d: 0.8586 - val_psnr_for2d: 23.5259
+Epoch 38/120
+ - 69s - loss: 302.0924 - ssim_for2d: 0.8585 - psnr_for2d: 23.3306 - val_loss: 286.4701 - val_ssim_for2d: 0.8596 - val_psnr_for2d: 23.5601
+Epoch 39/120
+ - 67s - loss: 299.8883 - ssim_for2d: 0.8596 - psnr_for2d: 23.3624 - val_loss: 284.3392 - val_ssim_for2d: 0.8606 - val_psnr_for2d: 23.5925
+Epoch 40/120
+ - 67s - loss: 297.6359 - ssim_for2d: 0.8605 - psnr_for2d: 23.3952 - val_loss: 282.2368 - val_ssim_for2d: 0.8616 - val_psnr_for2d: 23.6248
+Epoch 41/120
+ - 69s - loss: 295.5539 - ssim_for2d: 0.8615 - psnr_for2d: 23.4257 - val_loss: 280.3958 - val_ssim_for2d: 0.8624 - val_psnr_for2d: 23.6532
+Epoch 42/120
+ - 69s - loss: 293.5453 - ssim_for2d: 0.8624 - psnr_for2d: 23.4553 - val_loss: 278.3802 - val_ssim_for2d: 0.8633 - val_psnr_for2d: 23.6845
+Epoch 43/120
+ - 67s - loss: 291.6250 - ssim_for2d: 0.8632 - psnr_for2d: 23.4838 - val_loss: 276.5589 - val_ssim_for2d: 0.8641 - val_psnr_for2d: 23.7130
+Epoch 44/120
+ - 68s - loss: 289.7741 - ssim_for2d: 0.8640 - psnr_for2d: 23.5115 - val_loss: 274.9154 - val_ssim_for2d: 0.8648 - val_psnr_for2d: 23.7389
+Epoch 45/120
+ - 67s - loss: 288.0336 - ssim_for2d: 0.8648 - psnr_for2d: 23.5376 - val_loss: 273.2821 - val_ssim_for2d: 0.8655 - val_psnr_for2d: 23.7648
+Epoch 46/120
+ - 68s - loss: 286.3415 - ssim_for2d: 0.8655 - psnr_for2d: 23.5632 - val_loss: 271.6599 - val_ssim_for2d: 0.8662 - val_psnr_for2d: 23.7906
+Epoch 47/120
+ - 67s - loss: 284.7219 - ssim_for2d: 0.8662 - psnr_for2d: 23.5878 - val_loss: 270.1114 - val_ssim_for2d: 0.8669 - val_psnr_for2d: 23.8155
+Epoch 48/120
+ - 67s - loss: 283.1819 - ssim_for2d: 0.8669 - psnr_for2d: 23.6114 - val_loss: 268.6673 - val_ssim_for2d: 0.8675 - val_psnr_for2d: 23.8387
+Epoch 49/120
+ - 67s - loss: 281.7208 - ssim_for2d: 0.8675 - psnr_for2d: 23.6339 - val_loss: 267.3538 - val_ssim_for2d: 0.8680 - val_psnr_for2d: 23.8600
+Epoch 50/120
+ - 67s - loss: 280.2729 - ssim_for2d: 0.8681 - psnr_for2d: 23.6563 - val_loss: 265.9914 - val_ssim_for2d: 0.8686 - val_psnr_for2d: 23.8822
+Epoch 51/120
+ - 67s - loss: 278.9049 - ssim_for2d: 0.8686 - psnr_for2d: 23.6775 - val_loss: 264.6688 - val_ssim_for2d: 0.8691 - val_psnr_for2d: 23.9039
+Epoch 52/120
+ - 67s - loss: 277.5983 - ssim_for2d: 0.8692 - psnr_for2d: 23.6979 - val_loss: 263.4328 - val_ssim_for2d: 0.8696 - val_psnr_for2d: 23.9242
+Epoch 53/120
+ - 67s - loss: 276.3348 - ssim_for2d: 0.8697 - psnr_for2d: 23.7177 - val_loss: 262.2318 - val_ssim_for2d: 0.8701 - val_psnr_for2d: 23.9440
+Epoch 54/120
+ - 68s - loss: 275.1842 - ssim_for2d: 0.8702 - psnr_for2d: 23.7359 - val_loss: 261.1862 - val_ssim_for2d: 0.8706 - val_psnr_for2d: 23.9614
+Epoch 55/120
+ - 68s - loss: 274.0336 - ssim_for2d: 0.8707 - psnr_for2d: 23.7540 - val_loss: 260.8128 - val_ssim_for2d: 0.8710 - val_psnr_for2d: 23.9676
+Epoch 56/120
+ - 69s - loss: 273.0279 - ssim_for2d: 0.8711 - psnr_for2d: 23.7700 - val_loss: 259.2834 - val_ssim_for2d: 0.8715 - val_psnr_for2d: 23.9931
+Epoch 57/120
+ - 68s - loss: 271.9801 - ssim_for2d: 0.8716 - psnr_for2d: 23.7867 - val_loss: 258.8399 - val_ssim_for2d: 0.8718 - val_psnr_for2d: 24.0006
+Epoch 58/120
+ - 67s - loss: 270.9992 - ssim_for2d: 0.8720 - psnr_for2d: 23.8024 - val_loss: 257.7951 - val_ssim_for2d: 0.8723 - val_psnr_for2d: 24.0181
+Epoch 59/120
+ - 68s - loss: 269.8038 - ssim_for2d: 0.8724 - psnr_for2d: 23.8216 - val_loss: 255.9516 - val_ssim_for2d: 0.8727 - val_psnr_for2d: 24.0493
+Epoch 60/120
+ - 68s - loss: 268.9750 - ssim_for2d: 0.8728 - psnr_for2d: 23.8350 - val_loss: 255.4521 - val_ssim_for2d: 0.8731 - val_psnr_for2d: 24.0578
+Epoch 61/120
+ - 67s - loss: 267.8506 - ssim_for2d: 0.8732 - psnr_for2d: 23.8532 - val_loss: 254.1273 - val_ssim_for2d: 0.8735 - val_psnr_for2d: 24.0804
+Epoch 62/120
+ - 67s - loss: 266.6971 - ssim_for2d: 0.8736 - psnr_for2d: 23.8719 - val_loss: 253.1841 - val_ssim_for2d: 0.8739 - val_psnr_for2d: 24.0965
+Epoch 63/120
+ - 69s - loss: 266.4647 - ssim_for2d: 0.8740 - psnr_for2d: 23.8757 - val_loss: 253.6051 - val_ssim_for2d: 0.8741 - val_psnr_for2d: 24.0893
+Epoch 64/120
+ - 68s - loss: 265.6416 - ssim_for2d: 0.8743 - psnr_for2d: 23.8892 - val_loss: 252.7175 - val_ssim_for2d: 0.8745 - val_psnr_for2d: 24.1045
+Epoch 65/120
+ - 68s - loss: 264.5227 - ssim_for2d: 0.8747 - psnr_for2d: 23.9075 - val_loss: 251.2950 - val_ssim_for2d: 0.8748 - val_psnr_for2d: 24.1290
+Epoch 66/120
+ - 67s - loss: 263.2920 - ssim_for2d: 0.8750 - psnr_for2d: 23.9277 - val_loss: 250.0864 - val_ssim_for2d: 0.8752 - val_psnr_for2d: 24.1500
+Epoch 67/120
+ - 67s - loss: 262.4650 - ssim_for2d: 0.8754 - psnr_for2d: 23.9414 - val_loss: 249.1735 - val_ssim_for2d: 0.8755 - val_psnr_for2d: 24.1659
+Epoch 68/120
+ - 67s - loss: 262.0357 - ssim_for2d: 0.8757 - psnr_for2d: 23.9485 - val_loss: 250.4350 - val_ssim_for2d: 0.8757 - val_psnr_for2d: 24.1439
+Epoch 69/120
+ - 67s - loss: 265.2109 - ssim_for2d: 0.8759 - psnr_for2d: 23.8964 - val_loss: 247.8955 - val_ssim_for2d: 0.8761 - val_psnr_for2d: 24.1882
+Epoch 70/120
+ - 67s - loss: 260.8688 - ssim_for2d: 0.8763 - psnr_for2d: 23.9679 - val_loss: 247.6558 - val_ssim_for2d: 0.8763 - val_psnr_for2d: 24.1924
+Epoch 71/120
+ - 67s - loss: 259.5620 - ssim_for2d: 0.8766 - psnr_for2d: 23.9897 - val_loss: 246.4041 - val_ssim_for2d: 0.8767 - val_psnr_for2d: 24.2144
+Epoch 72/120
+ - 67s - loss: 258.6638 - ssim_for2d: 0.8769 - psnr_for2d: 24.0048 - val_loss: 245.8369 - val_ssim_for2d: 0.8769 - val_psnr_for2d: 24.2244
+Epoch 73/120
+ - 67s - loss: 257.9477 - ssim_for2d: 0.8772 - psnr_for2d: 24.0168 - val_loss: 245.1114 - val_ssim_for2d: 0.8772 - val_psnr_for2d: 24.2372
+Epoch 74/120
+ - 67s - loss: 257.9721 - ssim_for2d: 0.8774 - psnr_for2d: 24.0164 - val_loss: 246.0863 - val_ssim_for2d: 0.8774 - val_psnr_for2d: 24.2200
+Epoch 75/120
+ - 67s - loss: 258.6995 - ssim_for2d: 0.8777 - psnr_for2d: 24.0042 - val_loss: 247.0794 - val_ssim_for2d: 0.8777 - val_psnr_for2d: 24.2025
+Epoch 76/120
+ - 67s - loss: 257.6211 - ssim_for2d: 0.8779 - psnr_for2d: 24.0224 - val_loss: 243.2603 - val_ssim_for2d: 0.8780 - val_psnr_for2d: 24.2702
+Epoch 77/120
+ - 67s - loss: 255.9089 - ssim_for2d: 0.8782 - psnr_for2d: 24.0513 - val_loss: 243.5433 - val_ssim_for2d: 0.8781 - val_psnr_for2d: 24.2651
+Epoch 78/120
+ - 67s - loss: 256.8473 - ssim_for2d: 0.8784 - psnr_for2d: 24.0354 - val_loss: 245.6668 - val_ssim_for2d: 0.8785 - val_psnr_for2d: 24.2274
+Epoch 79/120
+ - 67s - loss: 256.3361 - ssim_for2d: 0.8787 - psnr_for2d: 24.0441 - val_loss: 242.3117 - val_ssim_for2d: 0.8786 - val_psnr_for2d: 24.2871
+Epoch 80/120
+ - 67s - loss: 254.0386 - ssim_for2d: 0.8789 - psnr_for2d: 24.0831 - val_loss: 241.6192 - val_ssim_for2d: 0.8789 - val_psnr_for2d: 24.2996
+Epoch 81/120
+ - 67s - loss: 256.1423 - ssim_for2d: 0.8791 - psnr_for2d: 24.0474 - val_loss: 247.8888 - val_ssim_for2d: 0.8788 - val_psnr_for2d: 24.1883
+Epoch 82/120
+ - 68s - loss: 262.0801 - ssim_for2d: 0.8792 - psnr_for2d: 23.9480 - val_loss: 241.8952 - val_ssim_for2d: 0.8794 - val_psnr_for2d: 24.2946
+Epoch 83/120
+ - 67s - loss: 253.2458 - ssim_for2d: 0.8796 - psnr_for2d: 24.0967 - val_loss: 240.5880 - val_ssim_for2d: 0.8796 - val_psnr_for2d: 24.3181
+Epoch 84/120
+ - 67s - loss: 251.8456 - ssim_for2d: 0.8798 - psnr_for2d: 24.1208 - val_loss: 239.0596 - val_ssim_for2d: 0.8797 - val_psnr_for2d: 24.3458
+Epoch 85/120
+ - 68s - loss: 250.9805 - ssim_for2d: 0.8800 - psnr_for2d: 24.1358 - val_loss: 238.7854 - val_ssim_for2d: 0.8799 - val_psnr_for2d: 24.3508
+Epoch 86/120
+ - 67s - loss: 251.9694 - ssim_for2d: 0.8802 - psnr_for2d: 24.1187 - val_loss: 245.7755 - val_ssim_for2d: 0.8801 - val_psnr_for2d: 24.2255
+Epoch 87/120
+ - 67s - loss: 284.0054 - ssim_for2d: 0.8797 - psnr_for2d: 23.6075 - val_loss: 249.4621 - val_ssim_for2d: 0.8798 - val_psnr_for2d: 24.1608
+Epoch 88/120
+ - 67s - loss: 255.5253 - ssim_for2d: 0.8805 - psnr_for2d: 24.0586 - val_loss: 238.7596 - val_ssim_for2d: 0.8805 - val_psnr_for2d: 24.3513
+Epoch 89/120
+ - 67s - loss: 251.0978 - ssim_for2d: 0.8808 - psnr_for2d: 24.1338 - val_loss: 238.9745 - val_ssim_for2d: 0.8807 - val_psnr_for2d: 24.3474
+Epoch 90/120
+ - 67s - loss: 249.5339 - ssim_for2d: 0.8810 - psnr_for2d: 24.1609 - val_loss: 236.9118 - val_ssim_for2d: 0.8808 - val_psnr_for2d: 24.3850
+Epoch 91/120
+ - 68s - loss: 248.4860 - ssim_for2d: 0.8811 - psnr_for2d: 24.1791 - val_loss: 236.3469 - val_ssim_for2d: 0.8810 - val_psnr_for2d: 24.3954
+Epoch 92/120
+ - 68s - loss: 248.1638 - ssim_for2d: 0.8813 - psnr_for2d: 24.1848 - val_loss: 237.8940 - val_ssim_for2d: 0.8812 - val_psnr_for2d: 24.3670
+Epoch 93/120
+ - 67s - loss: 251.9569 - ssim_for2d: 0.8814 - psnr_for2d: 24.1190 - val_loss: 240.9419 - val_ssim_for2d: 0.8810 - val_psnr_for2d: 24.3118
+Epoch 94/120
+ - 67s - loss: 257.6195 - ssim_for2d: 0.8814 - psnr_for2d: 24.0228 - val_loss: 254.4848 - val_ssim_for2d: 0.8813 - val_psnr_for2d: 24.0743
+Epoch 95/120
+ - 67s - loss: 275.6592 - ssim_for2d: 0.8812 - psnr_for2d: 23.7315 - val_loss: 235.5430 - val_ssim_for2d: 0.8816 - val_psnr_for2d: 24.4102
+Epoch 96/120
+ - 67s - loss: 252.4517 - ssim_for2d: 0.8819 - psnr_for2d: 24.1110 - val_loss: 237.5551 - val_ssim_for2d: 0.8816 - val_psnr_for2d: 24.3732
+Epoch 97/120
+ - 67s - loss: 247.6605 - ssim_for2d: 0.8821 - psnr_for2d: 24.1937 - val_loss: 238.0538 - val_ssim_for2d: 0.8817 - val_psnr_for2d: 24.3641
+Epoch 98/120
+ - 67s - loss: 249.6567 - ssim_for2d: 0.8822 - psnr_for2d: 24.1588 - val_loss: 234.5213 - val_ssim_for2d: 0.8821 - val_psnr_for2d: 24.4291
+Epoch 99/120
+ - 67s - loss: 245.6122 - ssim_for2d: 0.8824 - psnr_for2d: 24.2297 - val_loss: 236.9014 - val_ssim_for2d: 0.8822 - val_psnr_for2d: 24.3852
+Epoch 100/120
+ - 68s - loss: 268.9749 - ssim_for2d: 0.8821 - psnr_for2d: 23.8478 - val_loss: 319.0837 - val_ssim_for2d: 0.8795 - val_psnr_for2d: 23.0918
+Epoch 101/120
+ - 67s - loss: 301.8790 - ssim_for2d: 0.8814 - psnr_for2d: 23.3814 - val_loss: 280.9122 - val_ssim_for2d: 0.8808 - val_psnr_for2d: 23.6452
+Epoch 102/120
+ - 67s - loss: 271.9771 - ssim_for2d: 0.8822 - psnr_for2d: 23.7991 - val_loss: 244.4768 - val_ssim_for2d: 0.8821 - val_psnr_for2d: 24.2485
+Epoch 00102: early stopping
+save the first model
+save predicted frame0.tif
+save predicted frame1.tif
+save predicted frame2.tif
+save predicted frame3.tif
+save predicted frame4.tif
+save predicted frame5.tif
+save predicted frame6.tif
+save predicted frame7.tif
+save predicted frame8.tif
+save predicted frame9.tif
+save predicted frame10.tif
+save predicted frame11.tif
+save predicted frame12.tif
+save predicted frame13.tif
+save predicted frame14.tif
+save predicted frame15.tif
+save predicted frame16.tif
+save predicted frame17.tif
+save predicted frame18.tif
+save predicted frame19.tif
+save predicted frame20.tif
+save predicted frame21.tif
+save predicted frame22.tif
+save predicted frame23.tif
+save predicted frame24.tif
+save predicted frame25.tif
+save predicted frame26.tif
+save predicted frame27.tif
+save predicted frame28.tif
+save predicted frame29.tif
+save predicted frame30.tif
+save predicted frame31.tif
+save predicted frame32.tif
+save predicted frame33.tif
+save predicted frame34.tif
+save predicted frame35.tif
+save predicted frame36.tif
+save predicted frame37.tif
+save predicted frame38.tif
+save predicted frame39.tif
+save predicted frame40.tif
+save predicted frame41.tif
+save predicted frame42.tif
+save predicted frame43.tif
+save predicted frame44.tif
+save predicted frame45.tif
+save predicted frame46.tif
+save predicted frame47.tif
+save predicted frame48.tif
+save predicted frame49.tif
+save predicted frame50.tif
+save predicted frame51.tif
+save predicted frame52.tif
+save predicted frame53.tif
+save predicted frame54.tif
+save predicted frame55.tif
+save predicted frame56.tif
+save predicted frame57.tif
+save predicted frame58.tif
+save predicted frame59.tif
+save predicted frame60.tif
+save predicted frame61.tif
+save predicted frame62.tif
+save predicted frame63.tif
+save predicted frame64.tif
+save predicted frame65.tif
+save predicted frame66.tif
+save predicted frame67.tif
+save predicted frame68.tif
+save predicted frame69.tif
+save predicted frame70.tif
+save predicted frame71.tif
+save predicted frame72.tif
+save predicted frame73.tif
+save predicted frame74.tif
+save predicted frame75.tif
+save predicted frame76.tif
+save predicted frame77.tif
+save predicted frame78.tif
+save predicted frame79.tif
+save predicted frame80.tif
+save predicted frame81.tif
+save predicted frame82.tif
+save predicted frame83.tif
+save predicted frame84.tif
+save predicted frame85.tif
+save predicted frame86.tif
+save predicted frame87.tif
+save predicted frame88.tif
+save predicted frame89.tif
+save predicted frame90.tif
+save predicted frame91.tif
+save predicted frame92.tif
+save predicted frame93.tif
+save predicted frame94.tif
+save predicted frame95.tif
+save predicted frame96.tif
+save predicted frame97.tif
+save predicted frame98.tif
+save predicted frame99.tif
+save predicted frame100.tif
+save predicted frame101.tif
+save predicted frame102.tif
+save predicted frame103.tif
+save predicted frame104.tif
+save predicted frame105.tif
+save predicted frame106.tif
+save predicted frame107.tif
+save predicted frame108.tif
+save predicted frame109.tif
+save predicted frame110.tif
+save predicted frame111.tif
+save predicted frame112.tif
+save predicted frame113.tif
+save predicted frame114.tif
+save predicted frame115.tif
+save predicted frame116.tif
+save predicted frame117.tif
+save predicted frame118.tif
+save predicted frame119.tif
+save predicted frame120.tif
+save predicted frame121.tif
+save predicted frame122.tif
+save predicted frame123.tif
+save predicted frame124.tif
+save predicted frame125.tif
+save predicted frame126.tif
+save predicted frame127.tif
+save predicted frame128.tif
+save predicted frame129.tif
+save predicted frame130.tif
+save predicted frame131.tif
+save predicted frame132.tif
+save predicted frame133.tif
+save predicted frame134.tif
+save predicted frame135.tif
+save predicted frame136.tif
+save predicted frame137.tif
+save predicted frame138.tif
+save predicted frame139.tif
+save predicted frame140.tif
+save predicted frame141.tif
+save predicted frame142.tif
+save predicted frame143.tif
+save predicted frame144.tif
+save predicted frame145.tif
+save predicted frame146.tif
+save predicted frame147.tif
+save predicted frame148.tif
+save predicted frame149.tif
+save predicted frame150.tif
+save predicted frame151.tif
+save predicted frame152.tif
+save predicted frame153.tif
+save predicted frame154.tif
+save predicted frame155.tif
+save predicted frame156.tif
+save predicted frame157.tif
+save predicted frame158.tif
+save predicted frame159.tif
+save predicted frame160.tif
+save predicted frame161.tif
+save predicted frame162.tif
+save predicted frame163.tif
+save predicted frame164.tif
+save predicted frame165.tif
+save predicted frame166.tif
+save predicted frame167.tif
+save predicted frame168.tif
+save predicted frame169.tif
+save predicted frame170.tif
+save predicted frame171.tif
+save predicted frame172.tif
+save predicted frame173.tif
+save predicted frame174.tif
+save predicted frame175.tif
+save predicted frame176.tif
+save predicted frame177.tif
+save predicted frame178.tif
+save predicted frame179.tif
+save predicted frame180.tif
+save predicted frame181.tif
+save predicted frame182.tif
+save predicted frame183.tif
+save predicted frame184.tif
+save predicted frame185.tif
+save predicted frame186.tif
+save predicted frame187.tif
+save predicted frame188.tif
+save predicted frame189.tif
+save predicted frame190.tif
+save predicted frame191.tif
+save predicted frame192.tif
+save predicted frame193.tif
+save predicted frame194.tif
+save predicted frame195.tif
+save predicted frame196.tif
+save predicted frame197.tif
+save predicted frame198.tif
+save predicted frame199.tif
+save predicted frame200.tif
+save predicted frame201.tif
+save predicted frame202.tif
+save predicted frame203.tif
+save predicted frame204.tif
+save predicted frame205.tif
+save predicted frame206.tif
+save predicted frame207.tif
+save predicted frame208.tif
+save predicted frame209.tif
+save predicted frame210.tif
+save predicted frame211.tif
+save predicted frame212.tif
+save predicted frame213.tif
+save predicted frame214.tif
+save predicted frame215.tif
+save predicted frame216.tif
+save predicted frame217.tif
+save predicted frame218.tif
+save predicted frame219.tif
+save predicted frame220.tif
+save predicted frame221.tif
+save predicted frame222.tif
+save predicted frame223.tif
+save predicted frame224.tif
+save predicted frame225.tif
+save predicted frame226.tif
+save predicted frame227.tif
+save predicted frame228.tif
+save predicted frame229.tif
+save predicted frame230.tif
+save predicted frame231.tif
+save predicted frame232.tif
+save predicted frame233.tif
+save predicted frame234.tif
+save predicted frame235.tif
+save predicted frame236.tif
+save predicted frame237.tif
+save predicted frame238.tif
+save predicted frame239.tif
+save predicted frame240.tif
+save predicted frame241.tif
+save predicted frame242.tif
+save predicted frame243.tif
+save predicted frame244.tif
+save predicted frame245.tif
+save predicted frame246.tif
+save predicted frame247.tif
+save predicted frame248.tif
+save predicted frame249.tif
+save predicted frame250.tif
+save predicted frame251.tif
+save predicted frame252.tif
+save predicted frame253.tif
+save predicted frame254.tif
+save predicted frame255.tif
+save predicted frame256.tif
+save predicted frame257.tif
+save predicted frame258.tif
+save predicted frame259.tif
+save predicted frame260.tif
+save predicted frame261.tif
+save predicted frame262.tif
+save predicted frame263.tif
+save predicted frame264.tif
+save predicted frame265.tif
+save predicted frame266.tif
+save predicted frame267.tif
+save predicted frame268.tif
+save predicted frame269.tif
+save predicted frame270.tif
+save predicted frame271.tif
+save predicted frame272.tif
+save predicted frame273.tif
+save predicted frame274.tif
+save predicted frame275.tif
+save predicted frame276.tif
+save predicted frame277.tif
+save predicted frame278.tif
+save predicted frame279.tif
+save predicted frame280.tif
+save predicted frame281.tif
+save predicted frame282.tif
+save predicted frame283.tif
+save predicted frame284.tif
+save predicted frame285.tif
+save predicted frame286.tif
+save predicted frame287.tif
+save predicted frame288.tif
+save predicted frame289.tif
+save predicted frame290.tif
+save predicted frame291.tif
+save predicted frame292.tif
+save predicted frame293.tif
+save predicted frame294.tif
+save predicted frame295.tif
+save predicted frame296.tif
+save predicted frame297.tif
+save predicted frame298.tif
+save predicted frame299.tif
+packed 2 packages already
+packed 3 packages already
+packed 4 packages already
+packed 5 packages already
+packed 6 packages already
+packed 7 packages already
+packed 8 packages already
+packed 9 packages already
+packed 10 packages already
+packed 11 packages already
+packed 12 packages already
+packed 13 packages already
+packed 14 packages already
+packed 15 packages already
+packed 16 packages already
+packed 17 packages already
+packed 18 packages already
+packed 19 packages already
+packed 20 packages already
+packed 21 packages already
+packed 22 packages already
+packed 23 packages already
+packed 24 packages already
+packed 25 packages already
+packed 26 packages already
+packed 27 packages already
+packed 28 packages already
+packed 29 packages already
+packed 30 packages already
+packed 31 packages already
+packed 32 packages already
+packed 33 packages already
+packed 34 packages already
+packed 35 packages already
+packed 36 packages already
+packed 37 packages already
+packed 38 packages already
+packed 39 packages already
+packed 40 packages already
+packed 41 packages already
+packed 42 packages already
+packed 43 packages already
+packed 44 packages already
+packed 45 packages already
+packed 46 packages already
+packed 47 packages already
+packed 48 packages already
+packed 49 packages already
+packed 50 packages already
+packed 51 packages already
+packed 52 packages already
+packed 53 packages already
+packed 54 packages already
+packed 55 packages already
+packed 56 packages already
+packed 57 packages already
+packed 58 packages already
+packed 59 packages already
+packed 60 packages already
+packed 61 packages already
+packed 62 packages already
+packed 63 packages already
+packed 64 packages already
+packed 65 packages already
+packed 66 packages already
+packed 67 packages already
+packed 68 packages already
+packed 69 packages already
+packed 70 packages already
+packed 71 packages already
+packed 72 packages already
+packed 73 packages already
+packed 74 packages already
+packed 75 packages already
+packed 76 packages already
+packed 77 packages already
+packed 78 packages already
+packed 79 packages already
+packed 80 packages already
+packed 81 packages already
+packed 82 packages already
+packed 83 packages already
+packed 84 packages already
+packed 85 packages already
+packed 86 packages already
+packed 87 packages already
+packed 88 packages already
+packed 89 packages already
+packed 90 packages already
+packed 91 packages already
+packed 92 packages already
+packed 93 packages already
+packed 94 packages already
+packed 95 packages already
+packed 96 packages already
+packed 97 packages already
+packed 98 packages already
+packed 99 packages already
+packed 100 packages already
+packed 101 packages already
+packed 102 packages already
+packed 103 packages already
+packed 104 packages already
+packed 105 packages already
+packed 106 packages already
+packed 107 packages already
+packed 108 packages already
+packed 109 packages already
+packed 110 packages already
+packed 111 packages already
+packed 112 packages already
+packed 113 packages already
+packed 114 packages already
+packed 115 packages already
+packed 116 packages already
+packed 117 packages already
+packed 118 packages already
+packed 119 packages already
+packed 120 packages already
+packed 121 packages already
+packed 122 packages already
+packed 123 packages already
+packed 124 packages already
+packed 125 packages already
+packed 126 packages already
+packed 127 packages already
+packed 128 packages already
+packed 129 packages already
+packed 130 packages already
+packed 131 packages already
+packed 132 packages already
+packed 133 packages already
+packed 134 packages already
+packed 135 packages already
+packed 136 packages already
+packed 137 packages already
+packed 138 packages already
+packed 139 packages already
+packed 140 packages already
+packed 141 packages already
+packed 142 packages already
+packed 143 packages already
+packed 144 packages already
+packed 145 packages already
+packed 146 packages already
+packed 147 packages already
+packed 148 packages already
+packed 149 packages already
+packed 150 packages already
+packed 151 packages already
+packed 152 packages already
+packed 153 packages already
+packed 154 packages already
+packed 155 packages already
+packed 156 packages already
+packed 157 packages already
+packed 158 packages already
+packed 159 packages already
+packed 160 packages already
+packed 161 packages already
+packed 162 packages already
+packed 163 packages already
+packed 164 packages already
+packed 165 packages already
+packed 166 packages already
+packed 167 packages already
+packed 168 packages already
+packed 169 packages already
+packed 170 packages already
+packed 171 packages already
+packed 172 packages already
+packed 173 packages already
+packed 174 packages already
+packed 175 packages already
+packed 176 packages already
+packed 177 packages already
+packed 178 packages already
+packed 179 packages already
+packed 180 packages already
+packed 181 packages already
+packed 182 packages already
+packed 183 packages already
+packed 184 packages already
+packed 185 packages already
+packed 186 packages already
+packed 187 packages already
+packed 188 packages already
+packed 189 packages already
+packed 190 packages already
+packed 191 packages already
+packed 192 packages already
+packed 193 packages already
+packed 194 packages already
+packed 195 packages already
+packed 196 packages already
+packed 197 packages already
+packed 198 packages already
+packed 199 packages already
+packed 200 packages already
+packed 201 packages already
+packed 202 packages already
+packed 203 packages already
+packed 204 packages already
+packed 205 packages already
+packed 206 packages already
+packed 207 packages already
+packed 208 packages already
+packed 209 packages already
+packed 210 packages already
+packed 211 packages already
+packed 212 packages already
+packed 213 packages already
+packed 214 packages already
+packed 215 packages already
+packed 216 packages already
+packed 217 packages already
+packed 218 packages already
+packed 219 packages already
+packed 220 packages already
+packed 221 packages already
+packed 222 packages already
+packed 223 packages already
+packed 224 packages already
+packed 225 packages already
+packed 226 packages already
+packed 227 packages already
+packed 228 packages already
+packed 229 packages already
+packed 230 packages already
+packed 231 packages already
+packed 232 packages already
+packed 233 packages already
+packed 234 packages already
+packed 235 packages already
+packed 236 packages already
+packed 237 packages already
+packed 238 packages already
+packed 239 packages already
+packed 240 packages already
+packed 241 packages already
+packed 242 packages already
+packed 243 packages already
+packed 244 packages already
+packed 245 packages already
+packed 246 packages already
+packed 247 packages already
+packed 248 packages already
+packed 249 packages already
+packed 250 packages already
+packed 251 packages already
+packed 252 packages already
+packed 253 packages already
+packed 254 packages already
+packed 255 packages already
+packed 256 packages already
+packed 257 packages already
+packed 258 packages already
+packed 259 packages already
+packed 260 packages already
+packed 261 packages already
+packed 262 packages already
+packed 263 packages already
+packed 264 packages already
+packed 265 packages already
+packed 266 packages already
+packed 267 packages already
+packed 268 packages already
+packed 269 packages already
+packed 270 packages already
+packed 271 packages already
+packed 272 packages already
+packed 273 packages already
+packed 274 packages already
+packed 275 packages already
+packed 276 packages already
+packed 277 packages already
+packed 278 packages already
+packed 279 packages already
+packed 280 packages already
+packed 281 packages already
+packed 282 packages already
+packed 283 packages already
+packed 284 packages already
+packed 285 packages already
+packed 286 packages already
+packed 287 packages already
+packed 288 packages already
+packed 289 packages already
+packed 290 packages already
+packed 291 packages already
+packed 292 packages already
+packed 293 packages already
+packed 294 packages already
+packed 295 packages already
+packed 296 packages already
+packed 297 packages already
+finish picking up prediction set!
+prediction_set shape:  (296, 5, 352, 288, 1)
+Traceback (most recent call last):
+  File "main.py", line 146, in <module>
+    ModelCheckpoint(filepath = './ImageNet.h5', monitor='val_loss', verbose=2, save_best_only=True, save_weights_only=False, mode='auto', period=1)])
+  File "/home/janegao/.conda/envs/env/lib/python3.7/site-packages/keras/engine/training.py", line 952, in fit
+    batch_size=batch_size)
+  File "/home/janegao/.conda/envs/env/lib/python3.7/site-packages/keras/engine/training.py", line 751, in _standardize_user_data
+    exception_prefix='input')
+  File "/home/janegao/.conda/envs/env/lib/python3.7/site-packages/keras/engine/training_utils.py", line 138, in standardize_input_data
+    str(data_shape))
+ValueError: Error when checking input: expected conv3d_1_input to have shape (5, 64, 64, 1) but got array with shape (5, 352, 288, 1)

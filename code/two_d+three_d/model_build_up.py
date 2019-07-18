@@ -7,45 +7,6 @@ from keras.layers import Conv2D, MaxPooling2D, Conv3D
 from keras import optimizers
 from keras.optimizers import adam
 
-
-'''
-def base_model_SRCNN(FILE_INDEX, HEIGHT, WIDTH):
-    model = Sequential()
-    
-    model.add(Conv2D(64, kernel_size=(9, 9), padding='same', activation='relu', use_bias = True,  input_shape=(HEIGHT,WIDTH,1)))
-    
-    for i in range(0,1):
-        model.layers[i].set_weights(getParameter(FILE_INDEX)[i])
-        print(model.layers[i].weights)
-    
-    #print(model.summary())
-    
-    model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.001, decay=1e-6), metrics=[ssim_for2d, psnr_for2d])
-
-    return model    
-
-def transfer_learning_SRCNN(FILE_INDEX, HEIGHT, WIDTH):
-    base_model = base_model_SRCNN(FILE_INDEX, HEIGHT, WIDTH)
-    base_model.trainable = False
-
-    model = Sequential()
-    model.add(base_model)
-    
-    model.add(Conv2D(32, (1, 1),padding = 'same', activation = 'relu', use_bias = True))
-    model.layers[1].set_weights(getParameter(FILE_INDEX)[1])
-    
-    #model.add(Conv2D(32, (1, 1), padding='same', activation='relu', use_bias = True))
-    
-    model.add(Conv2D(1, (5, 5), padding='same', activation = 'relu', use_bias = True))
-    model.layers[2].set_weights(getParameter(FILE_INDEX)[2])
-
-    print(model.summary())
-
-    model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.001, decay=1e-6), metrics=[ssim_for2d, psnr_for2d])
-
-    return model
-'''
-
 def transfer_learning_SRCNN(filename, HEIGHT, WIDTH):
 
     par = load_parameter(filename)
@@ -68,13 +29,6 @@ def transfer_learning_SRCNN(filename, HEIGHT, WIDTH):
 
 def SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
 
-    '''
-    The first 3D convolution layer takes a series of five consecutive frames in a sliding input window,
-    where each 3D filter generates a temporal feature map (TFM).
-    For an input of five frames and a 3D filter of depth 3,
-    no extrapolation is carried out from layer L-1, where L is the number of convolution layers.
-    '''
-    
     model = Sequential()
     
     model.add(Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last", activation='relu', use_bias=True, input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)))

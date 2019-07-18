@@ -62,8 +62,10 @@ FRACTION = 0.95
 TARGET_HEIGHT_TMP = TARGET_HEIGHT - 2*2
 TARGET_WIDTH_TMP = TARGET_WIDTH - 2*2
 
-x = numpy.reshape(train_x[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :], (math.floor(FRACTION*AMOUNT), TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
-y = numpy.reshape(train_y[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :], (math.floor(FRACTION*AMOUNT), TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+x = numpy.reshape(x_set[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+    AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+y = numpy.reshape(y_set[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+    AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
 
 print('x.shape:', x.shape, 'y.shape', y.shape)
 
@@ -84,23 +86,29 @@ VALIDATION_BATCH_SIZE = 10
 STEPS_PER_EPOCH = math.floor(AMOUNT / BATCH)
 VALIDATION_STEPS = math.floor(AMOUNT / VALIDATION_BATCH_SIZE)
 
-history = model.fit(train_x, train_y, BATCH, EPOCHS, verbose=2, validation_split=1 - FRACTION, callbacks=[EarlyStopping(monitor='val_loss', patience=4, verbose=1, mode='auto', baseline=None, restore_best_weights=False)])
-model.save(save_model_path()+'2d_model.h5')
+history = model.fit(train_x, train_y, BATCH, EPOCHS, verbose=2, validation_split=1 - FRACTION,
+callbacks=[EarlyStopping(monitor='val_loss', patience=4, verbose=1, mode='auto', baseline=None, restore_best_weights=False)])
+model.save(save_model_path() +'2d_model_container.h5')
 print('save the first model')
 
-# Performance after 2d model process-------------------------------------------------
-mse_individual_processing_train, ssim_individual_processing_train, psnr_individual_processing_train = model.evaluate(train_x, train_y, verbose=2)
-mse_individual_processing_test, ssim_individual_processing_test, psnr_individual_processing_test = model.evaluate(test_x, test_y, verbose=2)
-
 # make prediction after individual processing ----------------------------------------
-train_prediction = model.predict(train_x)
-test_prediction = model.predict(test_x)
+#train_prediction = model.predict(train_x)
+#test_prediction = model.predict(test_x)
+prediction = model.predict(x_set)
 # y_set doesn't need any change
+
+# Performance after 2d model process-------------------------------------------------
+x_prediction = numpy.reshape(prediction[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+    AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+
+(psnr_before_reload, ssim_before_reload) = PSNR_SSIM(y,x_prediction)
+
+#=====================================================================================================
 
 # store the predicted frames-----------------------------------------------------------
 # append train_prediction with test_prediction
-interim = numpy.append(train_prediction, test_prediction, axis=0)
-interim = interim.reshape((-1, TARGET_HEIGHT, TARGET_WIDTH))
+#interim = numpy.append(train_prediction, test_prediction, axis=0)
+interim = prediction.reshape((-1, TARGET_HEIGHT, TARGET_WIDTH))
 (TOTAL_AMOUNT, TARGET_HEIGHT, TARGET_WIDTH) = interim.shape
 
 for i in range(TOTAL_AMOUNT):
@@ -110,22 +118,30 @@ for i in range(TOTAL_AMOUNT):
     #print('save predicted frame' + str(i) + '.tif')
 
 # Reload data-------------------------------------------------------------------------
-(AMOUNT, x_set, HEIGHT, WIDTH) = prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH)
-print('prediction_set shape: ', x_set.shape)
+(AMOUNT, x_set_reload, HEIGHT, WIDTH) = prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH)
+print('prediction_set shape: ', x_set_reload.shape)
 
 if AMOUNT != 296:
     AMOUNT = 296
     TOTAL_AMOUNT = 296
 
+# Performance after reloading-------------------------------------------------
+x_reload = numpy.reshape(x_set_reload[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+    AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+
+(psnr_after_reload, ssim_after_reload) = PSNR_SSIM(y,x_reload)
+
 # y_set change picture size
 predict_y_set = y_set[:, 2:TARGET_HEIGHT-2, 2:TARGET_WIDTH-2, :]
-y_set = predict_y_set
+
+#=====================================================================================================
 
 # Separate training set and test set-----------------------------------------------
 FRACTION = 0.9
 
-(train_prediction, test_prediction) = separator(x_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
-(train_y, test_y) = separator(y_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
+#(train_prediction, test_prediction) = separator(x_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
+(train_x_reload, test_x_reload) = separator(x_set_reload, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
+(train_y_predict, test_y_predict) = separator(predict_y_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
 
 # Pass the first results to the 3D SRnet model ----------------------------------------
 model = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
@@ -138,15 +154,24 @@ VALIDATION_BATCH_SIZE = 20
 STEPS_PER_EPOCH = math.floor(AMOUNT / BATCH)
 VALIDATION_STEPS = math.floor(AMOUNT / VALIDATION_BATCH_SIZE)
 
-history = model.fit(train_prediction, train_y, BATCH, EPOCHS, verbose=2, validation_split=1 - FRACTION,
+history = model.fit(train_x_reload, train_y_predict, BATCH, EPOCHS, verbose=2, validation_split=1 - FRACTION,
                     callbacks=[EarlyStopping(monitor='val_loss', patience=3, verbose=2, mode='auto', baseline=None, restore_best_weights=False),
                                ModelCheckpoint(filepath = './checkpoint.h5', monitor='val_loss', verbose=2, save_best_only=True, save_weights_only=False, mode='auto', period=1)])
-model.save(save_model_path()+'3d_model.h5')
+model.save(save_model_path() + '/3d_model_container.h5')
 print('save the second model')
 
 # Performance after 3d model process-------------------------------------------------
-mse_3d_train, ssim_3d_train, psnr_3d_train = model.evaluate(train_prediction, train_y, verbose=2)
-mse_3d_test, ssim_3d_test, psnr_3d_test = model.evaluate(test_prediction, test_y, verbose=2)
+#mse_3d_train, ssim_3d_train, psnr_3d_train = model.evaluate(train_x_reload, train_y_predict, verbose=2)
+#mse_3d_test, ssim_3d_test, psnr_3d_test = model.evaluate(test_x_reload, train_y_predict, verbose=2)
+
+x_final_set = model.predict(x_set_reload)
+x_final = numpy.reshape(x_final_set[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+    AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+
+print('x_final.shape:', x_final.shape, 'y.shape', y.shape)
+
+(psnr_final, ssim_final) = PSNR_SSIM(y,x_final)
+
 
 # Print performance-------------------------------------------------------------------
 print('')
@@ -155,15 +180,26 @@ print('AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH:', AMOUNT, BATC
 print('without any process, raw data:')
 print('psnr_before, ssim_before:', psnr_before, ssim_before, '\n')
 
-print('after processed by SRCNN individually:')
-print('for train set, mse, ssim, psnr:', mse_individual_processing_train, ssim_individual_processing_train, psnr_individual_processing_train)
-print('for test set, mse, ssim, psnr:', mse_individual_processing_test, ssim_individual_processing_test, psnr_individual_processing_test, '\n')
+print('after SRCNN, before reloading:')
+print('psnr_before_reload, ssim_before_reload:', psnr_before_reload, ssim_before_reload, '\n')
 
-print('after processed by 3D SRnet:')
-print('for train set, mse, ssim, psnr:', mse_3d_train, ssim_3d_train, psnr_3d_train)
-print('for test set, mse, ssim, psnr:', mse_3d_test, ssim_3d_test, psnr_3d_test, '\n')
+print('after reloading, before processing by 3d layers:')
+print('psnr_after_reload, ssim_after_reload', psnr_after_reload, ssim_after_reload, '\n')
 
+print('final result:')
+print('psnr_final, ssim_final', psnr_final, ssim_final)
 
-
-
-
+fig=plt.figure()
+fig.add_subplot(2,2,1)
+plt.imshow(x_set[0, :, :, 0])
+plt.title('raw picture')
+fig.add_subplot(2, 2, 2)
+plt.imshow(prediction[0, :, :, 0])
+plt.title('prediction before reloading')
+fig.add_subplot(2,2,3)
+plt.imshow(x_set_reload[0, :, :, 0])
+plt.title('after reloading')
+fig.add_subplot(2, 2, 4)
+plt.imshow(x_final_set[0, :, :, 0])
+plt.title('final prediction')
+plt.show()
