@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 # THE PATH IS USED FOR LOCAL DATASET FILES
 # TO USE BRIDGES, USE THE getpath FUNTION STORED IN REMOTE COMPUTER
 
-LOCAL_PATH = '/home/user1/REUS/image-reconstruction-2019/data/'
+#LOCAL_PATH = '/home/user1/REUS/image-reconstruction-2019/data/'
+LOCAL_PATH = '/pylon5/ac5610p/janegao/image-reconstruction-2019/data/data/'
 
 # ==============================================================================================
 
@@ -55,3 +56,19 @@ def get_container_2D(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_
 def container_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH):
     CTN, TOTAL_AMOUNT = container()
     return packed_image_set(DEPTH, AMOUNT, TOTAL_AMOUNT, CTN, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
+
+    
+#========================================================================================================
+def climate():
+    return (LOCAL_PATH + 'climate/', 2000)
+
+def climate_2D(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH):
+    CLM, TOTAL_AMOUNT = climate()
+    if AMOUNT > TOTAL_AMOUNT:
+        print('Error: amount >  total_amount')
+        return
+    (x_set, y_set) = single_image_set(AMOUNT, TOTAL_AMOUNT, CLM, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
+    (TARGET_HEIGHT, TARGET_WIDTH) = (318, 640)
+    (HEIGHT, WIDTH) = (159, 320)
+    return (x_set, y_set, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH, AMOUNT, TOTAL_AMOUNT)   
+

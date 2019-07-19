@@ -7,10 +7,10 @@ from PIL import Image
 from skimage.measure import compare_ssim, compare_psnr
 
 def PSNR_SSIM(y,x):
-    (AMT,HT,WDTH) = y.shape
+    (AMT,HT,WDTH) = x.shape
     PSNR_sum = 0
     SSIM_sum = 0
-    (AMT, HT, WITH) = y.shape
+    (AMT, HT, WITH) = x.shape
 
     for i in range (AMT):
         y_tmp = y[i,:,:].reshape((HT,WDTH))

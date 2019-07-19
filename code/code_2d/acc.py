@@ -4,55 +4,29 @@ import tensorflow as tf
 import keras.backend as K
 import numpy
 from PIL import Image
+from skimage.measure import compare_ssim, compare_psnr
 
-def PSNR(y, x): #y_true, y_pred for 3d input
-    (AMT, HT, WDTH) = y.shape
+def PSNR_SSIM(y,x):
+    (AMT,HT,WDTH) = y.shape
     PSNR_sum = 0
-    for i in range(AMT):
-        y_tmp = y[i, :, :].reshape((HT, WDTH)) 
-        y_tmp = tf.dtypes.cast(y_tmp,tf.float32)
-        
-        x_tmp = x[i, :, :].reshape((HT, WDTH))
-        x_tmp = tf.dtypes.cast(x_tmp,tf.float32) 
-        
-        (x_tmp, y_tmp) = to_ndarray(x_tmp, y_tmp)
-        y_tmp = y_tmp.reshape((HT, WDTH, 1))
-        x_tmp = x_tmp.reshape((HT, WDTH, 1))
-        y_tmp = tf.convert_to_tensor(y_tmp, dtype = tf.float32)
-        x_tmp = tf.convert_to_tensor(x_tmp, dtype = tf.float32)
-        
-        PSNR_sum += tf.Session().run(tf.image.psnr(x_tmp, y_tmp, max_val=1))
-        print(PSNR_sum.shape)
+    SSIM_sum = 0
+    (AMT, HT, WITH) = y.shape
 
-    psnr = PSNR_sum/AMT    
-    return psnr 
+    for i in range (AMT):
+        y_tmp = y[i,:,:].reshape((HT,WDTH))
+        x_tmp = x[i,:,:].reshape((HT,WITH))
+        PSNR_sum += compare_psnr(x_tmp, y_tmp, data_range=1)
+        SSIM_sum += compare_ssim(x_tmp, y_tmp, data_range=1)
+    
+    PSNR_sum = PSNR_sum/AMT
+    SSIM_sum = SSIM_sum/AMT
+
+    return (PSNR_sum, SSIM_sum)
 
 def psnr_for2d(y, x):
     #x = tf.dtypes.cast(x, tf.float32)
     #y = tf.dtypes.cast(y, tf.float32)
     return tf.image.psnr(x, y, max_val=1)
-
-def SSIM(y, x):
-    (AMT, HT, WDTH) = y.shape
-    ssim_sum = 0
-    for i in range(AMT):
-        y_tmp = y[i,:,:].reshape((HT, WDTH))
-        y_tmp = tf.dtypes.cast(y_tmp,tf.float32)
-
-        x_tmp = x[i, :, :].reshape((HT, WDTH))
-        x_tmp = tf.dtypes.cast(x_tmp,tf.float32)
-
-        (x_tmp, y_tmp) = to_ndarray(x_tmp, y_tmp)
-        y_tmp = y_tmp.reshape((HT, WDTH, 1))
-        x_tmp = x_tmp.reshape((HT, WDTH, 1))
-        y_tmp = tf.convert_to_tensor(y_tmp, dtype = tf.float32)
-        x_tmp = tf.convert_to_tensor(x_tmp, dtype = tf.float32)
-
-        ssim_sum += tf.Session().run(tf.image.ssim(x_tmp, y_tmp, max_val=1))    #Image.fromarray(x_tmp), Image.fromarray(y_tmp)
-    
-    ssim = ssim_sum/AMT
-
-    return ssim
 
 def ssim_for2d(y, x):
     return tf.image.ssim(x, y, max_val=1)

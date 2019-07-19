@@ -55,6 +55,7 @@ y_set = y_set_tmp
 print('x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH')
 print(x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH)
 
+
 '''
 # Performance without any processing-------------------------------------------------
 TARGET_HEIGHT_TMP = TARGET_HEIGHT - 2*2
@@ -73,9 +74,10 @@ FILENAME = 'x3.mat'
 model = combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
 model.compile(loss = 'mean_squared_error',
                 optimizer = adam(lr=0.0005, decay=1e-6), metrics=[ssim_for2d, psnr_for2d])
+
 # Train model ------------------------------------------------------------------------
-EPOCHS = 200
-BATCH = 20
+EPOCHS = 120
+BATCH = 25
 VALIDATION_FRACTION = 0.8
 VALIDATION_BATCH_SIZE = 10
 STEPS_PER_EPOCH = math.floor(AMOUNT / BATCH)
@@ -87,19 +89,81 @@ history = model.fit(x_set, y_set, BATCH, EPOCHS, verbose=2, validation_split=1 -
                         save_best_only=True, save_weights_only=False, mode='auto', period=1)])
 
 '''
+# Performance after 2d model process-------------------------------------------------
+mse_individual_processing_train, ssim_individual_processing_train, psnr_individual_processing_train = model.evaluate(train_x, train_y, verbose=2)
+mse_individual_processing_test, ssim_individual_processing_test, psnr_individual_processing_test = model.evaluate(test_x, test_y, verbose=2)
+
+# make prediction after individual processing ----------------------------------------
+train_prediction = model.predict(train_x)
+test_prediction = model.predict(test_x)
+# y_set doesn't need any change
+
+# store the predicted frames-----------------------------------------------------------
+# append train_prediction with test_prediction
+interim = numpy.append(train_prediction, test_prediction, axis=0)
+interim = interim.reshape((-1, TARGET_HEIGHT, TARGET_WIDTH))
+(TOTAL_AMOUNT, TARGET_HEIGHT, TARGET_WIDTH) = interim.shape
+
+for i in range(TOTAL_AMOUNT):
+    img = interim[i , : , :]
+    img = Image.fromarray(img)
+    img.save(prediction_path() + 'frame' + str(i) + '.tif')
+    #print('save predicted frame' + str(i) + '.tif')
+
+# Reload data-------------------------------------------------------------------------
+(AMOUNT, x_set, HEIGHT, WIDTH) = prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH)
+
+if AMOUNT != 296:
+    AMOUNT = 296
+    TOTAL_AMOUNT = 296
+
+# y_set change picture size
+predict_y_set = y_set[:, 2:TARGET_HEIGHT-2, 2:TARGET_WIDTH-2, :]
+y_set = predict_y_set
+
+# shape of train_prediction (266, 5, 352, 288, 1) shape of train_y (266, 348, 284, 1)
+
+# Separate training set and test set-----------------------------------------------
+FRACTION = 0.9
+
+(train_prediction, test_prediction) = separator(x_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
+(train_y, test_y) = separator(y_set, FRACTION, DEPTH, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, AMOUNT)
+
+# Pass the first results to the 3D SRnet model ----------------------------------------
+model = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
+
+# Train model ------------------------------------------------------------------------
+# TODO: enlarge EPOCHS if time/memory permits
+EPOCHS = 200
+BATCH = 10
+VALIDATION_BATCH_SIZE = 20
+STEPS_PER_EPOCH = math.floor(AMOUNT / BATCH)
+VALIDATION_STEPS = math.floor(AMOUNT / VALIDATION_BATCH_SIZE)
+
+history = model.fit(train_prediction, train_y, BATCH, EPOCHS, verbose=2, validation_split=1 - FRACTION,
+                    callbacks=[EarlyStopping(monitor='val_loss', patience=3, verbose=2, mode='auto', baseline=None, restore_best_weights=False),
+                               ModelCheckpoint(filepath = './checkpoint.h5', monitor='val_loss', verbose=2, save_best_only=True, save_weights_only=False, mode='auto', period=1)])
+model.save(save_model_path()+'3d_model.h5')
+print('save the second model')
+
 # Performance after 3d model process-------------------------------------------------
-mse_3d_train, ssim_3d_train, psnr_3d_train = model.evaluate(x_set, y_set, verbose=2)
+mse_3d_train, ssim_3d_train, psnr_3d_train = model.evaluate(train_prediction, train_y, verbose=2)
+mse_3d_test, ssim_3d_test, psnr_3d_test = model.evaluate(test_prediction, test_y, verbose=2)
 
 # Print performance-------------------------------------------------------------------
 print('')
-print('AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH:',
-        AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH, '\n')
+print('AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH:', AMOUNT, BATCH, TARGET_HEIGHT, HEIGHT, TARGET_WIDTH, WIDTH, '\n')
 
 print('without any process, raw data:')
 print('psnr_before, ssim_before:', psnr_before, ssim_before, '\n')
 
-print('after processing:')
-print('mse, ssim, psnr:', mse_3d_train, ssim_3d_train, psnr_3d_train, '\n')
+print('after processed by SRCNN individually:')
+print('for train set, mse, ssim, psnr:', mse_individual_processing_train, ssim_individual_processing_train, psnr_individual_processing_train)
+print('for test set, mse, ssim, psnr:', mse_individual_processing_test, ssim_individual_processing_test, psnr_individual_processing_test, '\n')
+
+print('after processed by 3D SRnet:')
+print('for train set, mse, ssim, psnr:', mse_3d_train, ssim_3d_train, psnr_3d_train)
+print('for test set, mse, ssim, psnr:', mse_3d_test, ssim_3d_test, psnr_3d_test, '\n')
 
 '''
 

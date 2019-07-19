@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # THE PATH IS USED FOR LOCAL DATASET FILES
 # TO USE BRIDGES, USE THE getpath FUNTION STORED IN REMOTE COMPUTER
 
-LOCAL_PATH = '/home/user1/REUS/image-reconstruction-2019/data/'
+LOCAL_PATH = '/pylon5/ac5610p/janegao/image-reconstruction-2019/data/data/'
 
 # ==============================================================================================
 

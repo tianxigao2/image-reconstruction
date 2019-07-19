@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 # THE PATH IS USED FOR LOCAL DATASET FILES
 # TO USE BRIDGES, USE THE getpath FUNTION STORED IN REMOTE COMPUTER
 
-LOCAL_PATH = '/home/user1/REUS/image-reconstruction/data/'
+LOCAL_PATH = '/pylon5/ac5610p/janegao/image-reconstruction-2019/data/data/'
 
 def prediction_path():
     return LOCAL_PATH + 'prediction_tmp/'
 
 def save_model_path():
-    return '/home/user1/REUS/image-reconstruction/saved_model/'
+    return '/pylon5/ac5610p/janegao/image-reconstruction-2019/saved_model/'
 
 # for 3D SRNet model to take time-domain information -------------------------------------------------------------
 def prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH):

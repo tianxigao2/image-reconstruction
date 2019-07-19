@@ -20,7 +20,7 @@ def my_metric(the_data_metric: np.ndarray, the_data_perform: List[float], new_hi
 
 class NewMetricMeasure(keras.callbacks.Callback):
     def __init__(self, x_train, y_train, trials:int, split_rate = 0.2, the_data_metric = np.array([]), the_data_perform = [], keep_rate = 0.5, 
-                metric_name = 'loss', boundary = [0, 0], checkpts = [], cum_pts = np.linspace(0.01, 1, num = 200, endpoint = False)):
+                metric_name = 'loss', boundary = [0, 0], checkpts = [], cum_pts = np.linspace(0.01, 1, num = 1000, endpoint = False)):
       # boundary is a list including the lower and upper percentages for my_metric checking
       # boundary can be replaced by a set of checkpoints represented as precetages
       self.history_metric = the_data_metric
@@ -36,7 +36,7 @@ class NewMetricMeasure(keras.callbacks.Callback):
       self.trials = trials
       self.best_trial = 0
       self.running_trial = -1
-      self.best_performance = 100000
+      self.best_performance = 100
       self.best_model = None
       
     def on_train_begin(self, logs={}):
@@ -59,8 +59,8 @@ class NewMetricMeasure(keras.callbacks.Callback):
             self.model.stop_training = my_metric(self.history_metric, self.history_perform, self.metric_data, keep_rate  = self.keep_rate)
 
     def on_epoch_end(self, epoch, logs={}):
-        #if logs.get(self.metric_name) > 1000 and epoch >= 20:
-            #self.model.stop_training = True
+        if logs.get(self.metric_name) > 1000 and epoch >= 20:
+            self.model.stop_training = True
         if logs.get(self.metric_name) > 10000 and epoch >= 10:
             self.model.stop_training = True
         if logs.get(self.metric_name) > 20000 and epoch >= 5:

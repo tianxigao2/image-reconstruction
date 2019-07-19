@@ -29,11 +29,11 @@ with tf.Session() as sess:
 '''
 
 #------------when running cpu, block comment this session------------------------#
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-sess = tf.Session(config=config)
+#config = tf.ConfigProto()
+#config.gpu_options.allow_growth = True
+#sess = tf.Session(config=config)
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #---------------------------------------------------------------------------------#
 # TODO: match the amount with dataset
 AMOUNT = 300
@@ -48,9 +48,11 @@ HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH = 176, 144, 352, 288 #default
 
 
 # package choice: akiyo_package; container_package; shepp_logan_phantom_package
-(x_set, y_set, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH) = container_2D(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
+(x_set, y_set, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH, AMOUNT, TOTAL_AMOUNT
+    ) = container_2D(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH)
 
-print('x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH', x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH)
+print('x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH',
+    x_set.shape, y_set.shape, TARGET_HEIGHT, TARGET_WIDTH, HEIGHT, WIDTH)
 
 # Separate training set and test set-----------------------------------------------
 FRACTION = 0.95
@@ -119,20 +121,17 @@ for i in range(TOTAL_AMOUNT):
 
 # Reload data-------------------------------------------------------------------------
 (AMOUNT, x_set_reload, HEIGHT, WIDTH) = prediction_package(AMOUNT, TOTAL_AMOUNT, HEIGHT, WIDTH, TARGET_HEIGHT, TARGET_WIDTH, DEPTH)
-print('prediction_set shape: ', x_set_reload.shape)
-
-if AMOUNT != 296:
-    AMOUNT = 296
-    TOTAL_AMOUNT = 296
+print('prediction_set shape: ', x_set_reload.shape) #(296, 5, 352, 288, 1)
 
 # Performance after reloading-------------------------------------------------
-x_reload = numpy.reshape(x_set_reload[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
+x_reload = numpy.reshape(x_set_reload[:, 2, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_TMP + 2, :],(
     AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
-
-(psnr_after_reload, ssim_after_reload) = PSNR_SSIM(y,x_reload)
-
 # y_set change picture size
 predict_y_set = y_set[:, 2:TARGET_HEIGHT-2, 2:TARGET_WIDTH-2, :]
+y_reload = numpy.reshape(predict_y_set, (AMOUNT, TARGET_HEIGHT_TMP, TARGET_WIDTH_TMP))
+
+(psnr_after_reload, ssim_after_reload) = PSNR_SSIM(y_reload,x_reload)
+
 
 #=====================================================================================================
 
@@ -170,7 +169,7 @@ x_final = numpy.reshape(x_final_set[:, 2:TARGET_HEIGHT_TMP + 2, 2:TARGET_WIDTH_T
 
 print('x_final.shape:', x_final.shape, 'y.shape', y.shape)
 
-(psnr_final, ssim_final) = PSNR_SSIM(y,x_final)
+(psnr_final, ssim_final) = PSNR_SSIM(y_reload,x_final)
 
 
 # Print performance-------------------------------------------------------------------

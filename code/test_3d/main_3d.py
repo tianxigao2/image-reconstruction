@@ -23,11 +23,11 @@ with tf.Session() as sess:
 '''
 
 #------------when running cpu, block comment this session------------------------#
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-sess = tf.Session(config=config)
+#config = tf.ConfigProto()
+#config.gpu_options.allow_growth = True
+#sess = tf.Session(config=config)
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #---------------------------------------------------------------------------------#
 
 #=================================================================================
@@ -69,14 +69,18 @@ FRACTION = 0.9
 
 # Build model------------------------------------------------------------------------
 # model = super_resolution_model(TARGET_HEIGHT, TARGET_WIDTH)
-model = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
+# model = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)
+# model = keras.models.load_model('/pylon5/ac5610p/janegao/image-reconstruction-2019/saved_model/3d_container_model.h5',
+# custom_objects={'ssim_for2d':ssim_for2d, 'psnr_for2d':psnr_for2d})
+model = keras.models.load_model('/pylon5/ac5610p/janegao/image-reconstruction-2019/saved_model/3d_akiyo_model.h5',
+ custom_objects={'ssim_for2d':ssim_for2d, 'psnr_for2d':psnr_for2d})
 
 print('shape of train_prediction', train_prediction.shape, 'shape of train_y', train_y.shape)
 
 # Train model ------------------------------------------------------------------------
 EPOCHS = 300
 BATCH = 10
-VALIDATION_BATCH_SIZE = 20
+VALIDATION_BATCH_SIZE = 10
 STEPS_PER_EPOCH = math.floor(AMOUNT / BATCH)
 VALIDATION_STEPS = math.floor(AMOUNT / VALIDATION_BATCH_SIZE)
 
@@ -120,12 +124,12 @@ print('for test set, mse, ssim, psnr:', mse_3d_test, ssim_3d_test, psnr_3d_test,
 
 
 
-fig=plt.figure()
-fig.add_subplot(1,2,1)
-plt.imshow(x_set[0, 2, :, :, 0])
-fig.add_subplot(1,2,2)
-plt.imshow(y_set[0, :, :, 0])
-plt.show()
+#fig=plt.figure()
+#fig.add_subplot(1,2,1)
+#plt.imshow(x_set[0, 2, :, :, 0])
+#fig.add_subplot(1,2,2)
+#plt.imshow(y_set[0, :, :, 0])
+#plt.show()
 
 
 
