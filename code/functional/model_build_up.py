@@ -12,7 +12,7 @@ import numpy
 import math
 
 #TODO: depth defaults to be 5; If modified, need to change lambda function and lambda shape function
-
+#TODO: AMOUNT defaults to be 300; If modifed, need to change lambda function and lambda shape function
 def base_model_SRCNN(FILENAME, HEIGHT, WIDTH):
 
     par = load_parameter(FILENAME)  #load transfer learning parameters
@@ -24,6 +24,16 @@ def base_model_SRCNN(FILENAME, HEIGHT, WIDTH):
     model.add(Conv2D(32, (1, 1), padding='same', activation='relu', use_bias = True, trainable = True))
     model.add(Conv2D(1, (5, 5), padding='same', activation = 'relu', use_bias = True, trainable = True))
 
+    '''
+    SRCNN1 = Conv2D(64, 9, padding = 'same', activation ='relu', use_bias = True, 
+        data_format='channels_last', trainable = False) (ip)  #input_shape=(TARGET_HEIGHT, TARGET_WIDTH, 1),
+    SRCNN2 = Conv2D(32, 1, padding='same', activation='relu', use_bias = True, trainable = True) (SRCNN1)
+    SRCNN3 = Conv2D(1, 5, padding='same', activation = 'relu', use_bias = True, trainable = True) (SRCNN2)
+
+    SRCNN = Model(inputs = ip, outputs = SRCNN3)
+    print(SRCNN.summary())
+    ''' 
+
     for i in range(3):
         model.layers[i].set_weights(par[i])
 
@@ -32,14 +42,87 @@ def base_model_SRCNN(FILENAME, HEIGHT, WIDTH):
 
     return model
 
+def SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
+    '''
+    model = Sequential()
+    
+    model.add(Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last", activation='relu', use_bias=True, input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)))
+    model.add(Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu', use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros'))
+    model.add(Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu', use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros'))
+    model.add(Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu', use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros'))
+    model.add(Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu', use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros'))
+    model.add(Reshape((TARGET_HEIGHT - 2*2, TARGET_WIDTH - 2*2, -1)))    # first 2 for 2 lines of erosion; second 2 for 2 layers of erosion
+    model.add(Conv2D(1, kernel_size=(3, 3), padding='same', activation='relu', use_bias = True, input_shape=(DEPTH,TARGET_HEIGHT - 2*2, TARGET_WIDTH - 2*2, -1)))
+    
+    print(model.summary())
+
+    model.compile(loss = 'mean_squared_error', optimizer = adam(lr=0.002, decay=1e-5), metrics=[ssim_for2d, psnr_for2d])
+
+    return model
+    '''    
+    input_placeholder = Input(shape = (DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1))
+    SRnet1 = Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last",
+                    activation='relu', use_bias=True)(input_placeholder)   
+                    #input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)
+    SRnet2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet1)
+    SRnet3 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='same', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet2)
+    SRnet_downgrade_1 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet3)
+    SRnet_downgrade_2 = Conv3D(32, kernel_size = (3, 3, 3), strides=(1, 1, 1), padding='valid', dilation_rate=(1, 1, 1), activation='relu',
+                    use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros') (SRnet_downgrade_1)
+    SRnet_reshape = Reshape((TARGET_HEIGHT - 2*2, TARGET_WIDTH - 2*2, -1))(SRnet_downgrade_2)
+    SRnet_output = Conv2D(1, kernel_size=(3, 3), padding='same', activation='relu', use_bias = True,
+                    input_shape=(DEPTH,TARGET_HEIGHT-2*2, TARGET_WIDTH-2*2, -1))(SRnet_reshape)
+
+    model = Model(inputs = input_placeholder, outputs = SRnet_reshape)
+    
+    return model
+
 def repacking(x):
     #----------------------------get shape from input tensor---------------------------------
     (AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp) = x.shape
     DEPTH = 5
+    AMOUNT = 300
     #----------------------------pack frame one by one---------------------------------------
     FIRST = True
     HALF_RANGE = math.floor(DEPTH/2)
+    '''
+    sess = tf.Session()
+    sess.run(tf.global_variables_initializer())
+    interim_tensor = sess.run(x, feed_dict = {"input_1: 0":
+        numpy.zeros((AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp)).astype(numpy.float32)})
 
+    for i in range(AMOUNT):
+        if (i - HALF_RANGE) < 0 or (i + HALF_RANGE) >= AMOUNT:
+            AMOUNT = AMOUNT - 1
+        else:
+            if DEPTH%2 == 0:
+                RANGE = range(i - HALF_RANGE, i + HALF_RANGE)
+            else:
+                RANGE = range(i - HALF_RANGE, i + HALF_RANGE + 1)
+
+            for j in RANGE:
+                frame = interim_tensor[j, :, :, :]  #(352, 288, 1)
+                
+                frame = numpy.reshape(frame, (1, TARGET_HEIGHT, TARGET_WIDTH))  #(1, 352, 288)
+                
+                if j == i - HALF_RANGE:
+                    package = frame
+                else:              
+                    package = numpy.append(package, frame, axis = 0)
+
+            if FIRST == True:
+                package_set = package
+                FIRST = False
+            else:
+                package_set= numpy.append(package_set, package, axis = 0)
+
+    package_set = numpy.reshape(package_set, (AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH, 1))   #(294, 5, 352, 288, 1)
+    package_set_tensor= tf.convert_to_tensor(package_set, dtype = tf.float32)
+    return package_set_tensor
+    '''
     for i in range(AMOUNT):
         if (i - HALF_RANGE) < 0 or (i + HALF_RANGE) >= AMOUNT:
             AMOUNT = AMOUNT - 1
@@ -71,6 +154,7 @@ def repacking_output_shape(input_shape):
     #--------------get shape from input_shape---------------------------
     [AMOUNT, TARGET_HEIGHT, TARGET_WIDTH, tmp] = list(input_shape)
     DEPTH = 5
+    AMOUNT = 300
     #--------------modify shape-----------------------------------------
     HALF_RANGE = math.floor(DEPTH/2)
     for i in range(AMOUNT):
@@ -89,6 +173,8 @@ def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     interim_repacking = Lambda(repacking, output_shape = repacking_output_shape)(SRCNN_network)
 
     #---------------------------build 3dSRnet model--------------------------------------------
+    #SRnet_layer = SRnet_3d_model(AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH)(interim_repacking)
+    
     SRnet1 = Conv3D(32, kernel_size = (3, 3, 3), padding='same', data_format="channels_last",
                     activation='relu', use_bias=True)(interim_repacking)   
                     #input_shape=(DEPTH, TARGET_HEIGHT, TARGET_WIDTH,1)
@@ -109,3 +195,4 @@ def combined(FILENAME, AMOUNT, DEPTH, TARGET_HEIGHT, TARGET_WIDTH):
     print(combined_model.summary())  
 
     return combined_model  
+

@@ -4,7 +4,8 @@ import numpy as np
 #import h5py
 
 #filepath = '/home/user1/REUS/image-reconstruction/fine-tuned-model/9-1-5(91 images)/'
-filepath = '/home/user1/REUS/image-reconstruction/fine-tuned-model/9-1-5(ImageNet)/'
+#filepath = '/home/user1/REUS/image-reconstruction/fine-tuned-model/9-1-5(ImageNet)/'
+filepath = '/pylon5/ac5610p/janegao/image-reconstruction-2019/fine-tuned-model/9-1-5(ImageNet)/'
 
 #filename = ['x2.mat', 'x3.mat', 'x4.mat']  #for 9-1-5(91 images)
 #filename = ['x3.mat']   # for 9-1-5(ImageNet)
