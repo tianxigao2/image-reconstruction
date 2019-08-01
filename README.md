@@ -38,44 +38,9 @@ Climate Data:
 
   - `extractor.py` can run to extract frames out from video; only need to run once at the very beginning;
 
-- [Code](./code/): run the `main.py` file under each folder (or file named similar to this)
+  - [functional](./two-in-one_attempt/): combined 2d and 3d model with a lambda data-reprocessing layer in between (not succeed)
 
-  - [code_2d](./code/code_2d/): basic model named SRCNN
-
-  - [transfer_learning](./code/transfer_learning/): transfer learning on SRCNN model
-
-  - [test_transfer_learning](./code/test_transfer_learning_acce/): 2D FSRCNN with transfer learning
-
-  - [code_3d](./code/code_3d/): 3D SRnet model
-
-  - [two_d+three_d](./code/two_d%2Bthree_d/): combined 2d and 3d model
-
-  - [functional](./code/functional/): combined 2d and 3d model with a lambda data-reprocessing layer in between (not succeed)
-
-  - [test2](./code/test2/): using the code of hyper-parameter tuning team to optimize hyper-parameter -- for SRCNN model
-
-  - [test_3d](./code/test_3d): using the code of hyper-parameter tuning team to optimize hyper-parameter -- for 3d SRnet
-
-
-To choose different dataset:
-  - Check the `getpath.py` file under the exact directory of code, there are different choices for dataset (for example, shepp-logan phantom).
-
-  - Change the size constant in main file according to the selected dataset `HEIGHT, WIDTH, AMOUNT, TOTAL AMOUNT`
-
-  - Choose the data loading function inside main file `(x_set, y_set, ...)`
-
-
-  
-
-`code` folder gives general idea of models ==========================================
-
-SUGGESTION: start from running `final` folder. Though other dataset are not stored as h5 files like climate data, the `final` folder is more clearly and nicely structured. There are more versions of functions under `code` folder. You may want to refer to the most updated ones. 
-
-(`test_transfer_learning` is named as `fsrcnn` under `final`)
-
-(`functional` folder under `code` is not runnable -- not fully developed)
-
- run `final` folder for final result with climate data =====================================
+Run `final` folder for final result with climate data =====================================
 
 - [Experiment with climate data](./final/): run `main.py` and choose which model to run inside the code
 
